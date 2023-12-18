@@ -1,0 +1,1635 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --color-yellowLcHf: #FEE759;
+    --color-yellowLcH1: #FFEB97;
+    --color-blue: #0A4C6D;
+    --color-grey: #99A2A7;
+    --color-brown: #885527;
+    --color-darkBrown: #562C1B;
+    --color-black: #3B1100;
+    --color-green: #2B5446;
+    --color-aquamarine: #D0FEEE;
+    --color-orange: #FD7720;
+    --color-yellowDly: #EBC833;
+    --color-purple: #7B146A;
+    --color-darkPurple: #480C3E;
+    --color-red: #C30404;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-size: 1.6rem;
+    animation: fadeInAnimation ease 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.flexContainer {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+a {
+    text-decoration: none;
+}
+
+nav ul.flexContainer {
+    padding: 0;
+    margin-top: 4rem;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    position: static;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+nav a {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-right: 6rem;
+    /* font-size: larger; */
+}
+
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    display: block;
+    position: relative;
+    cursor: pointer;
+}
+
+
+ul ul {
+    display: none;
+    position: absolute;
+    min-width: 22rem;
+    z-index: 1;
+}
+
+ul ul li {
+    display: block;
+    margin: 1rem 0 0;
+    padding: 0;
+}
+
+li:hover ul {
+    display: block;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+h1 {
+    font-family: 'Josefin Sans';
+    text-align: center;
+    margin-top: 6rem;
+    line-height: 4rem;
+}
+
+h2 {
+    font-family: 'Raleway', sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 10rem;
+}
+.firstH2 {
+    margin-top: 0;
+}
+h3 {
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+    margin-top: 4rem;
+}
+
+h4 {
+    font-family: 'Raleway', sans-serif;
+    font-size: larger;
+    margin-bottom: 0.2rem;
+}
+
+p {
+    font-family: 'Montserrat', sans-serif;
+}
+
+p,
+h2,
+h3,
+h4 {
+    line-height: 3rem;
+}
+
+header {
+    height: 90vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+/* burger */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    transition-property: opacity, filter;
+    transition-duration: 0.5s;
+    transition-timing-function: linear;
+    font: inherit;
+    color: inherit;
+    text-transform: none;
+    border: 0;
+    margin: 0;
+    padding: 0 3rem;
+    overflow: visible;
+    border-radius: 0.5rem;
+}
+
+.hamburger:hover {
+    opacity: 0.7;
+}
+
+.hamburger.is-active:hover {
+    opacity: 0.7;
+}
+
+.hamburger-box {
+    width: 30px;
+    height: 24px;
+    display: inline-block;
+    position: relative;
+}
+
+.hamburger-inner {
+    display: block;
+    top: 50%;
+    margin-top: -2px;
+}
+
+.hamburger-inner,
+.hamburger-inner::before,
+.hamburger-inner::after {
+    width: 30px;
+    height: 4px;
+    border-radius: 0.4rem;
+    position: absolute;
+    transition-property: transform;
+    transition-duration: 0.15s;
+    transition-timing-function: ease;
+}
+
+.hamburger-inner::before,
+.hamburger-inner::after {
+    content: "";
+    display: block;
+}
+
+.hamburger-inner::before {
+    top: -10px;
+}
+
+.hamburger-inner::after {
+    bottom: -10px;
+}
+
+/*
+* Spin
+*/
+.hamburger--spin .hamburger-inner {
+    transition-duration: 0.22s;
+    transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.hamburger--spin .hamburger-inner::before {
+    transition: top 0.1s 0.25s ease-in, opacity 0.1s ease-in;
+}
+
+.hamburger--spin .hamburger-inner::after {
+    transition: bottom 0.1s 0.25s ease-in, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.hamburger--spin.is-active .hamburger-inner {
+    transform: rotate(225deg);
+    transition-delay: 0.12s;
+    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.hamburger--spin.is-active .hamburger-inner::before {
+    top: 0;
+    opacity: 0;
+    transition: top 0.1s ease-out, opacity 0.1s 0.12s ease-out;
+}
+
+.hamburger--spin.is-active .hamburger-inner::after {
+    bottom: 0;
+    transform: rotate(-90deg);
+    transition: bottom 0.1s ease-out, transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+/* fin burger */
+.miniLogo {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 25%;
+    left: 95%;
+    /* padding-right: 1rem;
+    right: 0; */
+}
+
+.miniLogo img {
+    width: 6rem;
+    height: 6rem;
+    object-fit: contain;
+    margin-top: 1rem;
+}
+
+.navBar {
+    height: 10vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.heroSection {
+    height: 76vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0px -22em;
+}
+
+main {
+    margin: 5rem 10rem 0;
+}
+
+footer {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    line-height: 3rem;
+}
+
+footer .logos {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.logos img {
+    height: 5rem;
+}
+
+footer .logos2 img {
+    height: 7rem;
+}
+
+footer .logos2 img:first-of-type {
+    padding-right: 2rem;
+}
+
+footer .logos2 img:last-of-type {
+    padding-left: 2rem;
+}
+
+footer h4 {
+    text-decoration: underline;
+}
+
+footer p {
+    margin: 0
+}
+
+address {
+    font-style: normal;
+}
+
+.infos-site {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+    padding-top: 12rem;
+}
+
+form {
+    display: inline-flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;
+    height: 5rem;
+    margin-left: 1.5rem;
+}
+
+input {
+    height: 3rem;
+}
+
+.rs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.rs a:first-of-type {
+    padding-right: 3rem;
+}
+
+.partenaires {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem 0 3rem 0;
+}
+
+.partenaires img {
+    height: 8rem;
+}
+
+.partenaires a {
+    padding: 0 2rem;
+
+}
+
+footer .separateur {
+    margin: auto;
+    height: 0.2rem;
+
+}
+
+footer .separateur:first-of-type {
+    margin-top: 3rem;
+    margin-bottom: 0;
+    width: 45%;
+}
+
+footer .separateur:last-of-type {
+    margin-bottom: 3rem;
+    margin-top: 0;
+    width: 10%;
+}
+
+.mentions {
+    text-align: center;
+    font-weight: 400;
+    padding-bottom: 2rem;
+}
+
+.top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    height: 6rem;
+    display: none;
+    cursor: pointer;
+    z-index: 99;
+}
+
+.top img {
+    width: 7rem;
+}
+
+/**** La Crouzié ****/
+
+#lc header {
+    background-image: url(img/chapiteau.JPG);
+    background-position: 50% 40%;
+}
+
+#lc .logos {
+    margin-top: 1rem;
+}
+
+#lc header .logos a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#lc header .logo {
+    width: 20rem;
+    height: auto;
+    margin: 0 2rem 1rem;
+    padding: 8rem 0 0 1rem;
+}
+
+#lc header .logo-mini {
+    height: 4rem;
+}
+
+#lc header .heroSection {
+    background-image: url(img/courbe-lc.svg);
+}
+
+
+#lc ul {
+    background-color: var(--color-blue);
+}
+
+#lc header ul ul,
+.hamburger-inner,
+#lc .hamburger-inner::before,
+#lc .hamburger-inner::after,
+#lc .hamburger.is-active .hamburger-inner,
+#lc .hamburger.is-active .hamburger-inner::before,
+#lc .hamburger.is-active .hamburger-inner::after {
+    background-color: var(--color-yellowDly);
+}
+
+#lc header nav a,
+#lc footer,
+#lc footer a,
+#lc footer p {
+    color: var(--color-yellowLcHf);
+}
+
+#lc header nav a:hover {
+    color: var(--color-grey);
+}
+
+#lc header h1 {
+    color: var(--color-yellowLcH1);
+    background-color: var(--color-blue);
+    padding: 0.5rem;
+}
+
+#lc h2 {
+    color: var(--color-blue);
+    margin-top: 10rem;
+}
+
+#lc h3,
+#lc h3 a,
+#lc .actu-lcdm a {
+    color: var(--color-darkPurple);
+}
+
+#lc p {
+    color: var(--color-black);
+}
+
+#lc .a-propos-text {
+    margin: 4rem 0 4rem 0;
+}
+
+#lc .deboutLesYeux,
+#lc .laCrouziedesMetiers {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 3rem;
+}
+
+#lc .dly-affiche {
+    display: flex;
+    justify-content: center;
+}
+
+#lc .deboutLesYeux img,
+#lc .laCrouziedesMetiers img {
+    align-self: center;
+    max-height: 10rem;
+    padding-right: 3rem;
+}
+
+#lc .dly-affiche img {
+    max-width: 80rem;
+    margin: 0 5rem 0 5rem;
+    align-self: center;
+    max-height: 54rem;
+}
+
+.actu-lcdm a {
+    font-weight: 600;
+}
+
+.actu-lcdm div:first-of-type {
+    display: flex;
+    justify-content: space-around;
+    margin: 0 5rem;
+}
+
+.actu-lcdm-img {
+    flex-direction: column;
+}
+
+.actu-lcdm-img img {
+    padding: 1rem 0;
+    width: 120em;
+}
+
+.actu-lcdm-text1 {
+    align-self: center;
+    background: url(img/logo-lcdm-opaque.jpg) no-repeat center;
+    background-size: contain;
+}
+
+.actu-lcdm-text2 {
+    text-align: center;
+    margin: 4rem 0;
+}
+
+#lc .radio {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#lc .france-inter {
+    width: 30em;
+    object-fit: contain;
+}
+
+#lc .radio div {
+    margin-left: 7rem;
+    padding-bottom: 5rem;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+#lc .radio h3 {
+    margin: 5rem 0 5rem 0;
+}
+
+#lc .radio a {
+    display: flex;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: large;
+    color: var(--color-yellowLcHf);
+    background-color: var(--color-blue);
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+#lc .radio div img {
+    padding-left: 1rem;
+}
+
+#lc footer {
+    background-image: url(img/courbe-footer-lc.svg);
+}
+
+#lc input {
+    color: var(--color-blue);
+}
+
+#lc .separateur {
+    background-color: var(--color-yellowLcHf);
+}
+
+#lc .top {
+    border: solid 0.2rem var(--color-blue);
+}
+
+
+
+/**** Debout les Yeux ****/
+
+#dly header {
+    background-image: url(img/photo-concert-dly.JPG);
+}
+
+/* #dly .dly (.a-laffiche, .festival) header background-image à changer */
+
+#dly header .logo {
+    width: 7rem;
+    height: auto;
+    margin: 4rem;
+    padding-top: 10rem;
+}
+
+#dly header .heroSection {
+    background-image: url(img/courbe-dly.svg);
+}
+
+#dly ul {
+    background-color: var(--color-yellowDly);
+}
+
+#dly header nav a,
+#dly footer,
+#dly footer a,
+#dly footer p,
+#dly input,
+#dly footer h4 {
+    color: var(--color-purple);
+}
+
+#dly header nav a:hover {
+    color: var(--color-red);
+}
+
+#dly header h1 {
+    color: var(--color-yellowDly);
+}
+
+#dly h2 {
+    color: var(--color-purple);
+}
+
+#dly h3 {
+    color: var(--color-orange);
+    margin-bottom: 3rem;
+}
+
+#dly h4 {
+    color: var(--color-red);
+}
+
+#dly p {
+    color: var(--color-darkPurple);
+}
+
+.dly span {
+    color: var(--color-purple);
+    font-size: x-large;
+    font-weight: 600;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 3rem;
+    display: flex;
+    justify-content: center;
+    margin: 10rem 0 3rem 0;
+}
+
+#dly .galerie {
+    margin: 5rem 10rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+#dly .galerie figure {
+    margin: 1rem;
+}
+
+#dly .galerie img {
+    max-width: 15rem;
+    max-height: 15rem;
+    transition: transform .2s;
+}
+
+#dly .galerie figcaption {
+    display: none;
+    background-color: var(--color-yellowDly);
+    color: var(--color-darkPurple);
+}
+
+#dly .galerie figure:hover figcaption {
+    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    -ms-transform: scale(0.4);
+    -webkit-transform: scale(0.4);
+    transform: scale(0.4);
+    margin: -2rem;
+}
+
+#dly .galerie figure:hover {
+    -ms-transform: scale(4.5);
+    -webkit-transform: scale(4.5);
+    transform: scale(4.5);
+}
+
+.galerie+a {
+    color: var(--color-purple);
+    font-size: x-large;
+    font-family: 'Montserrat';
+    display: flex;
+    justify-content: center;
+    margin: 5rem auto 0;
+    font-weight: 600;
+
+}
+
+.galerie+a>span {
+    margin: 0 1rem;
+    font-weight: 700;
+    font-size: x-large;
+    text-transform: uppercase;
+}
+
+#dly footer {
+    background-image: url(img/courbe-footer-dly.svg);
+}
+
+#dly .separateur,
+#dly .hamburger-inner,
+#dly .hamburger-inner::before,
+#dly .hamburger-inner::after,
+#dly .hamburger.is-active .hamburger-inner,
+#dly .hamburger.is-active .hamburger-inner::before,
+#dly .hamburger.is-active .hamburger-inner::after {
+    background-color: var(--color-purple);
+}
+
+#dly .top {
+    border: solid 0.2rem var(--color-yellowDly);
+}
+
+
+/**** Galerie photos ****/
+
+/* Slideshow container */
+.slideshow-container {
+    max-width: 40%;
+    position: relative;
+    margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides,
+.mySlides1,
+.mySlides2,
+.mySlides3,
+.mySlides4,
+.mySlides5,
+.mySlides5 {
+    display: none;
+}
+
+/* Caption text */
+.text {
+    color: var(--color-purple);
+    background-color: var(--color-yellowDly);
+    font-size: 18px;
+    /* padding: 8px 12px; */
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+    color: var(--color-darkPurple);
+    background-color: var(--color-yellowDly);
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: var(--color-yellowDly);
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+    background-color: var(--color-yellowDly);
+}
+
+/* Fading animation */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+/**** A l'affiche ****/
+.a-la-une div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.a-la-une img {
+    max-width: 35rem;
+    max-height: 25rem;
+    margin: 0 2rem;
+}
+
+#dly #cours-hebdo div {
+    display: flex;
+    align-items: center;
+    margin: 5rem 10rem;
+}
+
+#dly #cours-hebdo div>p {
+    margin-left: 10rem;
+}
+
+#dly main .separateur {
+    width: 40%;
+    margin: 5rem auto;
+    height: 0.2rem;
+}
+
+#dly #cafe-asso div {
+    display: flex;
+    margin-top: 5rem;
+}
+
+#dly #cafe-asso img {
+    width: 40%;
+    margin: auto;
+}
+
+#dly #event-fest p:first-of-type {
+    text-align: center;
+}
+
+#dly #event-fest .events {
+    display: flex;
+    align-items: center;
+    margin: 5rem 0;
+}
+
+#dly #event-fest .events h2 {
+    margin-top: 3rem;
+    color: var(--color-red);
+}
+
+#dly .events div {
+    padding-left: 10rem;
+}
+
+
+/**** festival ****/
+
+.festival .photo-groupe img {
+    width: 15rem;
+    height: 15rem;
+}
+
+#programme {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.journee {
+    margin: 7rem;
+}
+
+.jour {
+    display: flex;
+}
+
+.jour1 {
+    margin-right: 10rem;
+}
+
+.activites-metiers {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 70%;
+    margin: 7rem auto;
+}
+
+.activites-metiers:nth-child(odd) {
+    flex-direction: row-reverse;
+}
+
+.activites-metiers img {
+    width: 30rem;
+    height: 30rem;
+}
+
+.activites-metiers p {
+    margin: 0 3rem;
+}
+
+#restauration a {
+    color: var(--color-purple);
+    font-weight: bold;
+}
+
+#tarifs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    /* width: 70%; */
+}
+
+#tarifs a {
+    color: var(--color-yellowDly);
+    background-color: var(--color-purple);
+    padding: 0.3rem;
+    font-weight: 600;
+}
+
+#tarifs a:hover {
+    color: var(--color-purple);
+    background-color: var(--color-yellowDly);
+}
+
+#infos-pratiques p {
+    margin-bottom: 0;
+}
+
+/**** Archives ****/
+
+ul.archives-annees {
+    min-width: auto;
+}
+
+ul.archives-annees a {
+    padding: 3rem;
+    margin: 0;
+}
+
+#dly.archives main {
+    margin: 2rem 20rem;
+}
+
+.archives .events {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.archives .events h2 {
+    margin-top: 5rem;
+}
+
+.archives h4 {
+    text-align: center;
+    text-decoration: underline;
+    margin: 4rem;
+    background-color: var(--color-yellowDly);
+}
+
+.archives .events img {
+    max-height: 40rem;
+}
+
+/**** Artistes ****/
+.artiste {
+    display: flex;
+    align-items: center;
+    width: 75%;
+    margin: auto;
+}
+
+.artiste img {
+    width: 40rem;
+    height: 35rem;
+}
+
+.artiste div {
+    margin-left: 5rem;
+}
+
+.artiste p.lien {
+    margin-top: 5rem;
+    text-align: center;
+}
+
+.artiste a {
+    font-weight: 600;
+    color: var(--color-purple);
+    background-color: var(--color-yellowDly);
+    padding: 1rem;
+}
+
+.artiste a:hover {
+    background-color: var(--color-purple);
+    color: var(--color-yellowDly);
+}
+
+/**** La Crouzié des Métiers ****/
+#lcdm header {
+    background-image: url(img/gpe-photos-lcdm.jpg);
+}
+
+#lcdm header .logo {
+    width: 12rem;
+    height: auto;
+    margin: 4rem;
+    padding-top: 10rem;
+}
+
+#lcdm header .heroSection {
+    background-image: url(img/courbe-lcdm.svg);
+}
+
+#lcdm ul {
+    background-color: var(--color-brown);
+}
+
+#lcdm header nav a,
+#lcdm footer,
+#lcdm footer a,
+#lcdm footer p,
+#lcdm input {
+    color: var(--color-black);
+}
+
+#lcdm header nav a:hover {
+    color: var(--color-green);
+}
+
+#lcdm header h1 {
+    color: var(--color-aquamarine);
+}
+
+#lcdm h2 {
+    color: var(--color-blue);
+}
+
+#lcdm h3 {
+    color: var(--color-green);
+    text-align: inherit;
+}
+
+#lcdm p {
+    color: var(--color-black);
+}
+
+#lcdm .presentation {
+    margin-top: 4rem;
+}
+
+#lcdm #atelier-aiguilles img,
+#lcdm #atelier-bois img,
+#lcdm #atelier-metal-forge img {
+    width: 50%;
+    margin: 5rem auto;
+    display: flex;
+}
+
+#lcdm .btn-pdf {
+    color: var(--color-black);
+    background-color: var(--color-grey);
+    display: block;
+    border-radius: 0.4rem;
+    padding: 1rem;
+    font-weight: bold;
+    font-size: 1.8rem;
+    width: fit-content;
+    margin: 0 auto;
+    margin-top: 4rem;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+#lcdm .btn-pdf:hover {
+    color: var(--color-grey);
+    background-color: var(--color-black);
+    transform: scale(1.1);
+}
+
+#lcdm .recherche-artisan {
+    margin-top: 8rem;
+    text-align: center;
+    font-weight: bold;
+    color: var(--color-green);
+}
+
+#lcdm #artisans div {
+    display: flex;
+    align-items: center;
+    margin: 5rem 0 10rem;
+}
+
+#lcdm #artisans img {
+    width: 50%;
+    height: 35rem;
+    object-fit: contain;
+}
+
+#lcdm #artisans .lena p,
+#lcdm #artisans .pierro p {
+    margin: 5rem;
+}
+
+#lcdm #artisans span {
+    color: var(--color-green);
+    font-size: xx-large;
+    font-weight: 500;
+}
+
+#lcdm #artisans a {
+    color: var(--color-green);
+    font-weight: bold;
+}
+
+#lcdm .actu-lcdm a {
+    color: var(--color-green);
+}
+
+#lcdm footer {
+    background-image: url(img/courbe-footer-lcdm.svg);
+}
+
+#lcdm .separateur,
+#lcdm .hamburger-inner,
+#lcdm .hamburger-inner::before,
+#lcdm .hamburger-inner::after,
+#lcdm .hamburger.is-active .hamburger-inner,
+#lcdm .hamburger.is-active .hamburger-inner::before,
+#lcdm .hamburger.is-active .hamburger-inner::after {
+    background-color: var(--color-black);
+}
+
+#lcdm .top {
+    border: solid 0.2rem var(--color-brown);
+}
+
+/**** Mentions Légales ****/
+.mentions-legales main {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.mentions-legales .mentions-dly,
+.mentions-legales .mentions-lcdm {
+    margin: 15rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mentions-legales span {
+    text-decoration: underline;
+}
+
+
+/***** media *****/
+@media (max-width:1024px) {
+    .miniLogo {
+        top: 2%;
+        left: 89%;
+    }
+
+    nav ul.flexContainer {
+        display: none;
+        position: absolute;
+        z-index: 10;
+        padding: 0;
+        margin-top: 4rem;
+        width: 100%;
+        left: 0;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .heroSection {
+        height: 66vh;
+        background-position: 0px -18em;
+    }
+
+    .navBar {
+        justify-content: flex-start;
+        padding-top: 4rem;
+    }
+
+    nav a {
+        margin: 0;
+    }
+
+    nav li {
+        margin-top: 1rem;
+    }
+
+    .hamburger {
+        display: inline-block;
+    }
+
+    h1 {
+        margin: 0;
+    }
+
+    h2 {
+        margin: 4rem 0 2rem;
+    }
+
+    h3 {
+        margin-top: 3rem;
+    }
+
+    main {
+        margin: 2rem 2rem 0;
+    }
+
+    footer {
+        background-position: 100%;
+    }
+
+    .infos-site {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 11rem 4rem 0;
+    }
+
+    footer .separateur:first-of-type,
+    footer .separateur:last-of-type {
+        margin: 3rem auto 3rem;
+    }
+
+    footer .separateur:first-of-type {
+        width: 70%;
+    }
+
+    footer .separateur:last-of-type {
+        width: 40%;
+    }
+
+    .partenaires {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .partenaires p {
+        margin: 1rem;
+    }
+
+    form {
+        margin-bottom: 1rem;
+    }
+
+    .rs {
+        margin-top: 3rem;
+    }
+
+    .mentions-legales .mentions-dly,
+    .mentions-legales .mentions-lcdm {
+        margin: 3rem 0 0;
+    }
+
+    .top {
+        border: 0 !important;
+        bottom: 0;
+        right: 1rem;
+    }
+
+    .top img {
+        width: 4rem;
+    }
+
+    .miniLogo img {
+        width: 4rem;
+        height: 4rem;
+    }
+
+    /* lc */
+    #lc header .logo {
+        width: 9rem;
+        padding: 0;
+    }
+
+    #lc header .logo-mini {
+        height: 3rem;
+    }
+
+    #lc header h1 {
+        background-color: unset;
+    }
+
+    #lc h2 {
+        margin: 4rem 0 2rem;
+    }
+
+    #lc .a-propos {
+        margin: 1rem 2rem 1rem 2rem;
+    }
+
+    #lc .deboutLesYeux img,
+    #lc .laCrouziedesMetiers img {
+        max-height: 7rem;
+        padding-right: 0;
+    }
+
+    #lc .dly-affiche {
+        flex-wrap: wrap;
+    }
+
+    #lc .dly-affiche img {
+        width: 90%;
+        margin-bottom: 2rem;
+    }
+
+    .actu-lcdm div:first-of-type {
+        flex-direction: column;
+        margin: 0;
+    }
+
+    .actu-lcdm-text1 {
+        margin: 2rem 0 0;
+        background-position: 50% 0;
+    }
+
+    #lc .radio {
+        margin: 7rem 0 3rem;
+        flex-direction: column;
+    }
+
+    #lc .radio div {
+        margin-left: 0rem;
+        padding-bottom: 0rem;
+    }
+
+    #lc .radio h3 {
+        margin: 4rem 0;
+    }
+
+    /* dly */
+    #dly header .logo {
+        width: 4rem;
+        padding-top: 2rem;
+    }
+
+    #dly h1 {
+        padding: 4rem 0.5rem 0;
+    }
+
+    #dly main,
+    #dly.archives main {
+        margin: 2rem 2rem 0;
+    }
+
+    #dly .galerie {
+        margin: 1rem 0 0 0;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #dly .galerie figure {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+    }
+
+    #dly .galerie img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    #dly .galerie figcaption {
+        display: block;
+        padding: 0.2rem 0 0.2rem 1rem;
+    }
+
+    #dly .galerie figure:hover {
+        -ms-transform: scale(0);
+        -webkit-transform: scale(0);
+        transform: scale(0);
+    }
+
+    .galerie+a {
+        flex-direction: column;
+        text-align: center;
+        margin-top: 3rem;
+        font-size: larger;
+    }
+
+    .dly span {
+        margin: 5rem 0 3rem 0;
+    }
+
+    /* à l'affiche */
+    .a-la-une div {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .a-la-une div img {
+        max-width: 17rem;
+        margin: 0.5rem;
+    }
+
+    #dly #cours-hebdo div {
+        margin: 3rem 2rem;
+        flex-wrap: wrap;
+    }
+
+    #dly #cours-hebdo div>p {
+        margin: 4rem 0 0;
+    }
+
+    #dly #cafe-asso div {
+        margin-top: 1rem;
+        flex-direction: column;
+    }
+
+    #dly #cafe-asso img {
+        margin: 1rem 0;
+        width: auto;
+    }
+
+    #dly #event-fest .events {
+        flex-wrap: wrap;
+        margin: 3rem 0 2rem 0;
+    }
+
+    #dly #event-fest .events h2 {
+        margin: 3rem 0 0;
+    }
+
+    #dly #event-fest .events h3 {
+        margin-top: 2rem
+    }
+
+    #dly #event-fest .separateur {
+        margin: 2rem auto;
+    }
+
+    #dly .events div {
+        padding: 0 1rem;
+    }
+
+    /* festival */
+    #programme {
+        flex-direction: column-reverse;
+    }
+
+    .photo-groupe a {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .festival .photo-groupe img {
+        width: 20rem;
+        height: 20rem;
+        margin: 2rem auto;
+    }
+
+    .journee {
+        margin: 0;
+    }
+
+    .jour {
+        flex-direction: column;
+    }
+
+    .activites-metiers {
+        width: 100%;
+        flex-direction: column;
+        margin: 3rem auto;
+        justify-content: center;
+        background-color: var(--color-yellowLcH1);
+    }
+
+    .activites-metiers:nth-child(odd) {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .activites-metiers img {
+        margin: 0;
+        padding-top: 2rem;
+    }
+
+    #tarifs {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: auto;
+    }
+
+    /* archives */
+    .archives .events {
+        flex-direction: column;
+    }
+
+    #dly.archives main .separateur {
+        margin: 2rem auto 3rem;
+    }
+
+    /* artistes */
+    .artiste {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .artiste div {
+        margin-left: 0;
+    }
+
+    .artiste h2 {
+        margin-top: 3rem;
+    }
+
+    .artiste p.lien {
+        margin-top: 4rem;
+    }
+
+    #dly.artistes main .separateur {
+        margin: 4rem auto;
+    }
+
+    /* galerie */
+    .slideshow-container {
+        max-width: 85%;
+    }
+
+    /* lcdm */
+    #lcdm header .logo {
+        width: 6rem;
+        margin: 3rem;
+        padding: 0;
+    }
+
+    #lcdm header h1 {
+        background-color: var(--color-grey);
+    }
+
+    #lcdm main {
+        margin: 2rem 2rem 0;
+    }
+
+    #lcdm .btn-pdf {
+        width: auto;
+        margin-top: 0;
+    }
+
+    #lcdm .recherche-artisan {
+        margin-top: 5rem;
+    }
+
+    #lcdm #artisans a {
+        background-color: var(--color-aquamarine);
+        padding: 0.5rem;
+    }
+
+    #lcdm #atelier-aiguilles img,
+    #lcdm #atelier-bois img,
+    #lcdm #atelier-metal-forge img {
+        width: 100%;
+        margin: 3rem auto;
+    }
+
+    #lcdm #artisans div {
+        margin: 5rem 0;
+        flex-wrap: wrap;
+    }
+
+    #lcdm #artisans img {
+        width: 90%;
+        height: auto;
+        margin: auto;
+    }
+
+    #lcdm #artisans .lena p,
+    #lcdm #artisans .pierro p {
+        margin: 3rem 1rem 0;
+    }
+
+    #lcdm .actu-lcdm-text2 {
+        margin: 4rem 0 0rem 0;
+    }
+}
