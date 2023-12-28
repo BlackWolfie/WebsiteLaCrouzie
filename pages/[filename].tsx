@@ -9,9 +9,9 @@ export default function HomePage(
   props: InferGetStaticPropsType<typeof getStaticProps>
 ) {
   const { data } = useTina(props);
-
+  console.log(data);
   return (
-    <Layout rawData={data} data={data.global as any}>
+    <Layout rawData={data} data={data.global as any} theme={data.page.themes as any}>
       <Blocks {...data.page} />
     </Layout>
   );

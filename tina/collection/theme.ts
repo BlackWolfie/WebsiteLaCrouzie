@@ -1,8 +1,8 @@
 import type { Collection } from "tinacms";
 
-const Theme: Collection = {
-  label: "Theme",
-  name: "Theme",
+const Themes: Collection = {
+  label: "Themes",
+  name: "themes",
   path: "content/themes",
   format: "json",
   fields: [
@@ -115,4 +115,4 @@ const Theme: Collection = {
     }
   ],
 };
-export default Theme;
+export default Themes;

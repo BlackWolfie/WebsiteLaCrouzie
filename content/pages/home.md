@@ -1,5 +1,6 @@
 ---
 title: Tina Cloud Starter
+themes: content/themes/crouzie.json
 blocks:
   - headline: Welcome to the Tina Starter
     text: >
@@ -56,6 +57,4 @@ blocks:
     color: primary
     _template: testimonial
 ---
-
-
 

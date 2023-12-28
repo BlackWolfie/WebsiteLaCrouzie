@@ -4,21 +4,25 @@ import { Header } from "./header";
 import { Footer } from "./footer";
 import { Theme } from "./theme";
 import layoutData from "../../content/global/index.json";
-import { Global } from "../../tina/__generated__/types";
+import { Global , Themes} from "../../tina/__generated__/types";
 
 export const Layout = ({
   rawData = {},
-  data = layoutData,
+  data ,
+  theme ,
   children,
 }: {
   rawData?: object;
   data?: Omit<Global, "id" | "_sys" | "_values">;
+  theme?: Themes;
   children: React.ReactNode;
 }) => {
+  console.log(theme);
   return (
     <>
       <Head>
-        <title>Debout les Yeux</title>
+        {}
+        <title>Debout les Yeux </title>
         <meta charSet="UTF-8" />
         <meta name="description" content="Découvrez les évènements à l'affiche avec l'association Debout Les Yeux. Les cours hebdomadaires proposés, les activités du café associatif et les évènements et festival à venir."/>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
@@ -51,7 +55,7 @@ export const Layout = ({
             data.theme.font === "sans" && "font-sans"
           }`}
         >
-          <Header data={data?.header} />
+          <Header data={theme?.header} />
           <div className="flex-1 text-gray-800 bg-gradient-to-br from-white to-gray-50 dark:from-gray-900 dark:to-gray-1000 flex flex-col">
             {children}
           </div>

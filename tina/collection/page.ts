@@ -16,7 +16,7 @@ const Page: Collection = {
       if (document._sys.filename === "about") {
         return `/about`;
       }
-      return undefined;
+      return document._sys.filename;
     },
   },
   fields: [
@@ -28,6 +28,12 @@ const Page: Collection = {
         "The title of the page. This is used to display the title in the CMS",
       isTitle: true,
       required: true,
+    },
+    {
+      type: "reference",
+      label: "Categori",
+      name: "themes",
+      collections: ["themes"],
     },
     {
       type: "object",

@@ -5,15 +5,15 @@ import { Container } from "../util/container";
 import { useTheme } from ".";
 import { Icon } from "../util/icon";
 import { tinaField } from "tinacms/dist/react";
-import { GlobalHeader } from "../../tina/__generated__/types";
+import { ThemesHeader } from "../../tina/__generated__/types";
 
-export const Header = ({ data }: { data: GlobalHeader }) => {
+export const Header = ({ data }: { data: ThemesHeader }) => {
   const router = useRouter();
   const theme = useTheme();
 
   const headerColor = {
     default:
-      "text-black dark:text-white from-gray-50 to-white dark:from-gray-800 dark:to-gray-900",
+      "text-black from-gray-50 to-white ",
     primary: {
       blue: "text-white from-blue-300 to-blue-500",
       teal: "text-white from-teal-400 to-teal-500",
@@ -26,10 +26,7 @@ export const Header = ({ data }: { data: GlobalHeader }) => {
     },
   };
 
-  const headerColorCss =
-    data.color === "primary"
-      ? headerColor.primary[theme.color]
-      : headerColor.default;
+  const headerColorCss = headerColor.default;
 
   const activeItemClasses = {
     blue: "border-b-3 border-blue-200 text-blue-700 dark:text-blue-300 font-medium dark:border-blue-700",
@@ -61,6 +58,7 @@ export const Header = ({ data }: { data: GlobalHeader }) => {
     setIsClient(true);
   }, []);
 
+  console.log(data);
   return (
     <div
       className={`relative overflow-hidden bg-gradient-to-b ${headerColorCss}`}
@@ -72,7 +70,7 @@ export const Header = ({ data }: { data: GlobalHeader }) => {
               href="/"
               className="flex gap-1 items-center whitespace-nowrap tracking-[.002em]"
             >
-              <Icon
+             {/* <Icon
                 tinaField={tinaField(data, "icon")}
                 parentColor={data.color}
                 data={{
@@ -80,12 +78,12 @@ export const Header = ({ data }: { data: GlobalHeader }) => {
                   color: data.icon.color,
                   style: data.icon.style,
                 }}
-              />
-              <span data-tina-field={tinaField(data, "name")}>{data.name}</span>
+              />*/} 
+              {/* <span data-tina-field={tinaField(data, "name")}>{data.name}</span>*/}
             </Link>
           </h4>
           <ul className="flex gap-6 sm:gap-8 lg:gap-10 tracking-[.002em] -mx-4">
-            {data.nav &&
+           {/*  {data.nav &&
               data.nav.map((item, i) => {
                 const activeItem =
                   (item.href === ""
@@ -146,13 +144,11 @@ export const Header = ({ data }: { data: GlobalHeader }) => {
                     </Link>
                   </li>
                 );
-              })}
+              })}*/}
           </ul>
         </div>
         <div
-          className={`absolute h-1 bg-gradient-to-r from-transparent ${
-            data.color === "primary" ? `via-white` : `via-black dark:via-white`
-          } to-transparent bottom-0 left-4 right-4 -z-1 opacity-5`}
+          className={`absolute h-1 bottom-0 left-4 right-4 -z-1 opacity-5`}
         />
       </Container>
     </div>
