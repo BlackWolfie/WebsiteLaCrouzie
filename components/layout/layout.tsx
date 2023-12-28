@@ -18,7 +18,9 @@ export const Layout = ({
   return (
     <>
       <Head>
-        <title>Tina</title>
+        <title>Debout les Yeux</title>
+        <meta charSet="UTF-8" />
+        <meta name="description" content="Découvrez les évènements à l'affiche avec l'association Debout Les Yeux. Les cours hebdomadaires proposés, les activités du café associatif et les évènements et festival à venir."/>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         {data.theme.font === "nunito" && (
           <>

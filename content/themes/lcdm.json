@@ -1,0 +1,12 @@
+{
+  "header": {
+    "name": "La Crouzié Des Métiers",
+    "logo": "/uploads/svg/lcdm-favicon.svg",
+    "img": "/uploads/gpe-photos-lcdm.jpg"
+  },
+  "theme": {
+    "colorPrimary": "#885527",
+    "colorSecondary": "#3B1100",
+    "colorTerciary": "#2B5446"
+  }
+}

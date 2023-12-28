@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 /* eslint-disable no-undef */
-const theme = require("./content/global/theme.json");
 const colors = require("tailwindcss/colors");
 const defaultTheme = require("tailwindcss/defaultTheme");
 
@@ -88,17 +87,6 @@ module.exports = {
       4: "4px",
     },
     extend: {
-      colors:{
-        text: theme.colors.default.text_color.default,
-        light: theme.colors.default.text_color.light,
-        dark: theme.colors.default.text_color.dark,
-        primary: theme.colors.default.theme_color.primary,
-        body: theme.colors.default.theme_color.body,
-        border: theme.colors.default.theme_color.border,
-        "border-secondary": theme.colors.default.theme_color.border_secondary,
-        "theme-light": theme.colors.default.theme_color.theme_light,
-        "theme-dark": theme.colors.default.theme_color.theme_dark,
-      },
       textDecoration: ["active"],
       opacity: {
         7: ".075",

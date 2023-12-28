@@ -1,0 +1,26 @@
+{
+  "header": {
+    "name": "Tina Starter",
+    "logo": "/uploads/svg/dly-favicon.svg",
+    "img": "/uploads/concert.jpg",
+    "nav": [
+      {
+        "href": "",
+        "label": "Home"
+      },
+      {
+        "href": "about",
+        "label": "About"
+      },
+      {
+        "href": "posts",
+        "label": "Blog"
+      }
+    ]
+  },
+  "theme": {
+    "colorPrimary": "#EBC832",
+    "colorSecondary": "#7B146A",
+    "colorTerciary": "#AC0000"
+  }
+}
