@@ -16,6 +16,21 @@ module.exports = withMT({
     colors: {
       transparent: "transparent",
       current: "currentColor",
+      'crouzie': {
+        'primary': crouzie.theme.colorPrimary,
+        'secondary':crouzie.theme.colorSecondary,
+        'terciary':crouzie.theme.colorTerciary,
+      },
+      'lcdm': {
+        'primary': lcdm.theme.colorPrimary,
+        'secondary':lcdm.theme.colorSecondary,
+        'terciary':lcdm.theme.colorTerciary,
+      },
+      'dly': {
+        'primary': dly.theme.colorPrimary,
+        'secondary':dly.theme.colorSecondary,
+        'terciary':dly.theme.colorTerciary,
+      },
       black: colors.black,
       white: colors.white,
       teal: colors.cyan,
@@ -190,7 +205,9 @@ module.exports = withMT({
     },
   },
   variants: {
-    extend: { typography: ["tint", "dark", "primary", 'crouzie'] },
+    extend: { 
+      typography: ["tint", "dark", "primary", 'crouzie'] 
+    },
   },
   plugins: [require("@tailwindcss/typography")],
 });

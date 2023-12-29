@@ -11,7 +11,7 @@ import {
   IconButton,
 } from "@material-tailwind/react";
 import { HiBars3, HiXMark } from "react-icons/hi2";
-function NavList({ data, style }: { data: Themes, style: any }) {
+function NavList({ data, style }: {data:Themes, style:any}) {
   return (
     <ul className="my-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
       {data.header.nav && data.header.nav.map(function (item, i) {
@@ -22,7 +22,7 @@ function NavList({ data, style }: { data: Themes, style: any }) {
           className="p-1 font-medium"
           key={data.header.name + i}
         >
-          <a href={item.href} style={style} className={`flex items-center hover:text-[${data.theme.colorTerciary}] transition-colors`}>
+          <a href={item.href} className={`flex items-center transition-colors text-${data._sys.filename}-secondary hover:text-${data._sys.filename}-terciary`}>
             {item.label}
           </a>
         </Typography>
@@ -32,7 +32,7 @@ function NavList({ data, style }: { data: Themes, style: any }) {
   );
 }
 
-export const Header = ({ data }: { data: Themes }) => {
+export const Header = ({ data }: {data:Themes}) => {
   const router = useRouter();
   const theme = useTheme();
 
@@ -69,7 +69,7 @@ export const Header = ({ data }: { data: Themes }) => {
           className="mr-4 cursor-pointer py-1.5"
         >
           <Icon
-          className={`prose-crouzie`}
+          className={`text-${data._sys.filename}-secondary hover:text-${data._sys.filename}-terciary`}
             tinaField={tinaField(data.header, "icon")}
             data={{
               name: data.header.icon.name,
