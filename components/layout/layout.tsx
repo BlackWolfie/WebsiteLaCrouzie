@@ -4,7 +4,7 @@ import { Header } from "./header";
 import { Footer } from "./footer";
 import { Theme } from "./theme";
 import layoutData from "../../content/global/index.json";
-import { Global , Themes} from "../../tina/__generated__/types";
+import { Global , Page} from "../../tina/__generated__/types";
 
 export const Layout = ({
   rawData = {},
@@ -14,7 +14,7 @@ export const Layout = ({
 }: {
   rawData?: object;
   data?: Omit<Global, "id" | "_sys" | "_values">;
-  theme?: Themes;
+  theme?: Page;
   children: React.ReactNode;
 }) => {
   return (
@@ -52,9 +52,9 @@ export const Layout = ({
             data.theme.font === "nunito" && "font-nunito"
           } ${data.theme.font === "lato" && "font-lato"} ${
             data.theme.font === "sans" && "font-sans"
-          }`}
+          } ${theme.themes._sys.filename}`}
         >
-          <Header data={theme} />
+          <Header data={theme.themes} title={theme.title}/>
           <div className="flex-1 text-gray-800 bg-gradient-to-br from-white to-gray-50 dark:from-gray-900 dark:to-gray-1000 flex flex-col">
             {children}
           </div>

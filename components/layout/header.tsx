@@ -4,6 +4,7 @@ import { useTheme } from ".";
 import { tinaField } from "tinacms/dist/react";
 import { Themes, ThemesHeader } from "../../tina/__generated__/types";
 import { Icon } from "../util/svg";
+import Image from "next/image";
 import {
   Navbar,
   Collapse,
@@ -11,7 +12,9 @@ import {
   IconButton,
 } from "@material-tailwind/react";
 import { HiBars3, HiXMark } from "react-icons/hi2";
-function NavList({ data, style }: {data:Themes, style:any}) {
+
+
+function NavList({ data }: {data:Themes}) {
   return (
     <ul className="my-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
       {data.header.nav && data.header.nav.map(function (item, i) {
@@ -22,7 +25,7 @@ function NavList({ data, style }: {data:Themes, style:any}) {
           className="p-1 font-medium"
           key={data.header.name + i}
         >
-          <a href={item.href} className={`flex items-center transition-colors text-${data._sys.filename}-secondary hover:text-${data._sys.filename}-terciary`}>
+          <a href={item.href} className={`flex items-center ${data._sys.filename}`}>
             {item.label}
           </a>
         </Typography>
@@ -32,15 +35,12 @@ function NavList({ data, style }: {data:Themes, style:any}) {
   );
 }
 
-export const Header = ({ data }: {data:Themes}) => {
+export const Header = ({ data, title }: {data:Themes, title:String}) => {
   const router = useRouter();
-  const theme = useTheme();
-
   const Style = {
     color :  data.theme.colorSecondary ,
 
   }
-
   const [openNav, setOpenNav] = React.useState(false);
  
   const handleWindowResize = () =>
@@ -60,43 +60,52 @@ export const Header = ({ data }: {data:Themes}) => {
     setIsClient(true);
   }, []);
   return (
-    <Navbar className="mx-auto max-w-screen-xl px-6 py-3" shadow={false} blurred={false} fullWidth={true}>
-      <div className="flex items-center justify-between text-blue-gray-900">
-        <Typography
-          as="a"
-          href="/"
-          variant="h6"
-          className="mr-4 cursor-pointer py-1.5"
-        >
-          <Icon
-          className={`text-${data._sys.filename}-secondary hover:text-${data._sys.filename}-terciary`}
-            tinaField={tinaField(data.header, "icon")}
-            data={{
-              name: data.header.icon.name,
-              color: data.theme.colorSecondary,
-            }}
-          />
-        </Typography>
-        <div className="hidden lg:block">
-          <NavList data={data} style={Style}/>
+    <><div className={`back-${data._sys.filename} bg-cover bg-no-repeat bg-[50%_40%] w-full h-[90vh] flex flex-col flex-nowrap jus`}>
+    
+      <Navbar className={`mx-auto px-6 py-3 bg-transparent ${data._sys.filename}`} shadow={false} blurred={false} fullWidth={true}>
+        <div className="flex items-center justify-between text-blue-gray-900">
+          <Typography
+            as="a"
+            href="/"
+            variant="h6"
+            className="mr-4 cursor-pointer py-1.5"
+          >
+            <Icon
+            className={data._sys.filename}
+              tinaField={tinaField(data.header, "icon")}
+              data={{
+                name: data.header.icon.name,
+                color: data.theme.colorSecondary,
+              }}
+            />
+          </Typography>
+          <div className="hidden lg:block">
+            <NavList data={data} />
+          </div>
+          <IconButton
+            variant="text"
+            className={`ml-auto h-6 w-6 hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden ${data._sys.filename}`}
+            ripple={false}
+            onClick={() => setOpenNav(!openNav)}
+            style={Style}
+          >
+            {openNav ? (
+              <HiXMark className="h-6 w-6" strokeWidth={2} />
+            ) : (
+              <HiBars3 className="h-6 w-6" strokeWidth={2} fill={data.theme.colorSecondary}/>
+            )}
+          </IconButton>
         </div>
-        <IconButton
-          variant="text"
-          className={`ml-auto h-6 w-6 text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden`}
-          ripple={false}
-          onClick={() => setOpenNav(!openNav)}
-          style={Style}
-        >
-          {openNav ? (
-            <HiXMark className="h-6 w-6" strokeWidth={2} />
-          ) : (
-            <HiBars3 className="h-6 w-6" strokeWidth={2} fill={data.theme.colorSecondary}/>
-          )}
-        </IconButton>
+        <Collapse open={openNav}>
+          <NavList data={data}/>
+        </Collapse>
+      </Navbar>
+      <div className='bg-crouzie-primary'>
+        <h1 className={`${data._sys.filename} text-center`}>
+              {title}
+        </h1>
       </div>
-      <Collapse open={openNav}>
-        <NavList data={data} style={Style}/>
-      </Collapse>
-    </Navbar>
+    </div>
+    </>
   );
 };

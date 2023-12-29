@@ -7,6 +7,14 @@ const crouzie = require("./content/themes/crouzie.json")
 const lcdm = require("./content/themes/lcdm.json")
 const dly = require("./content/themes/dly.json")
 
+let font_base = 16
+let font_scale = 1.25;
+let h6 = font_base / font_base;
+let h5 = h6 * font_scale;
+let h4 = h5 * font_scale;
+let h3 = h4 * font_scale;
+let h2 = h3 * font_scale;
+let h1 = h2 * font_scale;
 
 module.exports = withMT({
   mode: "jit",
@@ -106,6 +114,11 @@ module.exports = withMT({
       4: "4px",
     },
     extend: {
+      backgroundImage: {
+        'crouzie': `url('${crouzie.header.img}')`,
+        'lcdm': `url('${lcdm.header.img}')`,
+        'dly': `url('${dly.header.img}')`,
+      },
       textDecoration: ["active"],
       opacity: {
         7: ".075",
@@ -123,6 +136,18 @@ module.exports = withMT({
       fontFamily: {
         nunito: ["Nunito", ...defaultTheme.fontFamily.sans],
         lato: ["Lato", ...defaultTheme.fontFamily.sans],
+      },
+      fontSize: {
+        base: font_base + "px",
+        h1: h1 + "rem",
+        "h1-sm": h1 * 0.8 + "rem",
+        h2: h2 + "rem",
+        "h2-sm": h2 * 0.8 + "rem",
+        h3: h3 + "rem",
+        "h3-sm": h3 * 0.8 + "rem",
+        h4: h4 + "rem",
+        h5: h5 + "rem",
+        h6: h6 + "rem",
       },
       typography: (theme) => ({
         DEFAULT: {
