@@ -2,9 +2,13 @@
 /* eslint-disable no-undef */
 const colors = require("tailwindcss/colors");
 const defaultTheme = require("tailwindcss/defaultTheme");
+const withMT = require("@material-tailwind/react/utils/withMT");
+const crouzie = require("./content/themes/crouzie.json")
+const lcdm = require("./content/themes/lcdm.json")
+const dly = require("./content/themes/dly.json")
 
 
-module.exports = {
+module.exports = withMT({
   mode: "jit",
   content: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
   darkMode: "class",
@@ -186,7 +190,7 @@ module.exports = {
     },
   },
   variants: {
-    extend: { typography: ["tint", "dark", "primary"] },
+    extend: { typography: ["tint", "dark", "primary", 'crouzie'] },
   },
   plugins: [require("@tailwindcss/typography")],
-};
+});

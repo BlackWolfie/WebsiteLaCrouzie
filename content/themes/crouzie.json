@@ -1,8 +1,30 @@
 {
   "header": {
     "name": "La Crouzié",
-    "logo": "/uploads/svg/crouzie-favicon.svg",
-    "img": "/uploads/chapiteau.JPG"
+    "icon": {
+      "name": "Crouzie"
+    },
+    "img": "/uploads/chapiteau.JPG",
+    "nav": [
+      {
+        "href": "/##",
+        "label": "Home1",
+        "subNav": [
+          {
+            "href": "home",
+            "label": "Home"
+          },
+          {
+            "href": "home",
+            "label": "Home"
+          }
+        ]
+      },
+      {
+        "href": "#",
+        "label": "Home 2"
+      }
+    ]
   },
   "theme": {
     "colorPrimary": "#094C6D",

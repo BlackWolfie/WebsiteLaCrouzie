@@ -17,7 +17,6 @@ export const Layout = ({
   theme?: Themes;
   children: React.ReactNode;
 }) => {
-  console.log(theme);
   return (
     <>
       <Head>
@@ -55,7 +54,7 @@ export const Layout = ({
             data.theme.font === "sans" && "font-sans"
           }`}
         >
-          <Header data={theme?.header} />
+          <Header data={theme} />
           <div className="flex-1 text-gray-800 bg-gradient-to-br from-white to-gray-50 dark:from-gray-900 dark:to-gray-1000 flex flex-col">
             {children}
           </div>

@@ -1,4 +1,6 @@
 import type { Collection } from "tinacms";
+import { logoSchema } from "../../components/util/svg";
+
 
 const Themes: Collection = {
   label: "Themes",
@@ -16,11 +18,7 @@ const Themes: Collection = {
             label: "Titre",
             name: "name"
         },
-        {
-            type: "image",
-            label: "Logo",
-            name: "logo"
-        },
+        logoSchema as any,
         {
             type: "image",
             label: "Image de Presentation",
