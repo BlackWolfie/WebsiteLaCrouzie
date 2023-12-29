@@ -60,52 +60,60 @@ export const Header = ({ data, title }: {data:Themes, title:String}) => {
     setIsClient(true);
   }, []);
   return (
-    <><div className={`back-${data._sys.filename} bg-cover bg-no-repeat bg-[50%_40%] w-full h-[90vh] flex flex-col flex-nowrap jus`}>
-    
-      <Navbar className={`mx-auto px-6 py-3 bg-transparent ${data._sys.filename}`} shadow={false} blurred={false} fullWidth={true}>
-        <div className="flex items-center justify-between text-blue-gray-900">
-          <Typography
-            as="a"
-            href="/"
-            variant="h6"
-            className="mr-4 cursor-pointer py-1.5"
-          >
-            <Icon
-            className={data._sys.filename}
-              tinaField={tinaField(data.header, "icon")}
-              data={{
-                name: data.header.icon.name,
-                color: data.theme.colorSecondary,
-              }}
-            />
-          </Typography>
-          <div className="hidden lg:block">
-            <NavList data={data} />
+    <><div className={`back-${data._sys.filename} bg-cover bg-no-repeat bg-[50%_40%] w-full h-[90vh] `}>
+        <svg id="Calque_2" data-name="Calque 2" xmlns="http://www.w3.org/2000/svg" 
+        viewBox="0 0 595.37 219.55" 
+        preserveAspectRatio="none" width={'100%'} height={'76vh'} fill={data.theme.colorPrimary} className='absolute z-0 -top-96'>
+          <g id="Calque_3" data-name="Calque 3">
+            <path d="m595.32,178.7C393.68,190.19,186.37,138.87.05,219.55L0,0h595.37l-.05,178.7Z"/>
+          </g>
+        </svg>
+        <div className={`flex flex-col flex-nowrap justify-between w-full h-[90vh]`}>
+          <Navbar className={`mx-auto z-10 px-6 py-3 bg-transparent ${data._sys.filename}`} shadow={false} blurred={false} fullWidth={true}>
+            <div className="flex items-center justify-between text-blue-gray-900">
+              <Typography
+                as="a"
+                href="/"
+                variant="h6"
+                className="mr-4 cursor-pointer py-1.5"
+              >
+                <Icon
+                className={data._sys.filename}
+                  tinaField={tinaField(data.header, "icon")}
+                  data={{
+                    name: data.header.icon.name,
+                    color: data.theme.colorSecondary,
+                  }}
+                />
+              </Typography>
+              <div className="hidden lg:block">
+                <NavList data={data} />
+              </div>
+              <IconButton
+                variant="text"
+                className={`ml-auto h-6 w-6 hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden ${data._sys.filename}`}
+                ripple={false}
+                onClick={() => setOpenNav(!openNav)}
+                style={Style}
+              >
+                {openNav ? (
+                  <HiXMark className="h-6 w-6" strokeWidth={2} />
+                ) : (
+                  <HiBars3 className="h-6 w-6" strokeWidth={2} fill={data.theme.colorSecondary}/>
+                )}
+              </IconButton>
+            </div>
+            <Collapse open={openNav}>
+              <NavList data={data}/>
+            </Collapse>
+          </Navbar>
+          <div className='bg-crouzie-primary mb-2'>
+            <h1 className={`${data._sys.filename} text-center`}>
+                {title}
+            </h1>
           </div>
-          <IconButton
-            variant="text"
-            className={`ml-auto h-6 w-6 hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden ${data._sys.filename}`}
-            ripple={false}
-            onClick={() => setOpenNav(!openNav)}
-            style={Style}
-          >
-            {openNav ? (
-              <HiXMark className="h-6 w-6" strokeWidth={2} />
-            ) : (
-              <HiBars3 className="h-6 w-6" strokeWidth={2} fill={data.theme.colorSecondary}/>
-            )}
-          </IconButton>
         </div>
-        <Collapse open={openNav}>
-          <NavList data={data}/>
-        </Collapse>
-      </Navbar>
-      <div className='bg-crouzie-primary'>
-        <h1 className={`${data._sys.filename} text-center`}>
-              {title}
-        </h1>
       </div>
-    </div>
     </>
   );
 };

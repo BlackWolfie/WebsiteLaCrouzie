@@ -118,6 +118,7 @@ module.exports = withMT({
         'crouzie': `url('${crouzie.header.img}')`,
         'lcdm': `url('${lcdm.header.img}')`,
         'dly': `url('${dly.header.img}')`,
+        'courbe-header': `url('/public/uploads/svg/courbe-header.svg')`,
       },
       textDecoration: ["active"],
       opacity: {
