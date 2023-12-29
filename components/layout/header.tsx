@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 import { useRouter } from "next/router";
-import { useTheme } from ".";
 import { tinaField } from "tinacms/dist/react";
-import { Themes, ThemesHeader } from "../../tina/__generated__/types";
+import { Themes } from "../../tina/__generated__/types";
 import { Icon } from "../util/svg";
-import Image from "next/image";
 import {
   Navbar,
   Collapse,
@@ -24,6 +22,7 @@ function NavList({ data }: {data:Themes}) {
           variant="small"
           className="p-1 font-medium"
           key={data.header.name + i}
+          tinaField={tinaField(data.header, "nav")}
         >
           <a href={item.href} className={`flex items-center ${data._sys.filename}`}>
             {item.label}
@@ -38,7 +37,16 @@ function NavList({ data }: {data:Themes}) {
 export const Header = ({ data, title }: {data:Themes, title:String}) => {
   const router = useRouter();
   const Style = {
-    color :  data.theme.colorSecondary ,
+    secondary: {
+      color :  data.theme.colorSecondary ,
+    },
+    tertiary: {
+      color :  data.theme.colorTerciary ,
+    },
+    bgPrimary:{
+      backgroundColor: data.theme.colorPrimary
+    }
+    
 
   }
   const [openNav, setOpenNav] = React.useState(false);
@@ -94,7 +102,7 @@ export const Header = ({ data, title }: {data:Themes, title:String}) => {
                 className={`ml-auto h-6 w-6 hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden ${data._sys.filename}`}
                 ripple={false}
                 onClick={() => setOpenNav(!openNav)}
-                style={Style}
+                style={Style.secondary}
               >
                 {openNav ? (
                   <HiXMark className="h-6 w-6" strokeWidth={2} />
@@ -107,8 +115,8 @@ export const Header = ({ data, title }: {data:Themes, title:String}) => {
               <NavList data={data}/>
             </Collapse>
           </Navbar>
-          <div className='bg-crouzie-primary mb-2'>
-            <h1 className={`${data._sys.filename} text-center`}>
+          <div className={` mb-2`} style={Style.bgPrimary}>
+            <h1 className={`${data._sys.filename} text-center`}  tinaField={tinaField(title)}>
                 {title}
             </h1>
           </div>

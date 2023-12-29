@@ -1,7 +1,9 @@
 {
   "header": {
-    "name": "Tina Starter",
-    "logo": "/uploads/svg/dly-favicon.svg",
+    "name": "Debout les Yeux",
+    "icon": {
+      "name": "Dly"
+    },
     "img": "/uploads/concert.jpg",
     "nav": [
       {

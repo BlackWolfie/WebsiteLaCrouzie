@@ -1,6 +1,6 @@
 ---
 title: Tina Cloud Starter
-themes: content/themes/crouzie.json
+themes: content/themes/dly.json
 blocks:
   - headline: Welcome to the Tina Starter
     text: >
