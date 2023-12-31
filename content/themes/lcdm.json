@@ -2,7 +2,8 @@
   "header": {
     "name": "La Crouzié Des Métiers",
     "icon": {
-      "name": "Lcdm"
+      "name": "Lcdm",
+      "favicon": "Lcdm"
     },
     "img": "/uploads/gpe-photos-lcdm.jpg"
   },

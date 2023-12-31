@@ -40,6 +40,11 @@ const Themes: Collection = {
             },
             fields: [
               {
+                type: 'boolean',
+                label: 'Par default',
+                name : 'default'
+              },
+              {
                 type: "string",
                 label: "Lien",
                 name: "href",

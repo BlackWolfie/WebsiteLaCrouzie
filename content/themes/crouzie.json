@@ -2,11 +2,13 @@
   "header": {
     "name": "La Crouzié",
     "icon": {
-      "name": "Crouzie1"
+      "name": "Crouzie1",
+      "favicon": "Crouzie"
     },
     "img": "/uploads/chapiteau.JPG",
     "nav": [
       {
+        "default": true,
         "href": "/##",
         "label": "Home1",
         "subNav": [

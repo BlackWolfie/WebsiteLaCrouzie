@@ -2,12 +2,14 @@
   "header": {
     "name": "Debout les Yeux",
     "icon": {
-      "name": "Dly"
+      "name": "Dly",
+      "favicon": "Dly"
     },
     "img": "/uploads/concert.jpg",
     "nav": [
       {
-        "href": "",
+        "default": true,
+        "href": "theme",
         "label": "Home"
       },
       {

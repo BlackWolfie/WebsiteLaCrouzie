@@ -22,7 +22,7 @@ function NavList({ data }: {data:Themes}) {
           variant="small"
           className="p-1 font-medium"
           key={data.header.name + i}
-          tinaField={tinaField(data.header, "nav")}
+          tinafield={tinaField(data.header, "nav")}
         >
           <a href={item.href} className={`flex items-center ${data._sys.filename}`}>
             {item.label}

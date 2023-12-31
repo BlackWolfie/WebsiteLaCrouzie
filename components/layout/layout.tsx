@@ -4,17 +4,20 @@ import { Header } from "./header";
 import { Footer } from "./footer";
 import { Theme } from "./theme";
 import layoutData from "../../content/global/index.json";
-import { Global , Page} from "../../tina/__generated__/types";
+import { Global , Page, ThemesConnection} from "../../tina/__generated__/types";
+import { Icon } from "../util/svg";
 
 export const Layout = ({
   rawData = {},
   data ,
   theme ,
+  allThemes,
   children,
 }: {
   rawData?: object;
   data?: Omit<Global, "id" | "_sys" | "_values">;
   theme?: Page;
+  allThemes?: ThemesConnection;
   children: React.ReactNode;
 }) => {
   return (
@@ -46,6 +49,28 @@ export const Layout = ({
           </>
         )}
       </Head>
+      <div className="flex flex-col flex-nowrap fixed right-2 z-50 top-48 scree">
+
+            {allThemes.edges.map((item, i)=> {
+              let t = null 
+              item.node.header.nav && item.node.header.nav.map((e)=>{                
+                e.default === true ? t= e.href : 'console.log(e.href)'
+                return t
+              })
+              return (
+                
+                <a href={t} key={i}>
+                  <Icon
+                    data={{
+                      name: item.node.header.icon.favicon,
+                      color: theme.themes.theme.colorSecondary,
+                      size: "xxl"
+                    }}
+                  />
+                </a>
+              )
+            })}
+          </div>
       <Theme data={data?.theme}>
         <div
           className={`min-h-screen flex flex-col ${
