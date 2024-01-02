@@ -62,21 +62,30 @@
 
 .crouzie{
     @apply text-crouzie-secondary;
-    @apply hover:text-crouzie-terciary;
+    .hover{
+        @apply hover:text-crouzie-terciary;
+    }
+    footer {
+
+    }
 }
 .back-crouzie{
     @apply bg-crouzie;
 }
 .dly{
     @apply text-dly-secondary;
-    @apply hover:text-dly-terciary;
+    .hover{
+        @apply hover:text-dly-terciary;
+    }
 }
 .back-dly{
     @apply bg-dly;
 }
 .lcdm{
+    .hover{
+        @apply hover:text-lcdm-terciary;
+    }
     @apply text-lcdm-secondary;
-    @apply hover:text-lcdm-terciary;
 }
 .back-lcdm{
     @apply bg-lcdm;

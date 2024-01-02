@@ -50,7 +50,7 @@ export const Layout = ({
           </>
         )}
       </Head>
-      <div className="flex flex-col flex-nowrap fixed right-2 z-50 top-48 scree">
+      <div className="flex flex-col flex-nowrap fixed right-2 z-50 top-48 ">
         {allThemes.edges.map((item, i)=> {
           let t = null 
           item.node.header.nav && item.node.header.nav.map((e)=>{                
@@ -60,6 +60,7 @@ export const Layout = ({
           return (
             <a href={t} key={i}>
               <Icon
+                className={` hover`}
                 data={{
                   name: item.node.header.icon.favicon,
                   color: theme.themes.theme.colorSecondary,

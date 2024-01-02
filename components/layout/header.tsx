@@ -20,10 +20,10 @@ function NavList({ data }: {data:Themes}) {
         <Typography
           as="li"
           variant="small"
-          className="p-1 font-medium"
+          className="p-1 font-medium "
           key={data.header.name + i}
         >
-          <a href={item.href} className={`flex items-center ${data._sys.filename}`}>
+          <a href={item.href} className={`flex items-center hover ${data._sys.filename}`}>
             {item.label}
           </a>
         </Typography>
@@ -85,7 +85,7 @@ export const Header = ({ data, title }: {data:Themes, title:String}) => {
                 className="mr-4 cursor-pointer py-1.5"
               >
                 <Icon
-                className={data._sys.filename}
+                className={`${data._sys.filename} hover`}
                   tinaField={tinaField(data.header, "icon")}
                   data={{
                     name: data.header.icon.name,
@@ -98,15 +98,15 @@ export const Header = ({ data, title }: {data:Themes, title:String}) => {
               </div>
               <IconButton
                 variant="text"
-                className={`ml-auto h-6 w-6 hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden ${data._sys.filename}`}
+                className={`ml-auto h-6 w-6 hover hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden ${data._sys.filename}`}
                 ripple={false}
                 onClick={() => setOpenNav(!openNav)}
                 style={Style.secondary}
               >
                 {openNav ? (
-                  <HiXMark className="h-6 w-6" strokeWidth={2} />
+                  <HiXMark className="h-6 w-6 hover" strokeWidth={2} />
                 ) : (
-                  <HiBars3 className="h-6 w-6" strokeWidth={2} fill={data.theme.colorSecondary}/>
+                  <HiBars3 className="h-6 w-6 hover" strokeWidth={2} fill={data.theme.colorSecondary}/>
                 )}
               </IconButton>
             </div>

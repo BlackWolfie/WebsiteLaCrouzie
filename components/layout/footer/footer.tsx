@@ -24,7 +24,7 @@ const style = {
               {data.links.nav && 
               data.links.nav.map((item, i)=>{
                 return(
-                  <a href={item.link} key={data.links.name + i}>{item.name}</a>
+                  <a href={item.link} key={data.links.name + i} className="hover">{item.name}</a>
                 )
               })}
             </p>
@@ -32,14 +32,14 @@ const style = {
           <div className='my-6 mx-2 flex-grow sm:flex-grow-0'>
             <h4 className='underline'>{data.contact.name}</h4>
             <p className='flex flex-col flex-nowrap'>
-              <a href={data.contact.laddr} target="_blank" rel="noopener noreferrer">
+              <a href={data.contact.laddr} target="_blank" rel="noopener noreferrer" className="hover">
                 {data.contact.addr}
               </a>
               {data.contact.phone.map((item,i)=>{
-                return <a key={'phone'+i} href={`tel:${item}`}>{item}</a>
+                return <a key={'phone'+i} href={`tel:${item}`} className="hover">{item}</a>
               })}
               {data.contact.email.map((item,i)=>{
-                return <a key={'mailto'+i} href={`mailto:${item}`}>{item}</a>
+                return <a key={'mailto'+i} href={`mailto:${item}`} className="hover">{item}</a>
               })}
             </p>
           </div>
@@ -54,45 +54,45 @@ const style = {
             <div>
             {data.social && data.social.facebook && (
               <a
-                className="inline-block opacity-80 hover:opacity-100 transition ease-out duration-150"
+                className="inline-block opacity-80 hover transition ease-out duration-150"
                 href={data.social.facebook}
                 target="_blank"
               >
                 <FaFacebookF
-                  className={``}
+                  className={`hover`}
                 />
               </a>
             )}
             {data.social && data.social.instagram && (
               <a
-                className="inline-block opacity-80 hover:opacity-100 transition ease-out duration-150"
+                className="inline-block opacity-80 hover  transition ease-out duration-150"
                 href={data.social.instagram}
                 target="_blank"
               >
                 <AiFillInstagram
-                  className={``}
+                  className={`hover`}
                 />
               </a>
             )}
             {data.social && data.social.pinterest && (
               <a
-                className="inline-block opacity-80 hover:opacity-100 transition ease-out duration-150"
+                className="inline-block opacity-80 hover transition ease-out duration-150"
                 href={data.social.pinterest}
                 target="_blank"
               >
                 <FaPinterest
-                  className={``}
+                  className={`hover`}
                 />
               </a>
             )}
             {data.social && data.social.twitter && (
               <a
-                className="inline-block opacity-80 hover:opacity-100 transition ease-out duration-150"
+                className="inline-block opacity-80 hover transition ease-out duration-150"
                 href={data.social.twitter}
                 target="_blank"
               >
                 <FaPinterest
-                  className={``}
+                  className={`hover`}
                 />
               </a>
             )}
@@ -114,7 +114,7 @@ const style = {
         <div className='mt-0 w-1/12 mx-auto h-1 mb-12' style={style.spacer}></div>
         <div className='flex flex-col flex-nowrap justify-center'>
           {data.legal.legal &&
-            <a href={data.legal.legal} className='text-center'>Mentions légales</a>  
+            <a href={data.legal.legal} className='text-center hover'>Mentions légales</a>  
           }
           {data.legal.copyright &&
             <p className='text-center'>Copyright 2023 - {year} : {data.legal.copyright} </p>
