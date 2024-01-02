@@ -6,6 +6,7 @@ import { Theme } from "./theme";
 import layoutData from "../../content/global/index.json";
 import { Global , Page, ThemesConnection} from "../../tina/__generated__/types";
 import { Icon } from "../util/svg";
+import ScrollToTopButton from "../util/scrollToTop";
 
 export const Layout = ({
   rawData = {},
@@ -50,27 +51,26 @@ export const Layout = ({
         )}
       </Head>
       <div className="flex flex-col flex-nowrap fixed right-2 z-50 top-48 scree">
-
-            {allThemes.edges.map((item, i)=> {
-              let t = null 
-              item.node.header.nav && item.node.header.nav.map((e)=>{                
-                e.default === true ? t= e.href : 'console.log(e.href)'
-                return t
-              })
-              return (
-                
-                <a href={t} key={i}>
-                  <Icon
-                    data={{
-                      name: item.node.header.icon.favicon,
-                      color: theme.themes.theme.colorSecondary,
-                      size: "xxl"
-                    }}
-                  />
-                </a>
-              )
-            })}
-          </div>
+        {allThemes.edges.map((item, i)=> {
+          let t = null 
+          item.node.header.nav && item.node.header.nav.map((e)=>{                
+            e.default === true ? t= e.href : 'console.log(e.href)'
+            return t
+          })
+          return (
+            <a href={t} key={i}>
+              <Icon
+                data={{
+                  name: item.node.header.icon.favicon,
+                  color: theme.themes.theme.colorSecondary,
+                  size: "xxl"
+                }}
+              />
+            </a>
+          )
+        })}
+        <ScrollToTopButton color={theme.themes.theme.colorSecondary}/>
+      </div>
       <Theme data={data?.theme}>
         <div
           className={`min-h-screen flex flex-col ${
@@ -84,10 +84,8 @@ export const Layout = ({
             {children}
           </div>
           <Footer
-            rawData={rawData}
             data={data?.footer}
-            icon={data?.header.icon}
-          />
+            theme={theme.themes.theme}/>
         </div>
       </Theme>
     </>

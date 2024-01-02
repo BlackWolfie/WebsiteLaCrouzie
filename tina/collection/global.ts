@@ -13,65 +13,76 @@ const Global: Collection = {
   fields: [
     {
       type: "object",
-      label: "Header",
-      name: "header",
-      fields: [
-        iconSchema as any,
-        {
-          type: "string",
-          label: "Name",
-          name: "name",
-        },
-        {
-          type: "string",
-          label: "Color",
-          name: "color",
-          options: [
-            { label: "Default", value: "default" },
-            { label: "Primary", value: "primary" },
-          ],
-        },
-        {
-          type: "object",
-          label: "Nav Links",
-          name: "nav",
-          list: true,
-          ui: {
-            itemProps: (item) => {
-              return { label: item?.label };
-            },
-            defaultItem: {
-              href: "home",
-              label: "Home",
-            },
-          },
-          fields: [
-            {
-              type: "string",
-              label: "Link",
-              name: "href",
-            },
-            {
-              type: "string",
-              label: "Label",
-              name: "label",
-            },
-          ],
-        },
-      ],
-    },
-    {
-      type: "object",
       label: "Footer",
       name: "footer",
       fields: [
         {
-          type: "string",
-          label: "Color",
-          name: "color",
-          options: [
-            { label: "Default", value: "default" },
-            { label: "Primary", value: "primary" },
+          type: "object",
+          label: "Navigation",
+          name: "links",
+          fields: [
+            {
+              type: "string",
+              label: "Titre",
+              name: "name",
+            },
+            {
+              type: "object",
+              label: "Lien",
+              name: "nav",
+              list: true,
+              ui: {
+                itemProps: (item) => {
+                  return { label: item?.name };
+                },
+              },
+              fields: [
+                {
+                  type: "string",
+                  label: "Titre",
+                  name: "name",
+                },
+                {
+                  type: "string",
+                  label: "Lien",
+                  name: "link",
+                },
+              ]
+            },
+          ],
+        },
+        {
+          type: "object",
+          label: "Contact",
+          name: "contact",
+          fields: [
+            {
+              type: "string",
+              label: "Titre",
+              name: "name",
+            },
+            {
+              type: "string",
+              label: "Adresse",
+              name: "addr",
+            },
+            {
+              type: "string",
+              label: "Lien Adresse",
+              name: "laddr",
+            },
+            {
+              type: "string",
+              label: "Telephone",
+              name: "phone",
+              list:true
+            },
+            {
+              type: "string",
+              label: "Email",
+              name: "email",
+              list: true
+            },
           ],
         },
         {
@@ -96,8 +107,60 @@ const Global: Collection = {
             },
             {
               type: "string",
-              label: "Github",
-              name: "github",
+              label: "Pinterest",
+              name: "pinterest",
+            },
+          ],
+        },
+        {
+          type: "object",
+          label: "Nos partenaire",
+          name: "part",
+          fields: [
+            {
+              type: "object",
+              label: "Nos partenaire",
+              name: "imgpart",
+              list:true,
+              ui: {
+                itemProps: (item) => {
+                  return { label: item?.name };
+                },
+              },
+              fields:[
+                {
+                  type: "string",
+                  label: "Titre",
+                  name: "name",
+                },
+                {
+                  type: "string",
+                  label: "Lien",
+                  name: "link",
+                },
+                {
+                  type: "image",
+                  label: "Image",
+                  name: "img",
+                },
+              ]
+            },
+          ],
+        },
+        {
+          type: "object",
+          label: "Legal",
+          name: "legal",
+          fields: [
+            {
+              type: "string",
+              label: "Lien Mentions légales",
+              name: "legal",
+            },
+            {
+              type: "string",
+              label: "Copyright",
+              name: "copyright",
             },
           ],
         },

@@ -1,33 +1,73 @@
 {
-  "header": {
-    "icon": {
-      "name": "Tina",
-      "color": "orange",
-      "style": "float"
-    },
-    "name": "Tina Starter",
-    "color": "default",
-    "nav": [
-      {
-        "href": "",
-        "label": "Home"
-      },
-      {
-        "href": "about",
-        "label": "About"
-      },
-      {
-        "href": "posts",
-        "label": "Blog"
-      }
-    ]
-  },
   "footer": {
-    "color": "default",
+    "links": {
+      "name": "Navigation",
+      "nav": [
+        {
+          "name": "La Crouzié",
+          "link": "/#"
+        },
+        {
+          "name": "Debout Les Yeux",
+          "link": "/##"
+        },
+        {
+          "name": "À l'affiche",
+          "link": "/###"
+        },
+        {
+          "name": "Festival",
+          "link": "/####"
+        },
+        {
+          "name": "La Crouzié Des Métiers",
+          "link": "/######"
+        }
+      ]
+    },
+    "contact": {
+      "name": "Contact",
+      "addr": "lieu-dit la Crouzié, 81190 Tanus",
+      "phone": [
+        "06 69 18 87 86"
+      ],
+      "email": [
+        "deboutlesyeux@gmail.com",
+        "lacrouziedesmetiers@gmail.com"
+      ]
+    },
     "social": {
-      "facebook": "/",
-      "twitter": "/",
-      "instagram": "/"
+      "facebook": "https://www.facebook.com/deboutlesyeux/?locale=fr_FR",
+      "twitter": "",
+      "instagram": "https://www.instagram.com/deboutlesyeux/"
+    },
+    "part": {
+      "imgpart": [
+        {
+          "name": "Carmausin Segala",
+          "link": "https://www.carmausin-segala.fr/",
+          "img": "/uploads/carmausin-segala.png"
+        },
+        {
+          "name": "Tarn",
+          "link": "https://www.tarn.fr/accueil",
+          "img": "/uploads/logo-tarn.png"
+        },
+        {
+          "name": "Occitanie",
+          "link": "https://www.laregion.fr/",
+          "img": "/uploads/logo-region-occitanie.png"
+        },
+        {
+          "name": "Tanus",
+          "link": "https://www.facebook.com/MairieDeTanus/",
+          "img": "/uploads/mairie-tanus.jpg"
+        }
+      ]
+    },
+    "legal": {
+      "legal": "/legal",
+      "copyright": "La Crouzié, Debout Les Yeux, La Crouzié Des Métiers"
     }
   },
   "theme": {

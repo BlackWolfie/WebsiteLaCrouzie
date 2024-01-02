@@ -22,7 +22,6 @@ function NavList({ data }: {data:Themes}) {
           variant="small"
           className="p-1 font-medium"
           key={data.header.name + i}
-          tinafield={tinaField(data.header, "nav")}
         >
           <a href={item.href} className={`flex items-center ${data._sys.filename}`}>
             {item.label}
@@ -116,7 +115,7 @@ export const Header = ({ data, title }: {data:Themes, title:String}) => {
             </Collapse>
           </Navbar>
           <div className={` mb-2`} style={Style.bgPrimary}>
-            <h1 className={`${data._sys.filename} text-center`}  tinaField={tinaField(title)}>
+            <h1 className={`${data._sys.filename} text-center`}>
                 {title}
             </h1>
           </div>
