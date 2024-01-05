@@ -6,7 +6,7 @@ import { Container } from "../../util/container";
 import { Icon } from "../../util/icon";
 import { GlobalFooter, ThemesTheme } from "../../../tina/__generated__/types";
 
-export const Footer = ({ data, theme}: {data:GlobalFooter, theme:ThemesTheme}) => {
+export const Footer = ({ data, theme, Style}: {data:GlobalFooter, theme:ThemesTheme, Style:String}) => {
 const date = new Date();
 const year = date.getFullYear();
 const style = {
@@ -15,8 +15,8 @@ const style = {
   },
 }
   return (
-    <footer className={`bg-gradient-to-br`}>
-      <Container className="relative" size="small">
+    <footer className={`font-semibold leading-7 back-footer-${Style} bg-no-repeat bg-cover bg-right lg:bg-center`}>
+      <Container className="relative pt-40" size="small">
         <div className='flex flex-row flex-wrap justify-around'>
           <div className='my-6 mx-2  flex-grow sm:flex-grow-0'>
             <h4 className='underline'>{data.links.name}</h4>

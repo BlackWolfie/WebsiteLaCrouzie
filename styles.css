@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {
+  html {
+    @apply text-base;
+  }
+  body {
+    @apply text-[15px];
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 .h1,
+  .h2,
+  .h3,
+  .h4,
+  .h5,
+  .h6 {
+    @apply leading-tight;
+    font-size: revert;
+  }
+  h1,
+  .h1 {
+    @apply text-h1-sm md:text-h1;
+  }
+  h2,
+  .h2 {
+    @apply text-h2-sm md:text-h2;
+  }
+  h3,
+  .h3 {
+    @apply text-h3-sm md:text-h3;
+  }
+  h4,
+  .h4 {
+    @apply text-h4;
+  }
+  h5,
+  .h5 {
+    @apply text-h5;
+  }
+  h6,
+  .h6 {
+    @apply text-h6;
+  }
+}
+.crouzie {
+  @apply text-crouzie-secondary;
+}
+.crouzie .hover {
+  @apply hover:text-crouzie-terciary;
+}
+.back-crouzie {
+  @apply bg-crouzie;
+}
+
+.back-footer-crouzie {
+  @apply bg-courbe-footer-crouzie;
+}
+
+.dly {
+  @apply text-dly-secondary;
+}
+.dly .hover {
+  @apply hover:text-dly-terciary;
+}
+
+.back-dly {
+  @apply bg-dly;
+}
+
+.back-footer-dly {
+  @apply bg-courbe-footer-dly;
+}
+
+.lcdm {
+  @apply text-lcdm-secondary;
+}
+.lcdm .hover {
+  @apply hover:text-lcdm-terciary;
+}
+
+.back-lcdm {
+  @apply bg-lcdm;
+}
+
+.back-footer-lcdm {
+  @apply bg-courbe-footer-lcdm;
+}/*# sourceMappingURL=styles.css.map */

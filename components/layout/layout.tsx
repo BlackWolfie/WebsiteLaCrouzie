@@ -86,7 +86,8 @@ export const Layout = ({
           </div>
           <Footer
             data={data?.footer}
-            theme={theme.themes.theme}/>
+            theme={theme.themes.theme}
+            Style={theme.themes._sys.filename}/>
         </div>
       </Theme>
     </>

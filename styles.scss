@@ -72,6 +72,9 @@
 .back-crouzie{
     @apply bg-crouzie;
 }
+.back-footer-crouzie{
+    @apply bg-courbe-footer-crouzie;
+}
 .dly{
     @apply text-dly-secondary;
     .hover{
@@ -81,6 +84,9 @@
 .back-dly{
     @apply bg-dly;
 }
+.back-footer-dly{
+    @apply bg-courbe-footer-dly;
+}
 .lcdm{
     .hover{
         @apply hover:text-lcdm-terciary;
@@ -89,4 +95,7 @@
 }
 .back-lcdm{
     @apply bg-lcdm;
+}
+.back-footer-lcdm{
+    @apply bg-courbe-footer-lcdm;
 }
