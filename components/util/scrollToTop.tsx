@@ -34,7 +34,7 @@ const ScrollToTopButton = ( { color}) => {
       }`}
       onClick={scrollToTop}
     >
-        <svg xmlns="http://www.w3.org/2000/svg" width="60.737" height="49.512" viewBox="0 0 60.737 49.512">
+        <svg xmlns="http://www.w3.org/2000/svg" width="60.737" height="49.512" viewBox="0 0 60.737 49.512" className="hover">
             <path id="top-dly-purple" d="M30.368,10.158,0,43.836H13.567l16.8-49.512L49.475,43.836H60.737Z" transform="translate(0 5.676)" fill={color}/>
         </svg>
     </button>

@@ -12,8 +12,8 @@ export default function HomePage(
   const theme = useTina(props.themeprops)
   return (
     <Layout rawData={data} data={data.global as any} theme={data.page as any} allThemes={theme.data.themesConnection as any}>
-      <Blocks {...data.page} />
-    </Layout>
+      <Blocks {...data.page as any} />
+    </Layout> 
   );
 }
 

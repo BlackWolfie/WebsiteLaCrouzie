@@ -65,9 +65,6 @@
     .hover{
         @apply hover:text-crouzie-terciary;
     }
-    footer {
-
-    }
 }
 .back-crouzie{
     @apply bg-crouzie;
@@ -75,6 +72,8 @@
 .back-footer-crouzie{
     @apply bg-courbe-footer-crouzie;
 }
+
+
 .dly{
     @apply text-dly-secondary;
     .hover{
@@ -87,6 +86,8 @@
 .back-footer-dly{
     @apply bg-courbe-footer-dly;
 }
+
+
 .lcdm{
     .hover{
         @apply hover:text-lcdm-terciary;

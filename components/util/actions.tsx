@@ -2,7 +2,7 @@ import Link from "next/link";
 import * as React from "react";
 import { BiRightArrowAlt } from "react-icons/bi";
 import { useTheme } from "../layout";
-import { PageBlocksHeroActions } from "../../tina/__generated__/types";
+import { PageBlocksHeroActions, ThemesTheme } from "../../tina/__generated__/types";
 import { tinaField } from "tinacms/dist/react";
 
 export const Actions = ({
@@ -71,9 +71,9 @@ export const Actions = ({
                 <button
                   data-tina-field={tinaField(action)}
                   className={`z-10 relative flex items-center px-7 py-3 font-semibold text-lg transition duration-150 ease-out  rounded-lg transform focus:shadow-outline focus:outline-none focus:ring-2 ring-offset-current ring-offset-2 whitespace-nowrap ${
-                    parentColor === "primary"
-                      ? invertedButtonColorClasses[theme.color]
-                      : buttonColorClasses[theme.color]
+                    parentColor === "crouzie"? 'text-crouzie-secondary bg-crouzie-primary hover:text-crouzie-terciary '
+                    :parentColor === "dly" ?'text-dly-secondary bg-dly-primary hover:text-dly-terciary ': 
+                    parentColor === "lcdm"?'text-lcdm-secondary bg-lcdm-primary hover:text-lcdm-terciary ': ''
                   }`}
                 >
                   {action.label}
@@ -92,10 +92,11 @@ export const Actions = ({
                 key={index}
                 href={action.link ? action.link : "/"}
                 data-tina-field={tinaField(action)}
-                className={`group inline-flex items-center font-semibold text-lg transition duration-150 ease-out ${
-                  parentColor === "primary"
-                    ? `text-white  hover:text-gray-50`
-                    : linkButtonColorClasses[theme.color]
+                className={`group inline-flex items-center font-semibold text-lg transition duration-150 ease-out 
+                ${
+                  parentColor === "crouzie"? 'text-crouzie-primary hover:text-crouzie-terciary '
+                  :parentColor === "dly" ?'text-dly-primary hover:text-dly-terciary ': 
+                  parentColor === "lcdm"?'text-lcdm-primary hover:text-lcdm-terciary ': ''
                 }`}
                 style={{
                   textShadow: `0 3px 7px rgba(var(--color-rgb-blue-400),0.2)`,

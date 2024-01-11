@@ -1,4 +1,4 @@
-import type { Page, PageBlocks } from "../tina/__generated__/types";
+import type { Page, PageBlocks, Themes, ThemesTheme } from "../tina/__generated__/types";
 import { Content } from "./blocks/content";
 import { Features } from "./blocks/features";
 import { Hero } from "./blocks/hero";
@@ -12,7 +12,7 @@ export const Blocks = (props: Omit<Page, "id" | "_sys" | "_values">) => {
         ? props.blocks.map(function (block, i) {
             return (
               <div key={i} data-tina-field={tinaField(block)}>
-                <Block {...block} />
+                <Block block={block} theme={props.themes}/>
               </div>
             );
           })
@@ -21,16 +21,16 @@ export const Blocks = (props: Omit<Page, "id" | "_sys" | "_values">) => {
   );
 };
 
-const Block = (block: PageBlocks) => {
+const Block = ({ block , theme}:{block: PageBlocks, theme: Themes}) => {
   switch (block.__typename) {
     case "PageBlocksContent":
-      return <Content data={block} />;
+      return <Content data={block} theme={theme}/>;
     case "PageBlocksHero":
-      return <Hero data={block} />;
+      return <Hero data={block} theme={theme}/>;
     case "PageBlocksFeatures":
-      return <Features data={block} />;
+      return <Features data={block} theme={theme}/>;
     case "PageBlocksTestimonial":
-      return <Testimonial data={block} />;
+      return <Testimonial data={block} theme={theme}/>;
     default:
       return null;
   }

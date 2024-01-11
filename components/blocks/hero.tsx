@@ -4,12 +4,12 @@ import { Container } from "../util/container";
 import { Section } from "../util/section";
 import { useTheme } from "../layout";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
-import type { TinaTemplate } from "tinacms";
-import { PageBlocksHero } from "../../tina/__generated__/types";
+import type { Template } from "tinacms";
+import { PageBlocksHero, Themes } from "../../tina/__generated__/types";
 import { tinaField } from "tinacms/dist/react";
 
-export const Hero = ({ data }: { data: PageBlocksHero }) => {
-  const theme = useTheme();
+export const Hero = ({ data, theme }: { data: PageBlocksHero, theme:Themes }) => {
+  //const theme = useTheme();
   const headlineColorClasses = {
     blue: "from-blue-400 to-blue-600",
     teal: "from-teal-400 to-teal-600",
@@ -20,9 +20,8 @@ export const Hero = ({ data }: { data: PageBlocksHero }) => {
     orange: "from-orange-300 to-orange-600",
     yellow: "from-yellow-400 to-yellow-600",
   };
-
   return (
-    <Section color={data.color}>
+    <Section color={theme._sys.filename}>
       <Container
         size="large"
         className="grid grid-cols-1 md:grid-cols-5 gap-14 items-center justify-center"
@@ -31,7 +30,7 @@ export const Hero = ({ data }: { data: PageBlocksHero }) => {
           {data.tagline && (
             <h2
               data-tina-field={tinaField(data, "tagline")}
-              className="relative inline-block px-3 py-1 mb-8 text-md font-bold tracking-wide title-font z-20"
+              className={`relative inline-block px-3 py-1 mb-8 text-md font-bold tracking-wide title-font z-20`}
             >
               {data.tagline}
               <span className="absolute w-full h-full left-0 top-0 rounded-full -z-1 bg-current opacity-7"></span>
@@ -43,11 +42,7 @@ export const Hero = ({ data }: { data: PageBlocksHero }) => {
               className={`w-full relative	mb-10 text-5xl font-extrabold tracking-normal leading-tight title-font`}
             >
               <span
-                className={`bg-clip-text text-transparent bg-gradient-to-r  ${
-                  data.color === "primary"
-                    ? `from-white to-gray-100`
-                    : headlineColorClasses[theme.color]
-                }`}
+                className={`bg-clip-text bg-gradient-to-r `}
               >
                 {data.headline}
               </span>
@@ -66,7 +61,7 @@ export const Hero = ({ data }: { data: PageBlocksHero }) => {
           {data.actions && (
             <Actions
               className="justify-center md:justify-start py-2"
-              parentColor={data.color}
+              parentColor={theme._sys.filename}
               actions={data.actions}
             />
           )}
@@ -93,7 +88,7 @@ export const Hero = ({ data }: { data: PageBlocksHero }) => {
   );
 };
 
-export const heroBlockSchema: TinaTemplate = {
+export const heroBlockSchema: Template = {
   name: "hero",
   label: "Hero",
   ui: {

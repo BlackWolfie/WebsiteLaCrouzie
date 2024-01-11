@@ -137,6 +137,7 @@ module.exports = withMT({
         "-1": "-1",
       },
       fontFamily: {
+        montserrat: ["Montserrat", ...defaultTheme.fontFamily.sans],
         nunito: ["Nunito", ...defaultTheme.fontFamily.sans],
         lato: ["Lato", ...defaultTheme.fontFamily.sans],
       },

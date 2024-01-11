@@ -72,7 +72,7 @@
   },
   "theme": {
     "color": "yellow",
-    "font": "sans",
+    "font": "montserrat",
     "darkMode": "light"
   }
 }

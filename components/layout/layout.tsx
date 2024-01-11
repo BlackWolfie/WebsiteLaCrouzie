@@ -49,6 +49,16 @@ export const Layout = ({
             />
           </>
         )}
+        {data?.theme.font === 'montserrat' && (
+          <>
+            <link rel="preconnect" href="https://fonts.googleapis.com"/>
+            <link rel="preconnect" href="https://fonts.gstatic.com"/>
+            <link 
+              href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" 
+              rel="stylesheet"
+              />
+          </>
+        )}
       </Head>
       <div className="flex flex-col flex-nowrap fixed right-2 z-50 top-48 ">
         {allThemes?.edges.map((item, i)=> {
@@ -78,7 +88,8 @@ export const Layout = ({
             data?.theme.font === "nunito" && "font-nunito"
           } ${data?.theme.font === "lato" && "font-lato"} ${
             data?.theme.font === "sans" && "font-sans"
-          } ${theme?.themes._sys.filename}`}
+          } ${data?.theme.font === "montserrat" && "font-montserrat"} 
+          ${theme?.themes._sys.filename}`}
         >
           <Header data={theme.themes} title={theme.title}/>
           <div className="flex-1 text-gray-800 bg-gradient-to-br from-white to-gray-50 dark:from-gray-900 dark:to-gray-1000 flex flex-col">

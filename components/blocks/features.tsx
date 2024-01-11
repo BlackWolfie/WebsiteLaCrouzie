@@ -5,6 +5,8 @@ import { iconSchema } from "../util/icon";
 import {
   PageBlocksFeatures,
   PageBlocksFeaturesItems,
+  Themes,
+  ThemesTheme,
 } from "../../tina/__generated__/types";
 import { tinaField } from "tinacms/dist/react";
 
@@ -48,9 +50,9 @@ export const Feature = ({
   );
 };
 
-export const Features = ({ data }: { data: PageBlocksFeatures }) => {
+export const Features = ({ data, theme }: { data: PageBlocksFeatures, theme:Themes }) => {
   return (
-    <Section color={data.color}>
+    <Section color={theme._sys.filename}>
       <Container
         className={`flex flex-wrap gap-x-10 gap-y-8 text-left`}
         size="large"

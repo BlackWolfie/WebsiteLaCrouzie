@@ -1,13 +1,13 @@
 import React from "react";
 import { Container } from "../util/container";
 import { Section } from "../util/section";
-import type { TinaTemplate } from "tinacms";
-import { PageBlocksTestimonial } from "../../tina/__generated__/types";
+import type { Template } from "tinacms";
+import { PageBlocksTestimonial, Themes } from "../../tina/__generated__/types";
 import { tinaField } from "tinacms/dist/react";
 
-export const Testimonial = ({ data }: { data: PageBlocksTestimonial }) => {
+export const Testimonial = ({ data,theme }: { data: PageBlocksTestimonial , theme:Themes }) => {
   return (
-    <Section color={data.color}>
+    <Section color={theme._sys.filename}>
       <Container size="large">
         <blockquote>
           <div
@@ -61,7 +61,7 @@ export const Testimonial = ({ data }: { data: PageBlocksTestimonial }) => {
   );
 };
 
-export const testimonialBlockSchema: TinaTemplate = {
+export const testimonialBlockSchema: Template = {
   name: "testimonial",
   label: "Testimonial",
   ui: {
