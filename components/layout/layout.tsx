@@ -29,7 +29,7 @@ export const Layout = ({
         <meta charSet="UTF-8" />
         <meta name="description" content="Découvrez les évènements à l'affiche avec l'association Debout Les Yeux. Les cours hebdomadaires proposés, les activités du café associatif et les évènements et festival à venir."/>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        {data.theme.font === "nunito" && (
+        {data?.theme.font === "nunito" && (
           <>
             <link rel="preconnect" href="https://fonts.googleapis.com" />
             <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -39,7 +39,7 @@ export const Layout = ({
             />
           </>
         )}
-        {data.theme.font === "lato" && (
+        {data?.theme.font === "lato" && (
           <>
             <link rel="preconnect" href="https://fonts.googleapis.com" />
             <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -51,7 +51,7 @@ export const Layout = ({
         )}
       </Head>
       <div className="flex flex-col flex-nowrap fixed right-2 z-50 top-48 ">
-        {allThemes.edges.map((item, i)=> {
+        {allThemes?.edges.map((item, i)=> {
           let t = null 
           item.node.header.nav && item.node.header.nav.map((e)=>{                
             e.default === true ? t= e.href : 'console.log(e.href)'
@@ -63,22 +63,22 @@ export const Layout = ({
                 className={` hover`}
                 data={{
                   name: item.node.header.icon.favicon,
-                  color: theme.themes.theme.colorSecondary,
+                  color: theme?.themes.theme.colorSecondary,
                   size: "xxl"
                 }}
               />
             </a>
           )
         })}
-        <ScrollToTopButton color={theme.themes.theme.colorSecondary}/>
+        <ScrollToTopButton color={theme?.themes.theme.colorSecondary}/>
       </div>
       <Theme data={data?.theme}>
         <div
           className={`min-h-screen flex flex-col ${
-            data.theme.font === "nunito" && "font-nunito"
-          } ${data.theme.font === "lato" && "font-lato"} ${
-            data.theme.font === "sans" && "font-sans"
-          } ${theme.themes._sys.filename}`}
+            data?.theme.font === "nunito" && "font-nunito"
+          } ${data?.theme.font === "lato" && "font-lato"} ${
+            data?.theme.font === "sans" && "font-sans"
+          } ${theme?.themes._sys.filename}`}
         >
           <Header data={theme.themes} title={theme.title}/>
           <div className="flex-1 text-gray-800 bg-gradient-to-br from-white to-gray-50 dark:from-gray-900 dark:to-gray-1000 flex flex-col">
@@ -86,8 +86,8 @@ export const Layout = ({
           </div>
           <Footer
             data={data?.footer}
-            theme={theme.themes.theme}
-            Style={theme.themes._sys.filename}/>
+            theme={theme?.themes.theme}
+            Style={theme?.themes._sys.filename}/>
         </div>
       </Theme>
     </>

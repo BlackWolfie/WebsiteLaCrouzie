@@ -35,6 +35,12 @@ const Post: Collection = {
       collections: ["author"],
     },
     {
+      type: "reference",
+      label: "Categori",
+      name: "themes",
+      collections: ["themes"],
+    },
+    {
       type: "datetime",
       label: "Posted Date",
       name: "date",

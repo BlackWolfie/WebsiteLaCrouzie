@@ -13,9 +13,11 @@ export default function BlogPostPage(
     variables: props.variables,
     data: props.data,
   });
+  const theme = useTina(props.themeProps);
+
   if (data && data.post) {
     return (
-      <Layout rawData={data} data={data.global}>
+      <Layout rawData={data} data={data.global} theme={data.post as any} allThemes={theme.data.themesConnection as any}>
         <Post {...data.post} />
       </Layout>
     );
@@ -31,9 +33,15 @@ export const getStaticProps = async ({ params }) => {
   const tinaProps = await client.queries.blogPostQuery({
     relativePath: `${params.filename}.mdx`,
   });
+  const themeProps = await client.queries.themesConnection();
+  const theme ={
+    ...themeProps,
+    enableVisualEditing: process.env.VERCEL_ENV === "preview",
+  }
   return {
     props: {
       ...tinaProps,
+      themeProps: JSON.parse(JSON.stringify(theme)) as typeof theme,
     },
   };
 };

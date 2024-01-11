@@ -5,6 +5,7 @@ import { AiFillInstagram } from "react-icons/ai";
 import { Container } from "../../util/container";
 import { Icon } from "../../util/icon";
 import { GlobalFooter, ThemesTheme } from "../../../tina/__generated__/types";
+import { Input, Button } from "@material-tailwind/react";
 
 export const Footer = ({ data, theme, Style}: {data:GlobalFooter, theme:ThemesTheme, Style:String}) => {
 const date = new Date();
@@ -14,6 +15,8 @@ const style = {
     backgroundColor : theme.colorSecondary
   },
 }
+  const [email, setEmail] = React.useState("");
+  const onChange = ({ target }) => setEmail(target.value);
   return (
     <footer className={`font-semibold leading-7 back-footer-${Style} bg-no-repeat bg-cover bg-right lg:bg-center`}>
       <Container className="relative pt-40" size="small">
@@ -47,8 +50,24 @@ const style = {
             <div>
                 <p>Abonnez-vous à la Newsletter</p>
                 <form >
-                    <input type="email" name="S'abonner à la newsletter" id=""/>
-                    <input type="submit" value="OK"/>
+                <Input
+                  type="email"
+                  label="Email Address"
+                  value={email}
+                  onChange={onChange}
+                  className="pr-20"
+                  containerProps={{
+                    className: "min-w-0",
+                  }}
+                />
+                <Button
+                  size="sm"
+                  color={email ? "gray" : "blue-gray"}
+                  disabled={!email}
+                  className="!absolute right-1 top-1 rounded"
+                >
+                  OK
+                </Button>
                 </form>
             </div>
             <div>
