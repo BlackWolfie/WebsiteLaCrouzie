@@ -3,6 +3,7 @@ import { heroBlockSchema } from "../../components/blocks/hero";
 import { contentBlockSchema } from "../../components/blocks/content";
 import { testimonialBlockSchema } from "../../components/blocks/testimonial";
 import { featureBlockSchema } from "../../components/blocks/features";
+import { heroPlusBlockSchema } from "../../components/blocks/heroPlus";
 
 const Page: Collection = {
   label: "Pages",
@@ -45,6 +46,7 @@ const Page: Collection = {
       },
       templates: [
         heroBlockSchema,
+        heroPlusBlockSchema,
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-ignore
         featureBlockSchema,

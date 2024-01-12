@@ -2,17 +2,17 @@ import Link from "next/link";
 import * as React from "react";
 import { BiRightArrowAlt } from "react-icons/bi";
 import { useTheme } from "../layout";
-import { PageBlocksHeroActions, ThemesTheme } from "../../tina/__generated__/types";
+import { PageBlocksHeroActions,PageBlocksHeroPlusActions, ThemesTheme } from "../../tina/__generated__/types";
 import { tinaField } from "tinacms/dist/react";
 
 export const Actions = ({
   parentColor = "default",
   className = "",
-  actions,
+  actions ,
 }: {
   parentColor: string;
   className: string;
-  actions: PageBlocksHeroActions[];
+  actions: any;
 }) => {
   const theme = useTheme();
   const buttonColorClasses = {
