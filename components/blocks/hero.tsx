@@ -10,31 +10,22 @@ import { tinaField } from "tinacms/dist/react";
 
 export const Hero = ({ data, theme }: { data: PageBlocksHero, theme:Themes }) => {
   //const theme = useTheme();
-  const headlineColorClasses = {
-    blue: "from-blue-400 to-blue-600",
-    teal: "from-teal-400 to-teal-600",
-    green: "from-green-400 to-green-600",
-    red: "from-red-400 to-red-600",
-    pink: "from-pink-400 to-pink-600",
-    purple: "from-purple-400 to-purple-600",
-    orange: "from-orange-300 to-orange-600",
-    yellow: "from-yellow-400 to-yellow-600",
-  };
   return (
     <Section color={theme._sys.filename}>
       <Container
         size="large"
         className="grid grid-cols-1 md:grid-cols-5 gap-14 items-center justify-center"
       >
-        <div className="row-start-2 md:row-start-1 md:col-span-3 text-center md:text-left">
+        <div className={`row-start-2 
+        ${data.image.placement ? `md:col-span-3`:`md:col-start-3`} md:row-start-1 md:col-span-3 text-center md:text-left`}>
           {data.tagline && (
-            <h2
+            <h6
               data-tina-field={tinaField(data, "tagline")}
               className={`relative inline-block px-3 py-1 mb-8 text-md font-bold tracking-wide title-font z-20`}
             >
               {data.tagline}
               <span className="absolute w-full h-full left-0 top-0 rounded-full -z-1 bg-current opacity-7"></span>
-            </h2>
+            </h6>
           )}
           {data.headline && (
             <h3
@@ -51,16 +42,14 @@ export const Hero = ({ data, theme }: { data: PageBlocksHero, theme:Themes }) =>
           {data.text && (
             <div
               data-tina-field={tinaField(data, "text")}
-              className={`prose prose-lg mx-auto md:mx-0 mb-10 ${
-                data.color === "primary" ? `prose-primary` : `dark:prose-dark`
-              }`}
+              className={`prose prose-lg mx-auto md:mx-0 mb-10 prose-dark`}
             >
               <TinaMarkdown content={data.text} />
             </div>
           )}
           {data.actions && (
             <Actions
-              className="justify-center md:justify-start py-2"
+              className={`justify-center ${data.image.placement ? `md:justify-start`:`md:justify-end`} py-2`}
               parentColor={theme._sys.filename}
               actions={data.actions}
             />
@@ -69,7 +58,8 @@ export const Hero = ({ data, theme }: { data: PageBlocksHero, theme:Themes }) =>
         {data.image && (
           <div
             data-tina-field={tinaField(data.image, "src")}
-            className="relative row-start-1 md:col-span-2 flex justify-center"
+            className={`relative row-start-1 
+            md:col-span-2 flex justify-center`}
           >
             <img
               className="absolute w-full rounded-lg max-w-xs md:max-w-none h-auto blur-2xl brightness-150 contrast-[0.9] dark:brightness-150 saturate-200 opacity-50 dark:opacity-30 mix-blend-multiply dark:mix-blend-hard-light"
@@ -102,12 +92,12 @@ export const heroBlockSchema: Template = {
   fields: [
     {
       type: "string",
-      label: "Tagline",
+      label: "Sous Titre",
       name: "tagline",
     },
     {
       type: "string",
-      label: "Headline",
+      label: "Titre",
       name: "headline",
     },
     {
@@ -116,7 +106,7 @@ export const heroBlockSchema: Template = {
       type: "rich-text",
     },
     {
-      label: "Actions",
+      label: "Boutton",
       name: "actions",
       type: "object",
       list: true,
@@ -131,7 +121,7 @@ export const heroBlockSchema: Template = {
       },
       fields: [
         {
-          label: "Label",
+          label: "Titre",
           name: "label",
           type: "string",
         },
@@ -140,8 +130,8 @@ export const heroBlockSchema: Template = {
           name: "type",
           type: "string",
           options: [
-            { label: "Button", value: "button" },
-            { label: "Link", value: "link" },
+            { label: "Bouton", value: "button" },
+            { label: "Lien", value: "link" },
           ],
         },
         {
@@ -150,7 +140,7 @@ export const heroBlockSchema: Template = {
           type: "boolean",
         },
         {
-          label: "Link",
+          label: "Lien",
           name: "link",
           type: "string",
         },
@@ -162,6 +152,11 @@ export const heroBlockSchema: Template = {
       name: "image",
       fields: [
         {
+          name: "placement",
+          label: "Placement Gauche/Droite",
+          type: "boolean",        
+        },
+        {
           name: "src",
           label: "Image Source",
           type: "image",
@@ -171,16 +166,6 @@ export const heroBlockSchema: Template = {
           label: "Alt Text",
           type: "string",
         },
-      ],
-    },
-    {
-      type: "string",
-      label: "Color",
-      name: "color",
-      options: [
-        { label: "Default", value: "default" },
-        { label: "Tint", value: "tint" },
-        { label: "Primary", value: "primary" },
       ],
     },
   ],
