@@ -161,6 +161,11 @@ export const heroPlusBlockSchema: Template = {
       label: "Image",
       name: "imagePlus",
       list: true,
+      ui: {
+        itemProps: (item) => {
+          return { label: item?.alt };
+        },
+      },
       fields: [
         {
           name: "src",
