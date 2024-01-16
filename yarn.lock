@@ -8196,6 +8196,11 @@ react-onclickoutside@^6.13.0, react-onclickoutside@^6.5.0:
   resolved "https://registry.yarnpkg.com/react-onclickoutside/-/react-onclickoutside-6.13.0.tgz#e165ea4e5157f3da94f4376a3ab3e22a565f4ffc"
   integrity sha512-ty8So6tcUpIb+ZE+1HAhbLROvAIJYyJe/1vRrrcmW+jLsaM+/powDRqxzo6hSh9CuRZGSL1Q8mvcF5WRD93a0A==
 
+react-photo-album@^2.3.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/react-photo-album/-/react-photo-album-2.3.0.tgz#262afa60691d8ed5e25b8c8a73cec339ec515652"
+  integrity sha512-CU+UMK4ZQHIoPZ672TSst9loKE5bxy6w0+bf7bY4XOw1g1C7+VdDWCW+wD8wPpbg2ve38QBTS73HVe6xYLAQ3w==
+
 react-redux@^7.2.0:
   version "7.2.9"
   resolved "https://registry.yarnpkg.com/react-redux/-/react-redux-7.2.9.tgz#09488fbb9416a4efe3735b7235055442b042481d"

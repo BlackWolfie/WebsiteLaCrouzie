@@ -2,6 +2,18 @@
 title: Tina Cloud Starter
 themes: content/themes/dly.json
 blocks:
+  - carouselFeature:
+      - src: /uploads/concert2019.JPG
+        alt: '2'
+      - src: /uploads/cafe-asso-accordeonistes.jpg
+        alt: '1'
+    _template: carouselFeature
+  - carousel:
+      - src: /uploads/chapiteau.JPG
+      - src: /uploads/cafe-asso-accordeonistes.jpg
+      - src: /uploads/cafe-asso-accordeonistes.jpg
+        alt: text
+    _template: carousel
   - headline: Welcome to the Tina Starter
     text: >
       This project is set up to show you the basics of working with Tina. You're
@@ -23,7 +35,6 @@ blocks:
       alt: >-
         Photo of palm trees at sunset by Adam Birkett -
         unsplash.com/photos/75EFpyXu3Wg
-    color: default
     _template: hero
   - items:
       - icon:
@@ -54,7 +65,6 @@ blocks:
       There are only two hard things in Computer Science: cache invalidation and
       naming things.
     author: Phil Karlton
-    color: primary
     _template: testimonial
 ---
 

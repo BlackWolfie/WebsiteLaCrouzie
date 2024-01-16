@@ -5,6 +5,8 @@ import { testimonialBlockSchema } from "../../components/blocks/testimonial";
 import { featureBlockSchema } from "../../components/blocks/features";
 import { heroPlusBlockSchema } from "../../components/blocks/heroPlus";
 import { heroFullBlockSchema } from "../../components/blocks/heroFull";
+import { carouselBlockSchema } from "../../components/blocks/carousel";
+import { carouselFeatureBlockSchema } from "../../components/blocks/carouselFeature";
 
 const Page: Collection = {
   label: "Pages",
@@ -54,6 +56,8 @@ const Page: Collection = {
         featureBlockSchema,
         contentBlockSchema,
         testimonialBlockSchema,
+        carouselBlockSchema,
+        carouselFeatureBlockSchema,
       ],
     },
   ],

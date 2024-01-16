@@ -1,4 +1,6 @@
 import type { Page, PageBlocks, Themes, ThemesTheme } from "../tina/__generated__/types";
+import { GalleryWithCarousel } from "./blocks/carousel";
+import { GalleryWithCarouselFeature } from "./blocks/carouselFeature";
 import { Content } from "./blocks/content";
 import { Features } from "./blocks/features";
 import { Hero } from "./blocks/hero";
@@ -37,6 +39,10 @@ const Block = ({ block , theme}:{block: PageBlocks, theme: Themes}) => {
       return <Features data={block} theme={theme}/>;
     case "PageBlocksTestimonial":
       return <Testimonial data={block} theme={theme}/>;
+    case "PageBlocksCarousel":
+      return <GalleryWithCarousel data={block} theme={theme}/>;
+    case "PageBlocksCarouselFeature":
+      return <GalleryWithCarouselFeature data={block} theme={theme}/>;
     default:
       return null;
   }
