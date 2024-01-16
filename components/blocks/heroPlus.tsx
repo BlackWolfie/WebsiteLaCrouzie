@@ -87,7 +87,7 @@ export const heroPlusBlockSchema: Template = {
   name: "heroPlus",
   label: "Hero Avec Plusieurs Images",
   ui: {
-    previewSrc: "/blocks/hero.png",
+    previewSrc: "/blocks/heroPlus.png",
     defaultItem: {
       tagline: "Here's some text above the other text",
       headline: "This Big Text is Totally Awesome",

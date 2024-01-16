@@ -44,7 +44,8 @@ export const HeroFull = ({ data, theme }: { data: PageBlocksHeroFull, theme:Them
           {data.text && (
             <div
               data-tina-field={tinaField(data, "text")}
-              className={`prose prose-lg mx-auto md:mx-0 mb-10 prose-dark`}
+              className={` prose-lg mx-auto md:mx-0 mb-10 prose-dark`}
+              style={{ color: `${data.colorFull ? data.colorFull : ''}` }}
             >
               <TinaMarkdown content={data.text} />
             </div>
@@ -66,7 +67,7 @@ export const heroFullBlockSchema: Template = {
   name: "heroFull",
   label: "Hero Avec Image de Fond",
   ui: {
-    previewSrc: "/blocks/hero.png",
+    previewSrc: "/blocks/heroFull.png",
     defaultItem: {
       tagline: "Here's some text above the other text",
       headline: "This Big Text is Totally Awesome",
@@ -88,6 +89,14 @@ export const heroFullBlockSchema: Template = {
       label: "Text",
       name: "text",
       type: "rich-text",
+    },
+    {
+      label: "Couleur du Texte",
+      name: "colorFull",
+      type: 'string',
+      ui : {
+        component: 'color',
+      },
     },
     {
       label: "Boutton",
