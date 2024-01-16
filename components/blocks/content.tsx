@@ -10,14 +10,34 @@ export const Content = ({ data , theme}: { data: PageBlocksContent , theme:Theme
   return (
     <Section color={theme._sys.filename}>
       <Container
-        className={`prose prose-lg ${
-          data.color === "primary" ? `prose-primary` : `dark:prose-dark`
-        }`}
         data-tina-field={tinaField(data, "body")}
         size="large"
         width="medium"
       >
+        {data.tagline && (
+            <h6
+              data-tina-field={tinaField(data, "tagline")}
+              className={`relative inline-block px-3 py-1 mb-2 text-md font-bold tracking-wide title-font z-20 text-center`}
+            >
+              {data.tagline}
+              <span className="absolute w-full h-full left-0 top-0 rounded-full -z-1 bg-current opacity-7"></span>
+            </h6>
+          )}
+          {data.headline && (
+            <h3
+              data-tina-field={tinaField(data, "headline")}
+              className={`w-full relative	mb-4 text-5xl font-extrabold tracking-normal leading-tight title-font text-center`}
+            >
+              <span
+                className={`bg-clip-text  `}
+              >
+                {data.headline}
+              </span>
+            </h3>
+          )}
+          <div className={` prose prose-lg `}>
         <TinaMarkdown content={data.body} />
+        </div>
       </Container>
     </Section>
   );
@@ -34,18 +54,19 @@ export const contentBlockSchema: Template = {
   },
   fields: [
     {
-      type: "rich-text",
-      label: "Body",
-      name: "body",
+      type: "string",
+      label: "Sous Titre",
+      name: "tagline",
     },
     {
       type: "string",
-      label: "Color",
-      name: "color",
-      options: [
-        { label: "Default", value: "default" },
-        { label: "Primary", value: "primary" },
-      ],
+      label: "Titre",
+      name: "headline",
+    },
+    {
+      type: "rich-text",
+      label: "Body",
+      name: "body",
     },
   ],
 };
