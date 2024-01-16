@@ -17,7 +17,7 @@ export const Content = ({ data , theme}: { data: PageBlocksContent , theme:Theme
         {data.tagline && (
             <h6
               data-tina-field={tinaField(data, "tagline")}
-              className={`relative inline-block px-3 py-1 mb-2 text-md font-bold tracking-wide title-font z-20 text-center`}
+              className={`relative inline-block px-3 py-1 mb-2 text-md font-bold tracking-wide title-font z-20 text-center left-1/2 -translate-x-1/2`}
             >
               {data.tagline}
               <span className="absolute w-full h-full left-0 top-0 rounded-full -z-1 bg-current opacity-7"></span>
@@ -35,7 +35,7 @@ export const Content = ({ data , theme}: { data: PageBlocksContent , theme:Theme
               </span>
             </h3>
           )}
-          <div className={` prose prose-lg `}>
+          <div className={` prose prose-lg text-center max-w-none`}>
         <TinaMarkdown content={data.body} />
         </div>
       </Container>
