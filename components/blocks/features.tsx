@@ -41,7 +41,7 @@ export const Feature = ({
       {data.text && (
         <p
           data-tina-field={tinaField(data, "text")}
-          className="text-base opacity-80 leading-relaxed"
+          className="text-base prose opacity-80 leading-relaxed"
         >
           {data.text}
         </p>
