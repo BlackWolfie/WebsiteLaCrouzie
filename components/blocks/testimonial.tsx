@@ -11,46 +11,42 @@ export const Testimonial = ({ data,theme }: { data: PageBlocksTestimonial , them
       <Container size="large">
         <blockquote>
           <div
-            className={`relative z-10 max-w-3xl mx-auto text-4xl lg:text-5xl font-bold tracking-normal text-center title-font ${
-              data.color === "primary"
-                ? `text-white`
-                : `text-gray-700 dark:text-gray-50`
-            }`}
+            className={`relative z-10 max-w-5xl mx-auto text-4xl lg:text-5xl font-bold tracking-normal text-center title-font `}
           >
             <span
-              className={`block opacity-15 text-8xl absolute inset-y-1/2 transform translate-y-2	-left-4 leading-4 -z-1`}
+              className={`block opacity-80 text-8xl absolute inset-y-1/2 transform translate-y-2	-left-4 leading-4 -z-1`}
+              style={{ color : `${theme.theme.colorPrimary? theme.theme.colorPrimary : 'black' }`}}
             >
               &ldquo;
             </span>
             <p
               data-tina-field={tinaField(data, `quote`)}
               className="relative opacity-95"
+              style={{ color : `${theme.theme.colorSecondary? theme.theme.colorSecondary : 'black' }`}}
+
             >
               {data.quote}
             </p>
             <span
-              className={`block opacity-15 text-8xl absolute inset-y-1/2 transform translate-y-3	-right-4 leading-4 -z-1`}
+              className={`block opacity-80 text-8xl absolute inset-y-1/2 transform translate-y-3	-right-4 leading-4 -z-1`}
+              style={{ color : `${theme.theme.colorPrimary? theme.theme.colorPrimary : 'black' }`}}
+
             >
               &rdquo;
             </span>
           </div>
           <div className={`my-8 flex-grow-0`}>
             <span
-              className={`block mx-auto h-0.5 w-1/6 ${
-                data.color === "primary"
-                  ? `bg-blue-600`
-                  : `bg-gray-200 dark:bg-gray-700`
-              }`}
+              className={`block mx-auto h-0.5 w-1/6 `}
+              style={{ background : `${theme.theme.colorTerciary? theme.theme.colorTerciary : 'black' }`}}
             ></span>
           </div>
           <footer className="text-center">
             <p
               data-tina-field={tinaField(data, `author`)}
-              className={`tracking-wide title-font font-bold text-lg ${
-                data.color === "primary"
-                  ? `text-blue-200`
-                  : `text-blue-500 dark:text-blue-300`
-              }`}
+              className={`tracking-wide title-font font-bold text-lg `}
+              style={{ color : `${theme.theme.colorSecondary? theme.theme.colorSecondary : 'black' }`}}
+
             >
               {data.author}
             </p>
@@ -86,16 +82,6 @@ export const testimonialBlockSchema: Template = {
       type: "string",
       label: "Author",
       name: "author",
-    },
-    {
-      type: "string",
-      label: "Color",
-      name: "color",
-      options: [
-        { label: "Default", value: "default" },
-        { label: "Tint", value: "tint" },
-        { label: "Primary", value: "primary" },
-      ],
     },
   ],
 };
