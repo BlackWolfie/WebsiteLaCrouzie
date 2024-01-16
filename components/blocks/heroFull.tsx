@@ -5,19 +5,21 @@ import { Section } from "../util/section";
 import { useTheme } from "../layout";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import type { Template } from "tinacms";
-import { PageBlocksHero, Themes } from "../../tina/__generated__/types";
+import { PageBlocksHeroFull, Themes } from "../../tina/__generated__/types";
 import { tinaField } from "tinacms/dist/react";
 
-export const Hero = ({ data, theme }: { data: PageBlocksHero, theme:Themes }) => {
+export const HeroFull = ({ data, theme }: { data: PageBlocksHeroFull, theme:Themes }) => {
   //const theme = useTheme();
   return (
-    <Section color={theme._sys.filename}>
+    <Section color={theme._sys.filename} >
+
       <Container
         size="large"
-        className="grid grid-cols-1 md:grid-cols-5 gap-14 items-center justify-center"
+        className="grid gap-14 items-center justify-center max-w-none bg-cover bg-center"
+        style={{ backgroundImage: `url(${data.src ? data.src : ''})` }}
       >
-        <div className={`row-start-2 
-        ${data.image.placement ? `md:col-span-3`:`md:col-start-3`} md:row-start-1 md:col-span-3 text-center md:text-left`}>
+        <div className={`row-start-2  max-w-7xl
+         md:row-start-1 md:col-span-3 text-center md:text-left`}>
           {data.tagline && (
             <h6
               data-tina-field={tinaField(data, "tagline")}
@@ -33,7 +35,7 @@ export const Hero = ({ data, theme }: { data: PageBlocksHero, theme:Themes }) =>
               className={`w-full relative	mb-10 text-5xl font-extrabold tracking-normal leading-tight title-font`}
             >
               <span
-                className={`bg-clip-text bg-gradient-to-r `}
+                className={`bg-clip-text `}
               >
                 {data.headline}
               </span>
@@ -49,36 +51,18 @@ export const Hero = ({ data, theme }: { data: PageBlocksHero, theme:Themes }) =>
           )}
           {data.actions && (
             <Actions
-              className={`justify-center ${data.image.placement ? `md:justify-start`:`md:justify-end`} py-2`}
+              className={`justify-center py-2`}
               parentColor={theme._sys.filename}
               actions={data.actions}
             />
           )}
         </div>
-        {data.image && (
-          <div
-            data-tina-field={tinaField(data.image, "src")}
-            className={`relative row-start-1 
-            md:col-span-2 flex justify-center`}
-          >
-            <img
-              className="absolute w-full rounded-lg max-w-xs md:max-w-none h-auto blur-2xl brightness-150 contrast-[0.9] dark:brightness-150 saturate-200 opacity-50 dark:opacity-30 mix-blend-multiply dark:mix-blend-hard-light"
-              src={data.image.src}
-              aria-hidden="true"
-            />
-            <img
-              className="relative z-10 w-full max-w-xs rounded-lg md:max-w-none h-auto"
-              alt={data.image.alt}
-              src={data.image.src}
-            />
-          </div>
-        )}
       </Container>
     </Section>
   );
 };
 
-export const heroBlockSchema: Template = {
+export const heroFullBlockSchema: Template = {
   name: "heroFull",
   label: "Hero Avec Image de Fond",
   ui: {
@@ -147,26 +131,9 @@ export const heroBlockSchema: Template = {
       ],
     },
     {
-      type: "object",
-      label: "Image",
-      name: "image",
-      fields: [
-        {
-          name: "placement",
-          label: "Placement Gauche/Droite",
-          type: "boolean",        
-        },
-        {
-          name: "src",
-          label: "Image Source",
-          type: "image",
-        },
-        {
-          name: "alt",
-          label: "Alt Text",
-          type: "string",
-        },
-      ],
+      name: "src",
+      label: "Image Source",
+      type: "image",
     },
   ],
 };
