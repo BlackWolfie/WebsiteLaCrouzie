@@ -15,7 +15,7 @@ export const Layout = ({
   allThemes,
   children,
 }: {
-  type: boolean;
+  type?: boolean;
   data?: Omit<Global, "id" | "_sys" | "_values">;
   theme?: Page;
   allThemes?: ThemesConnection;

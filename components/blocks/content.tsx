@@ -12,7 +12,7 @@ export const Content = ({ data , theme}: { data: PageBlocksContent , theme:Theme
       <Container
         data-tina-field={tinaField(data, "body")}
         size="large"
-        width="medium"
+        width="xlarge"
       >
         {data.tagline && (
             <h6
@@ -35,8 +35,8 @@ export const Content = ({ data , theme}: { data: PageBlocksContent , theme:Theme
               </span>
             </h3>
           )}
-          <div className={` prose prose-lg text-center max-w-none`}>
-        <TinaMarkdown content={data.body} />
+        <div className={` prose prose-lg text-center max-w-none content`}>
+          <TinaMarkdown content={data.body}/>
         </div>
       </Container>
     </Section>

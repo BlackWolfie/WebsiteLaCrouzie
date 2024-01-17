@@ -12,7 +12,7 @@ export const GalleryWithCarouselFeature= ({ data, theme }: { data: PageBlocksCar
     <Container
         data-tina-field={tinaField(data)}
         size="medium"
-        width="large"
+        width="xlarge"
       >
         <div className="grid gap-4">
             <div>

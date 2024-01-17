@@ -136,7 +136,7 @@ export const Post = (props: PostType) => {
 
   return (
     <Section className="flex-1">
-      <Container width="small" className={`flex-1 pb-2`} size="large">
+      <Container width="medium" className={`flex-1 pb-2`} size="large">
         <h2
           data-tina-field={tinaField(props, "title")}
           className={`w-full relative	mb-8 text-6xl font-extrabold tracking-normal text-center title-font`}

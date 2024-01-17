@@ -10,7 +10,7 @@ export const GalleryWithCarousel= ({ data, theme }: { data: PageBlocksCarousel, 
     <Container
         data-tina-field={tinaField(data)}
         size="medium"
-        width="large"
+        width="xlarge"
       >
         <Carousel loop={true} autoplay={data.autoplay} className="rounded-xl">
         { data.carousel && data.carousel.map((item,i)=>{

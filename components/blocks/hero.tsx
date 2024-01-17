@@ -14,6 +14,7 @@ export const Hero = ({ data, theme }: { data: PageBlocksHero, theme:Themes }) =>
     <Section color={theme._sys.filename}>
       <Container
         size="large"
+        width="xlarge"
         className="grid grid-cols-1 md:grid-cols-5 gap-14 items-center justify-center"
       >
         <div className={`row-start-2 

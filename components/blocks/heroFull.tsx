@@ -15,6 +15,7 @@ export const HeroFull = ({ data, theme }: { data: PageBlocksHeroFull, theme:Them
 
       <Container
         size="large"
+        width="xlarge"
         className="grid gap-14 items-center justify-center max-w-none bg-cover bg-center"
         style={{ backgroundImage: `url(${data.src ? data.src : ''})` }}
       >

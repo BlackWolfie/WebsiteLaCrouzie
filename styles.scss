@@ -100,3 +100,11 @@
 .back-footer-lcdm{
     @apply bg-courbe-footer-lcdm;
 }
+
+.content {
+    img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
