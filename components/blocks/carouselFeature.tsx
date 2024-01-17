@@ -27,6 +27,7 @@ export const GalleryWithCarouselFeature= ({ data, theme }: { data: PageBlocksCar
                     return (
                     <div key={index}>
                         <img
+                        data-tina-field={tinaField(item)}
                         onClick={() => setActive(item.src)}
                         src={item.src}
                         className=" h-28 max-w-full cursor-pointer rounded-lg object-cover object-center"

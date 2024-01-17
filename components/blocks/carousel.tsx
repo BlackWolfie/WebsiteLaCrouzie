@@ -16,6 +16,7 @@ export const GalleryWithCarousel= ({ data, theme }: { data: PageBlocksCarousel, 
         { data.carousel && data.carousel.map((item,i)=>{
             return(
                 <img
+                  data-tina-field={tinaField(item)}
                     key={'carousel'+i}
                     src={item.src}
                     alt={item.alt}
