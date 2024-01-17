@@ -113,7 +113,13 @@ module.exports = withMT({
       3: "3px",
       4: "4px",
     },
-    extend: {
+    extend: { 
+      screens: {
+      'tall': { 'raw': '(min-height: 800px)' },
+      'small': { 'raw': '(min-height: 500px) and (max-height: 799px)' },
+      'smaller': { 'raw': '(min-height: 250px) and (max-height: 499px)' },
+      // => @media (min-height: 800px) { ... }
+      },
       backgroundImage: {
         'crouzie': `url('${crouzie.header.img}')`,
         'lcdm': `url('${lcdm.header.img}')`,

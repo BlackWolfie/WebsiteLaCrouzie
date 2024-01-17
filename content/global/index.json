@@ -71,6 +71,7 @@
     }
   },
   "theme": {
+    "themes": "content/themes/dly.json",
     "color": "yellow",
     "font": "montserrat",
     "darkMode": "light"

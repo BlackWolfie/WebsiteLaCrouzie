@@ -9,13 +9,13 @@ import { Icon } from "../util/svg";
 import ScrollToTopButton from "../util/scrollToTop";
 
 export const Layout = ({
-  rawData = {},
+  type,
   data ,
   theme ,
   allThemes,
   children,
 }: {
-  rawData?: object;
+  type: boolean;
   data?: Omit<Global, "id" | "_sys" | "_values">;
   theme?: Page;
   allThemes?: ThemesConnection;
@@ -73,14 +73,14 @@ export const Layout = ({
                 className={` hover`}
                 data={{
                   name: item.node.header.icon.favicon,
-                  color: theme?.themes.theme.colorSecondary,
+                  color: theme?.themes.theme.colorSecondary ? theme?.themes.theme.colorSecondary : data.theme.themes.theme.colorSecondary ,
                   size: "xxl"
                 }}
               />
             </a>
           )
         })}
-        <ScrollToTopButton color={theme?.themes.theme.colorSecondary}/>
+        <ScrollToTopButton color={theme?.themes.theme.colorSecondary ? theme?.themes.theme.colorSecondary : data.theme.themes.theme.colorSecondary}/>
       </div>
       <Theme data={data?.theme}>
         <div
@@ -91,13 +91,13 @@ export const Layout = ({
           } ${data?.theme.font === "montserrat" && "font-montserrat"} 
           ${theme?.themes._sys.filename}`}
         >
-          <Header data={theme.themes} title={theme.title}/>
+          <Header type={type} data={theme.themes} title={theme.title? theme.title : 'La Crouzié'}/>
           <div className="flex-1 text-gray-800 bg-gradient-to-br from-white to-gray-50 dark:from-gray-900 dark:to-gray-1000 flex flex-col">
             {children}
           </div>
           <Footer
             data={data?.footer}
-            theme={theme?.themes.theme}
+            theme={theme?.themes.theme ? theme?.themes.theme : data.theme.themes.theme}
             Style={theme?.themes._sys.filename}/>
         </div>
       </Theme>

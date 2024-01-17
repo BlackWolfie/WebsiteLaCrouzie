@@ -33,7 +33,7 @@ function NavList({ data }: {data:Themes}) {
   );
 }
 
-export const Header = ({ data, title }: {data:Themes, title:String}) => {
+export const Header = ({ data, title, type }: {data:Themes, title:String, type:Boolean}) => {
   const router = useRouter();
   const Style = {
     secondary: {
@@ -67,15 +67,15 @@ export const Header = ({ data, title }: {data:Themes, title:String}) => {
     setIsClient(true);
   }, []);
   return (
-    <><div className={`back-${data._sys.filename} bg-cover bg-no-repeat bg-[50%_40%] w-full h-[90vh] `}>
+    <><div className={` ${type ?`back-${data._sys.filename} h-[90vh]`: `h-[25vh]` } bg-cover bg-no-repeat bg-[50%_40%] w-full `}>
         <svg id="Calque_2" data-name="Calque 2" xmlns="http://www.w3.org/2000/svg" 
         viewBox="0 0 595.37 219.55" 
-        preserveAspectRatio="none" width={'100%'} height={'76vh'} fill={data.theme.colorPrimary} className='absolute z-0 -top-96'>
+        preserveAspectRatio="none" width={'100%'} height={'76vh'} fill={data.theme.colorPrimary} className=' max-h-[50rem] absolute z-0 tall:-top-96 small:-top-72 smaller:-top-32'>
           <g id="Calque_3" data-name="Calque 3">
             <path d="m595.32,178.7C393.68,190.19,186.37,138.87.05,219.55L0,0h595.37l-.05,178.7Z"/>
           </g>
         </svg>
-        <div className={`flex flex-col flex-nowrap justify-between w-full h-[90vh]`}>
+        <div className={`flex flex-col flex-nowrap justify-between w-full ${type ? `h-[90vh]`: `h-[25vh]` }`}>
           <Navbar className={`mx-auto z-10 px-6 py-3 bg-transparent ${data._sys.filename}`} shadow={false} blurred={false} fullWidth={true}>
             <div className="flex items-center justify-between text-blue-gray-900">
               <Typography
@@ -114,11 +114,13 @@ export const Header = ({ data, title }: {data:Themes, title:String}) => {
               <NavList data={data}/>
             </Collapse>
           </Navbar>
+          {type &&
           <div className={` mb-2`} style={Style.bgPrimary}>
             <h1 className={`${data._sys.filename} text-center`}>
                 {title}
             </h1>
           </div>
+          }
         </div>
       </div>
     </>

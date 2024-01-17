@@ -174,6 +174,12 @@ const Global: Collection = {
       // @ts-ignore
       fields: [
         {
+          type: "reference",
+          label: "Theme par default",
+          name: "themes",
+          collections: ["themes"],
+        },
+        {
           type: "string",
           label: "Primary Color",
           name: "color",
