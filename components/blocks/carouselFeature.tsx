@@ -43,7 +43,7 @@ export const GalleryWithCarouselFeature= ({ data, theme }: { data: PageBlocksCar
 
 export const carouselFeatureBlockSchema: Template = {
     name: "carouselFeature",
-    label: "Photo Gallery",
+    label: "Carrousel avec thumbnail",
     ui: {
       previewSrc: "/blocks/carouselFeature.png",
       defaultItem: {

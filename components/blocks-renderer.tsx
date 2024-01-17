@@ -3,6 +3,7 @@ import { GalleryWithCarousel } from "./blocks/carousel";
 import { GalleryWithCarouselFeature } from "./blocks/carouselFeature";
 import { Content } from "./blocks/content";
 import { Features } from "./blocks/features";
+import { Gallery } from "./blocks/galery";
 import { Hero } from "./blocks/hero";
 import { HeroFull } from "./blocks/heroFull";
 import { HeroPlus } from "./blocks/heroPlus";
@@ -39,6 +40,8 @@ const Block = ({ block , theme}:{block: PageBlocks, theme: Themes}) => {
       return <Features data={block} theme={theme}/>;
     case "PageBlocksTestimonial":
       return <Testimonial data={block} theme={theme}/>;
+    case "PageBlocksGallery":
+      return <Gallery data={block} theme={theme}/>;
     case "PageBlocksCarousel":
       return <GalleryWithCarousel data={block} theme={theme}/>;
     case "PageBlocksCarouselFeature":

@@ -2,6 +2,12 @@
 title: Tina Cloud Starter
 themes: content/themes/dly.json
 blocks:
+  - gallery:
+      - src: /uploads/cafe-asso-accordeonistes.jpg
+      - src: /uploads/concert2019.JPG
+      - src: /uploads/fete-ecole.JPG
+      - src: /uploads/concert.jpg
+    _template: gallery
   - carouselFeature:
       - src: /uploads/concert2019.JPG
         alt: '2'

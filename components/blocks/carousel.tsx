@@ -33,7 +33,7 @@ export const GalleryWithCarousel= ({ data, theme }: { data: PageBlocksCarousel, 
 
 export const carouselBlockSchema: Template = {
     name: "carousel",
-    label: "Photo Gallery",
+    label: "Carrousel",
     ui: {
       previewSrc: "/blocks/carousel.png",
       defaultItem: {
