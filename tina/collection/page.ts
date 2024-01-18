@@ -21,7 +21,7 @@ const Page: Collection = {
       if (document._sys.filename === "about") {
         return `/about`;
       }
-      return document._sys.filename;
+      return document._sys.filename ? document._sys.filename :  undefined;;
     },
   },
   fields: [

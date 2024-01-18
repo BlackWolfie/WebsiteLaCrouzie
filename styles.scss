@@ -65,6 +65,11 @@
     .hover{
         @apply hover:text-crouzie-terciary;
     }
+    content {
+        h1,h2 ,h3,h4,h5,h6 {
+            @apply text-crouzie-secondary
+        }
+    }
 }
 .back-crouzie{
     @apply bg-crouzie;
@@ -78,6 +83,11 @@
     @apply text-dly-secondary;
     .hover{
         @apply hover:text-dly-terciary;
+    }
+    content {
+        h1,h2 ,h3,h4,h5,h6 {
+            @apply text-dly-secondary
+        }
     }
 }
 .back-dly{
@@ -93,6 +103,11 @@
         @apply hover:text-lcdm-terciary;
     }
     @apply text-lcdm-secondary;
+    content {
+        h1,h2 ,h3,h4,h5,h6 {
+            @apply text-lcdm-secondary
+        }
+    }
 }
 .back-lcdm{
     @apply bg-lcdm;
@@ -107,4 +122,5 @@
         margin-left: auto;
         margin-right: auto;
     }
+
 }
