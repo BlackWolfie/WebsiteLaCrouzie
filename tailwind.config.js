@@ -48,7 +48,7 @@ module.exports = withMT({
       pink: colors.pink,
       yellow: colors.yellow,
       gray: {
-        50: "#F6F6F9",
+        50: "#FBFBFB",
         100: "#EDECF3",
         150: "#E6E3EF",
         200: "#E1DDEC",

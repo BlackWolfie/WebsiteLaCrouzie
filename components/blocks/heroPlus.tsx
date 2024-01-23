@@ -61,6 +61,7 @@ export const HeroPlus = ({ data, theme }: { data: PageBlocksHeroPlus, theme:Them
           data.imagePlus.map((item,i)=>{
             return(
               <div
+              key={"heroplus-"+i}
                 data-tina-field={tinaField(item, "src")}
                 className={`relative row-start-1 
                 md:col-span-2 flex justify-center mx-2 md:mx-0 md:my-1`}

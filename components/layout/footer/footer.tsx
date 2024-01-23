@@ -18,10 +18,10 @@ const style = {
   const [email, setEmail] = React.useState("");
   const onChange = ({ target }) => setEmail(target.value);
   return (
-    <footer className={`font-semibold leading-7 back-footer-${Style} bg-no-repeat bg-cover bg-right lg:bg-center`}>
+    <footer className={`font-semibold leading-7 bg-right bg-no-repeat bg-cover back-footer-${Style} lg:bg-center`}>
       <Container className="relative pt-40" size="small">
         <div className='flex flex-row flex-wrap justify-around'>
-          <div className='my-6 mx-2  flex-grow sm:flex-grow-0'>
+          <div className='flex-grow mx-2 my-6 sm:flex-grow-0'>
             <h4 className='underline'>{data.links.name}</h4>
             <p className='flex flex-col flex-nowrap'>
               {data.links.nav && 
@@ -32,7 +32,7 @@ const style = {
               })}
             </p>
           </div>
-          <div className='my-6 mx-2 flex-grow sm:flex-grow-0'>
+          <div className='flex-grow mx-2 my-6 sm:flex-grow-0'>
             <h4 className='underline'>{data.contact.name}</h4>
             <p className='flex flex-col flex-nowrap'>
               <a href={data.contact.laddr} target="_blank" rel="noopener noreferrer" className="hover">
@@ -46,10 +46,10 @@ const style = {
               })}
             </p>
           </div>
-          <div className='my-6 mx-2 flex-grow sm:flex-grow-0'>
+          <div className='flex-grow mx-2 my-6 sm:flex-grow-0'>
             <div>
                 <p>Abonnez-vous à la Newsletter</p>
-                <form >
+                <form className="flex flex-row flex-nowrap">
                 <Input
                   type="email"
                   label="Email Address"
@@ -64,7 +64,7 @@ const style = {
                   size="sm"
                   color={email ? "gray" : "blue-gray"}
                   disabled={!email}
-                  className="!absolute right-1 top-1 rounded"
+                  className="rounded"
                 >
                   OK
                 </Button>
@@ -73,44 +73,44 @@ const style = {
             <div>
             {data.social && data.social.facebook && (
               <a
-                className="inline-block opacity-80 hover transition ease-out duration-150"
+                className="inline-block opacity-80 transition duration-150 ease-out hover"
                 href={data.social.facebook}
                 target="_blank"
               >
-                <FaFacebookF
+                <FaFacebookF size={'2em'}
                   className={`hover`}
                 />
               </a>
             )}
             {data.social && data.social.instagram && (
               <a
-                className="inline-block opacity-80 hover  transition ease-out duration-150"
+                className="inline-block opacity-80 transition duration-150 ease-out hover"
                 href={data.social.instagram}
                 target="_blank"
               >
-                <AiFillInstagram
+                <AiFillInstagram size={'2em'}
                   className={`hover`}
                 />
               </a>
             )}
             {data.social && data.social.pinterest && (
               <a
-                className="inline-block opacity-80 hover transition ease-out duration-150"
+                className="inline-block opacity-80 transition duration-150 ease-out hover"
                 href={data.social.pinterest}
                 target="_blank"
               >
-                <FaPinterest
+                <FaPinterest size={'2em'}
                   className={`hover`}
                 />
               </a>
             )}
             {data.social && data.social.twitter && (
               <a
-                className="inline-block opacity-80 hover transition ease-out duration-150"
+                className="inline-block opacity-80 transition duration-150 ease-out hover"
                 href={data.social.twitter}
                 target="_blank"
               >
-                <FaPinterest
+                <FaPinterest size={'2em'}
                   className={`hover`}
                 />
               </a>
@@ -118,8 +118,8 @@ const style = {
             </div>
           </div>
         </div>
-        <div className='mt-10 mb-0 w-5/12 mx-auto h-1'style={style.spacer}></div>
-        <div className='flex flex-wrap flex-row justify-center my-10'>
+        <div className='mx-auto mt-10 mb-0 w-5/12 h-1'style={style.spacer}></div>
+        <div className='flex flex-row flex-wrap justify-center my-10'>
           {data.part.imgpart && 
             data.part.imgpart.map((item,i)=>{
               return (
@@ -130,7 +130,7 @@ const style = {
 
         </div>
 
-        <div className='mt-0 w-1/12 mx-auto h-1 mb-12' style={style.spacer}></div>
+        <div className='mx-auto mt-0 mb-12 w-1/12 h-1' style={style.spacer}></div>
         <div className='flex flex-col flex-nowrap justify-center'>
           {data.legal.legal &&
             <a href={data.legal.legal} className='text-center hover'>Mentions légales</a>  
