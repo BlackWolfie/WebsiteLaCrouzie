@@ -19,57 +19,50 @@ const Artist: Collection = {
       name: "img",
     },
     {
+      label: "Boutton",
+      name: "actions",
+      type: "object",
+      list: true,
+      ui: {
+        defaultItem: {
+          label: "En savoir plus",
+          type: "button",
+          icon: false,
+          link: "/",
+        },
+        itemProps: (item) => ({ label: item.label }),
+      },
+      fields: [
+        {
+          label: "Titre",
+          name: "label",
+          type: "string",
+        },
+        {
+          label: "Type",
+          name: "type",
+          type: "string",
+          options: [
+            { label: "Bouton", value: "button" },
+            { label: "Lien", value: "link" },
+          ],
+        },
+        {
+          label: "Icon",
+          name: "icon",
+          type: "boolean",
+        },
+        {
+          label: "Lien",
+          name: "link",
+          type: "string",
+        },
+      ],
+    },
+    {
         type: "rich-text",
         label: "Description",
         name: "children",
-    },
-    {
-        type: 'object',
-        label: 'Composition',
-        name: 'artists',
-        list: true,
-        ui: {
-            itemProps: (item) => {
-                return { label: item?.name };
-              },
-        },
-        fields: [
-            {
-                type: "string",
-                label: "Nom",
-                name: "name",
-                required: true,
-              },
-              {
-                type: "image",
-                label: "Avatar",
-                name: "avatar",
-              },
-        ]
-    },
-    {
-        type: 'object',
-        label: 'Gallery',
-        name: 'galery',
-        list: true,
-        ui: {
-            itemProps: (item) => {
-                return { label: item?.name };
-              },
-        },
-        fields: [
-            {
-                type: "string",
-                label: "Nom",
-                name: "name",
-                required: true,
-              },
-              {
-                type: "image",
-                label: "Image",
-                name: "img",
-              },
-        ]
     },
   ],
 };

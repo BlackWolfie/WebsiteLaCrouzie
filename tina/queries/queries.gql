@@ -19,6 +19,27 @@ query pageQuery {
     }
   }
 }
+query artistQuery {
+  ...LayoutQueryFragment
+  artistConnection {
+    edges {
+      node {
+        name
+        img
+        actions {
+          label
+          type
+          icon
+          link
+        }
+        children
+        _sys {
+          filename
+        }
+      }
+    }
+  }
+}
 
 query contentQuery($relativePath: String!) {
   ...LayoutQueryFragment
