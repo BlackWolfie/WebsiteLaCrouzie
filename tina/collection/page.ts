@@ -8,6 +8,8 @@ import { heroFullBlockSchema } from "../../components/blocks/heroFull";
 import { carouselBlockSchema } from "../../components/blocks/carousel";
 import { carouselFeatureBlockSchema } from "../../components/blocks/carouselFeature";
 import { galleryBlockSchema } from "../../components/blocks/galery";
+import { defaultSeoPageProps, seoPageProps } from "@pcode-at/tinacms-seo";
+import { expertDefaultSeoPageProps, expertSeoPageProps } from "@pcode-at/tinacms-seo/dist/src/schema";
 
 const Page: Collection = {
   label: "Pages",
@@ -25,6 +27,7 @@ const Page: Collection = {
     },
   },
   fields: [
+    expertSeoPageProps,
     {
       type: "string",
       label: "Title",

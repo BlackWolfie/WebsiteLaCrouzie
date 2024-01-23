@@ -1,4 +1,9 @@
 ---
+seo:
+  title: Présentation | Debout les yeux | Occitanie
+  description: >-
+    Présentation de l'association Debout les Yeux et du lieu à la Crouzié,
+    Tanus.
 title: 'La ferme de La Crouzié, un épicentre culturel, artisanal et social'
 themes: content/themes/crouzie.json
 blocks:
