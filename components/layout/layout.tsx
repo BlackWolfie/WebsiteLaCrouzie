@@ -44,12 +44,12 @@ export const Layout = ({
           <meta property="og:title" content={SEO?.openGraph.title ? (SEO?.title && SEO?.title) : metatitle} />
           <meta property="og:url" content={SEO?.openGraph.url} />
           <meta property="og:description" content={SEO?.openGraph.description ? (SEO?.description && SEO?.description) : metadescription} />
-          <meta property="og:image" content={SEO?.openGraph.images.url} />
-          <meta property="og:image:width" content={SEO?.openGraph.images.width.toString()} />
-          <meta property="og:image:height" content={SEO?.openGraph.images.height.toString()}/>
+          <meta property="og:image" content={SEO?.openGraph.images?.url} />
+          <meta property="og:image:width" content={SEO?.openGraph.images?.width?.toString()} />
+          <meta property="og:image:height" content={SEO?.openGraph.images?.height?.toString()}/>
           </>
         )}
-        <link rel="icon" href="favicon.ico" />
+        <link rel="shortcut icon" href="favicon-lc-yellow.svg" type="image/x-icon"/>
         {data?.theme.font === "nunito" && (
           <>
             <link rel="preconnect" href="https://fonts.googleapis.com" />

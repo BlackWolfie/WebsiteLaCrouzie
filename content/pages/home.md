@@ -1,9 +1,29 @@
 ---
 seo:
-  title: Présentation | Debout les yeux | Occitanie
+  title: La Crouzié | Présentation | Occitanie
   description: >-
-    Présentation de l'association Debout les Yeux et du lieu à la Crouzié,
-    Tanus.
+    Découvrez La Ferme de La Crouzié : Un havre rural où la culture, l'artisanat
+    et le lien social prospèrent ensemble. Explorez nos ateliers artisanaux,
+    partagez notre passion pour les métiers traditionnels et vivez des
+    expériences culturelles inoubliables grâce à Debout les Yeux. Rejoignez
+    notre communauté où créativité et camaraderie fleurissent au cœur de la
+    campagne.
+  openGraph:
+    url: lacrouzie.fr
+    type: website
+    title: La Crouzié
+    description: >-
+      Découvrez La Ferme de La Crouzié : Un havre rural où la culture,
+      l'artisanat et le lien social prospèrent ensemble. Explorez nos ateliers
+      artisanaux, partagez notre passion pour les métiers traditionnels et vivez
+      des expériences culturelles inoubliables grâce à Debout les Yeux.
+      Rejoignez notre communauté où créativité et camaraderie fleurissent au
+      cœur de la campagne.
+    images:
+      url: /uploads/chapiteau.JPG
+      width: 1200
+      height: 900
+    siteName: La Crouzie
 title: 'La ferme de La Crouzié, un épicentre culturel, artisanal et social'
 themes: content/themes/crouzie.json
 blocks:

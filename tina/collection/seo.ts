@@ -34,6 +34,18 @@ export const expertSeoPageProps: TinaField = {
             type: "string",
             label: "Type",
             name: "type",
+            options: [
+              {
+                value: "website",
+                label: "Site Web"
+              }, {
+                value: "video",
+                label: "Video"
+              }, {
+                value: "article",
+                label: "Article"
+              }
+            ]
           },
           {
             type: "string",
