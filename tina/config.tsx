@@ -1,11 +1,11 @@
 import { defineConfig } from "tinacms";
 
-import Post from "./collection/post";
+import {Post, PostsSEO }from "./collection/post";
 import Global from "./collection/global";
 import Author from "./collection/author";
 import Page from "./collection/page";
 import Themes from "./collection/theme";
-import Artist from "./collection/artist";
+import {Artist, ArtistSEO} from "./collection/artist";
 
 const config = defineConfig({
   clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID!,
@@ -31,7 +31,7 @@ const config = defineConfig({
     outputFolder: "admin", // within the public folder
   },
   schema: {
-    collections: [Post, Global, Themes, Author, Page, Artist],
+    collections: [Page, Post, Author, Artist, PostsSEO, ArtistSEO, Global, Themes],
   },
 });
 

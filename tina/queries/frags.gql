@@ -4,3 +4,16 @@ fragment LayoutQueryFragment on Query {
   }
 }
 
+fragment ArtistQueryFragment on Query {
+  artistSeo(relativePath: "index.md"){
+    ...ArtistSeoParts
+  }
+}
+
+fragment PostsQueryFragment on Query {
+  PostsSeo(relativePath: "index.md"){
+    ...PostsSeoParts
+  }
+}
+
+

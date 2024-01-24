@@ -14,7 +14,7 @@ export default function HomePage(
   const theme = useTina(props.themeProps);
 
   return (
-    <Layout data={props.data.global as any} theme={props.data.global.theme as any} allThemes={theme.data.themesConnection as any} type={false}>
+    <Layout data={props.data.global as any} theme={props.data.global.theme as any} allThemes={theme.data.themesConnection as any} type={false} SEO={props.data.artistSeo.seo as any}>
       <Section className="flex-1">
         <Container size="large" width="large">
           <Artists data={artists} theme={props.data.global.theme.themes as Themes}/>

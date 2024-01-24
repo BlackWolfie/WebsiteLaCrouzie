@@ -13,7 +13,7 @@ export default function HomePage(
   const theme = useTina(props.themeProps);
 
   return (
-    <Layout data={props.data.global as any} theme={props.data.global.theme as any} allThemes={theme.data.themesConnection as any} type={false}>
+    <Layout data={props.data.global as any} theme={props.data.global.theme as any} allThemes={theme.data.themesConnection as any} type={false} SEO={props.data.PostsSeo.seo as any}>
       <Section className="flex-1">
         <Container size="large" width="small">
           <Posts data={posts} />

@@ -1,9 +1,13 @@
 import type { Collection } from "tinacms";
+import { expertSeoPageProps } from "./seo";
 
 const Post: Collection = {
   label: "Blog Posts",
   name: "post",
   path: "content/posts",
+  match: {
+    exclude: '**/**/index',
+  },
   format: "mdx",
   ui: {
     router: ({ document }) => {
@@ -11,6 +15,7 @@ const Post: Collection = {
     },
   },
   fields: [
+    expertSeoPageProps,
     {
       type: "string",
       label: "Title",
@@ -121,4 +126,23 @@ const Post: Collection = {
   ],
 };
 
-export default Post;
+const PostsSEO: Collection = {
+  label: "Posts SEO",
+  name: "PostsSeo",
+  path: "content/posts",
+  match: {
+    include: '**/**/index',
+  },
+  format: "md",
+  ui: {
+    allowedActions: {
+      create: false,
+      delete:false,
+    }
+  },
+  fields: [
+    expertSeoPageProps,
+  ],
+};
+
+export {Post, PostsSEO };

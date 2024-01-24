@@ -17,7 +17,7 @@ export default function BlogPostPage(
 
   if (data && data.post) {
     return (
-      <Layout type={false} data={data.global as any} theme={data.post as any} allThemes={theme.data.themesConnection as any}>
+      <Layout type={false} data={data.global as any} theme={data.post as any} allThemes={theme.data.themesConnection as any} SEO={data.post.seo as any}>
         <Post {...data.post} />
       </Layout>
     );

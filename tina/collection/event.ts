@@ -1,16 +1,21 @@
 import type { Collection } from "tinacms";
+import { expertSeoPageProps } from "./seo";
 
 const Event: Collection = {
   label: "Evenements",
   name: "event",
   path: "content/events",
   format: "mdx",
+  match: {
+    exclude: '**/**/index',
+  },
   ui: {
     router: ({ document }) => {
       return `/events/${document._sys.filename}`;
     },
   },
   fields: [
+    expertSeoPageProps,
     {
       type: "string",
       label: "Title",
@@ -89,6 +94,25 @@ const Event: Collection = {
       ],
       isBody: true,
     },
+  ],
+};
+
+const EventsSEO: Collection = {
+  label: "Evenements SEO",
+  name: "EventsSeo",
+  path: "content/events",
+  match: {
+    include: '**/**/index',
+  },
+  ui: {
+    allowedActions: {
+      create: false,
+      delete:false,
+    }
+  },
+  format: "md",
+  fields: [
+    expertSeoPageProps,
   ],
 };
 

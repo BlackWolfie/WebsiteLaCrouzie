@@ -4,7 +4,7 @@ import { Header } from "./header";
 import { Footer } from "./footer";
 import { Theme } from "./theme";
 import layoutData from "../../content/global/index.json";
-import { Global , Page, ThemesConnection} from "../../tina/__generated__/types";
+import { Global , Page, PageSeo, ThemesConnection} from "../../tina/__generated__/types";
 import { Icon } from "../util/svg";
 import ScrollToTopButton from "../util/scrollToTop";
 
@@ -13,22 +13,43 @@ export const Layout = ({
   data ,
   theme ,
   allThemes,
+  SEO,
   children,
 }: {
   type?: boolean;
   data?: Omit<Global, "id" | "_sys" | "_values">;
   theme?: Page;
   allThemes?: ThemesConnection;
+  SEO?: PageSeo;
   children: React.ReactNode;
 }) => {
+  const metatitle= "Debout les Yeux ";
+  const metadescription = "Découvrez les évènements à l'affiche avec l'association Debout Les Yeux. Les cours hebdomadaires proposés, les activités du café associatif et les évènements et festival à venir.";
   return (
     <>
       <Head>
-        {}
-        <title>Debout les Yeux </title>
+        <title>{SEO?.title ? SEO?.title : metatitle}</title>
         <meta charSet="UTF-8" />
-        <meta name="description" content="Découvrez les évènements à l'affiche avec l'association Debout Les Yeux. Les cours hebdomadaires proposés, les activités du café associatif et les évènements et festival à venir."/>
+        <meta name="description" content={SEO?.description ? SEO?.description : metadescription}/>
+        <meta name="robot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"/>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        {/* Meta Key Word */}
+        <meta name="Keyword" content={SEO?.addtionalMetaTags?.toString()}/>
+        {/* OPEN GRAPH META */}
+        { SEO?.openGraph && (
+          <>
+          <meta property="og:locale" content="fr-FR"/>
+          <meta property="og:type" content={SEO?.openGraph.type ? SEO?.openGraph.type : 'siteweb'}/>
+          <meta property="og:site_name" content={SEO?.openGraph.siteName ? SEO?.openGraph.siteName : "La Crouzié"} />
+          <meta property="og:title" content={SEO?.openGraph.title ? (SEO?.title && SEO?.title) : metatitle} />
+          <meta property="og:url" content={SEO?.openGraph.url} />
+          <meta property="og:description" content={SEO?.openGraph.description ? (SEO?.description && SEO?.description) : metadescription} />
+          <meta property="og:image" content={SEO?.openGraph.images.url} />
+          <meta property="og:image:width" content={SEO?.openGraph.images.width.toString()} />
+          <meta property="og:image:height" content={SEO?.openGraph.images.height.toString()}/>
+          </>
+        )}
+        <link rel="icon" href="favicon.ico" />
         {data?.theme.font === "nunito" && (
           <>
             <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -60,7 +81,7 @@ export const Layout = ({
           </>
         )}
       </Head>
-      <div className="flex flex-col flex-nowrap fixed right-2 z-50 top-48 ">
+      <div className="flex fixed right-2 top-48 z-50 flex-col flex-nowrap">
         {allThemes?.edges.map((item, i)=> {
           let t = null 
           item.node.header.nav && item.node.header.nav.map((e)=>{                
@@ -70,17 +91,17 @@ export const Layout = ({
           return (
             <a href={t} key={i}>
               <Icon
-                className={` hover`}
+                className={`hover`}
                 data={{
                   name: item.node.header.icon.favicon,
-                  color: theme?.themes.theme.colorSecondary ? theme?.themes.theme.colorSecondary : data.theme.themes.theme.colorSecondary ,
+                  color: theme?.themes?.theme.colorSecondary ? theme?.themes.theme.colorSecondary : data.theme.themes.theme.colorSecondary ,
                   size: "xxl"
                 }}
               />
             </a>
           )
         })}
-        <ScrollToTopButton color={theme?.themes.theme.colorSecondary ? theme?.themes.theme.colorSecondary : data.theme.themes.theme.colorSecondary}/>
+        <ScrollToTopButton color={theme?.themes?.theme.colorSecondary ? theme?.themes.theme.colorSecondary : data.theme.themes.theme.colorSecondary}/>
       </div>
       <Theme data={data?.theme}>
         <div
@@ -89,16 +110,16 @@ export const Layout = ({
           } ${data?.theme.font === "lato" && "font-lato"} ${
             data?.theme.font === "sans" && "font-sans"
           } ${data?.theme.font === "montserrat" && "font-montserrat"} 
-          ${theme?.themes._sys.filename}`}
+          ${theme?.themes?._sys.filename}`}
         >
-          <Header type={type} data={theme.themes} title={theme.title? theme.title : 'La Crouzié'}/>
-          <div className="flex-1 text-gray-800 bg-gradient-to-br from-white to-gray-50 dark:from-gray-900 dark:to-gray-1000 flex flex-col">
+          <Header type={type} data={theme?.themes ? theme.themes : data.theme.themes} title={theme?.title? theme.title : 'La Crouzié'}/>
+          <div className="flex flex-col flex-1 text-gray-800 bg-gradient-to-br from-white to-gray-50 dark:from-gray-900 dark:to-gray-1000">
             {children}
           </div>
           <Footer
             data={data?.footer}
-            theme={theme?.themes.theme ? theme?.themes.theme : data.theme.themes.theme}
-            Style={theme?.themes._sys.filename}/>
+            theme={theme?.themes?.theme ? theme?.themes.theme : data.theme.themes.theme}
+            Style={theme?.themes?._sys.filename}/>
         </div>
       </Theme>
     </>

@@ -1,9 +1,13 @@
 import type { Collection } from "tinacms";
+import { expertSeoPageProps } from "./seo";
 
 const Artist: Collection = {
   label: "Artist",
   name: "artist",
   path: "content/artists",
+  match: {
+    exclude: '**/**/index',
+  },
   format: "md",
   fields: [
     {
@@ -66,4 +70,23 @@ const Artist: Collection = {
     },
   ],
 };
-export default Artist;
+const ArtistSEO: Collection = {
+  label: "Artist SEO",
+  name: "artistSeo",
+  path: "content/artists",
+  match: {
+    include: '**/**/index',
+  },
+  format: "md",
+  ui: {
+    allowedActions: {
+      create: false,
+      delete:false,
+    }
+  },
+  fields: [
+    expertSeoPageProps,
+  ],
+};
+
+export {Artist, ArtistSEO};

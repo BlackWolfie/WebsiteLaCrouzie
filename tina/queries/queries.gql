@@ -1,5 +1,6 @@
 query pageQuery {
   ...LayoutQueryFragment
+  ...PostsQueryFragment
   postConnection {
     edges {
       node {
@@ -21,6 +22,7 @@ query pageQuery {
 }
 query artistQuery {
   ...LayoutQueryFragment
+  ...ArtistQueryFragment
   artistConnection {
     edges {
       node {
