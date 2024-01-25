@@ -41,7 +41,7 @@ export const Artists = ({ data, theme }: { data: ArtistsType[], theme: Themes })
               {artist.children && (
                 <div
                   data-tina-field={tinaField(artist, "children")}
-                  className={`mx-auto mb-10 prose prose-lg md:mx-0 prose-dark`}
+                  className={`mx-auto mb-10 md:mx-0`}
                 >
                   <TinaMarkdown content={artist.children} />
                 </div>

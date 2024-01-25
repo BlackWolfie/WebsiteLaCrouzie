@@ -70,11 +70,11 @@ const components: Components<{
   NewsletterSignup: (props) => {
     return (
       <div className="bg-white">
-        <div className="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
+        <div className="px-4 py-8 mx-auto max-w-7xl sm:px-6 lg:px-8">
           <div className="">
             <TinaMarkdown content={props.children} />
           </div>
-          <div className="mt-8 ">
+          <div className="mt-8">
             <form className="sm:flex">
               <label htmlFor="email-address" className="sr-only">
                 Email address
@@ -85,13 +85,13 @@ const components: Components<{
                 type="email"
                 autoComplete="email"
                 required
-                className="w-full px-5 py-3 border border-gray-300 shadow-sm placeholder-gray-400 focus:ring-1 focus:ring-teal-500 focus:border-teal-500 sm:max-w-xs rounded-md"
+                className="px-5 py-3 w-full placeholder-gray-400 rounded-md border border-gray-300 shadow-sm focus:ring-1 focus:ring-teal-500 focus:border-teal-500 sm:max-w-xs"
                 placeholder={props.placeholder}
               />
               <div className="mt-3 rounded-md shadow sm:mt-0 sm:ml-3 sm:flex-shrink-0">
                 <button
                   type="submit"
-                  className="w-full flex items-center justify-center py-3 px-5 border border-transparent text-base font-medium rounded-md text-white bg-teal-600 hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500"
+                  className="flex justify-center items-center px-5 py-3 w-full text-base font-medium text-white bg-teal-600 rounded-md border border-transparent hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500"
                 >
                   {props.buttonText}
                 </button>
@@ -106,7 +106,7 @@ const components: Components<{
     );
   },
   img: (props) => (
-    <span className="flex items-center justify-center">
+    <span className="flex justify-center items-center">
       <img src={props.url} alt={props.alt} />
     </span>
   ),
@@ -139,7 +139,7 @@ export const Post = (props: PostType) => {
       <Container width="medium" className={`flex-1 pb-2`} size="large">
         <h2
           data-tina-field={tinaField(props, "title")}
-          className={`w-full relative	mb-8 text-6xl font-extrabold tracking-normal text-center title-font`}
+          className={`relative mb-8 w-full text-6xl font-extrabold tracking-normal text-center title-font`}
         >
           <span
             className={`bg-clip-text text-transparent bg-gradient-to-r ${
@@ -151,14 +151,14 @@ export const Post = (props: PostType) => {
         </h2>
         <div
           data-tina-field={tinaField(props, "author")}
-          className="flex items-center justify-center mb-16"
+          className="flex justify-center items-center mb-16"
         >
           {props.author && (
             <>
               <div className="flex-shrink-0 mr-4">
                 <img
                   data-tina-field={tinaField(props.author, "avatar")}
-                  className="h-14 w-14 object-cover rounded-full shadow-sm"
+                  className="object-cover w-14 h-14 rounded-full shadow-sm"
                   src={props.author.avatar}
                   alt={props.author.name}
                 />
@@ -169,7 +169,7 @@ export const Post = (props: PostType) => {
               >
                 {props.author.name}
               </p>
-              <span className="font-bold text-gray-200 dark:text-gray-500 mx-2">
+              <span className="mx-2 font-bold text-gray-200 dark:text-gray-500">
                 —
               </span>
             </>
@@ -186,7 +186,7 @@ export const Post = (props: PostType) => {
         <div className="px-4 w-full">
           <div
             data-tina-field={tinaField(props, "heroImg")}
-            className="relative max-w-4xl lg:max-w-5xl mx-auto"
+            className="relative mx-auto max-w-4xl lg:max-w-5xl"
           >
             <img
               src={props.heroImg}
@@ -196,7 +196,7 @@ export const Post = (props: PostType) => {
             <img
               src={props.heroImg}
               alt={props.title}
-              className="relative z-10 mb-14 block rounded-lg w-full h-auto opacity-100"
+              className="block relative z-10 mb-14 w-full h-auto rounded-lg opacity-100"
             />
           </div>
         </div>
@@ -204,7 +204,7 @@ export const Post = (props: PostType) => {
       <Container className={`flex-1 pt-4`} width="small" size="large">
         <div
           data-tina-field={tinaField(props, "_body")}
-          className="prose dark:prose-dark w-full max-w-none"
+          className="w-full max-w-none"
         >
           <TinaMarkdown components={components} content={props._body} />
         </div>

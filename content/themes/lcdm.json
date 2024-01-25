@@ -5,7 +5,14 @@
       "name": "Lcdm",
       "favicon": "Lcdm"
     },
-    "img": "/uploads/gpe-photos-lcdm.jpg"
+    "img": "/uploads/gpe-photos-lcdm.jpg",
+    "nav": [
+      {
+        "default": true,
+        "href": "/lacrouziedesmetiers",
+        "label": "La Crouzié Des Metiers"
+      }
+    ]
   },
   "theme": {
     "colorPrimary": "#885527",

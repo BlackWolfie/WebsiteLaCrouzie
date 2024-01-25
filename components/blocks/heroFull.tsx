@@ -16,27 +16,26 @@ export const HeroFull = ({ data, theme }: { data: PageBlocksHeroFull, theme:Them
       <Container
         size="large"
         width="xlarge"
-        className="grid gap-14 items-center justify-center max-w-none bg-cover bg-center"
+        className="grid gap-14 justify-center items-center max-w-none bg-center bg-cover"
         style={{ backgroundImage: `url(${data.src ? data.src : ''})` }}
       >
-        <div className={`row-start-2  max-w-7xl
-         md:row-start-1 md:col-span-3 text-center md:text-left`}>
+        <div className={`row-start-2 max-w-7xl text-center md:row-start-1 md:col-span-3 md:text-left`}>
           {data.tagline && (
             <h6
               data-tina-field={tinaField(data, "tagline")}
-              className={`relative inline-block px-3 py-1 mb-8 text-md font-bold tracking-wide title-font z-20`}
+              className={`inline-block relative z-20 px-3 py-1 mb-8 font-bold tracking-wide text-md title-font`}
             >
               {data.tagline}
-              <span className="absolute w-full h-full left-0 top-0 rounded-full -z-1 bg-current opacity-7"></span>
+              <span className="absolute top-0 left-0 w-full h-full bg-current rounded-full -z-1 opacity-7"></span>
             </h6>
           )}
           {data.headline && (
             <h3
               data-tina-field={tinaField(data, "headline")}
-              className={`w-full relative	mb-10 text-5xl font-extrabold tracking-normal leading-tight title-font`}
+              className={`relative mb-10 w-full text-5xl font-extrabold tracking-normal leading-tight title-font`}
             >
               <span
-                className={`bg-clip-text `}
+                className={`bg-clip-text`}
               >
                 {data.headline}
               </span>
@@ -45,7 +44,7 @@ export const HeroFull = ({ data, theme }: { data: PageBlocksHeroFull, theme:Them
           {data.text && (
             <div
               data-tina-field={tinaField(data, "text")}
-              className={` prose-lg mx-auto md:mx-0 mb-10 prose-dark`}
+              className={`mx-auto mb-10  md:mx-0`}
               style={{ color: `${data.colorFull ? data.colorFull : ''}` }}
             >
               <TinaMarkdown content={data.text} />

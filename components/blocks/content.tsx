@@ -17,25 +17,25 @@ export const Content = ({ data , theme}: { data: PageBlocksContent , theme:Theme
         {data.tagline && (
             <h6
               data-tina-field={tinaField(data, "tagline")}
-              className={`relative inline-block px-3 py-1 mb-2 text-md font-bold tracking-wide title-font z-20 text-center left-1/2 -translate-x-1/2`}
+              className={`inline-block relative left-1/2 z-20 px-3 py-1 mb-2 font-bold tracking-wide text-center -translate-x-1/2 text-md title-font`}
             >
               {data.tagline}
-              <span className="absolute w-full h-full left-0 top-0 rounded-full -z-1 bg-current opacity-7"></span>
+              <span className="absolute top-0 left-0 w-full h-full bg-current rounded-full -z-1 opacity-7"></span>
             </h6>
           )}
           {data.headline && (
             <h3
               data-tina-field={tinaField(data, "headline")}
-              className={`w-full relative	mb-4 text-5xl font-extrabold tracking-normal leading-tight title-font text-center`}
+              className={`relative mb-4 w-full text-5xl font-extrabold tracking-normal leading-tight text-center title-font`}
             >
               <span
-                className={`bg-clip-text  `}
+                className={`bg-clip-text`}
               >
                 {data.headline}
               </span>
             </h3>
           )}
-        <div className={` prose prose-lg text-center max-w-none content`}>
+        <div className={`max-w-none text-center content`}>
           <TinaMarkdown content={data.body}/>
         </div>
       </Container>

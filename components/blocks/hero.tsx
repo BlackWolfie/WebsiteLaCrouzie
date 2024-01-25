@@ -43,7 +43,7 @@ export const Hero = ({ data, theme }: { data: PageBlocksHero, theme:Themes }) =>
           {data.text && (
             <div
               data-tina-field={tinaField(data, "text")}
-              className={`mx-auto mb-10 prose prose-lg md:mx-0 prose-dark`}
+              className={`mx-auto mb-10 md:mx-0`}
             >
               <TinaMarkdown content={data.text} />
             </div>
