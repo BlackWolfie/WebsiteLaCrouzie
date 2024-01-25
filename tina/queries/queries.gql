@@ -43,6 +43,24 @@ query artistQuery {
   }
 }
 
+query eventsQuery {
+  ...LayoutQueryFragment
+  ...EventsQueryFragment
+  eventConnection{
+    edges {
+      node {
+        ... on Document {
+          _sys {
+            filename
+          }
+          id
+        }
+        ...EventParts
+      }
+    }
+  }
+}
+
 query contentQuery($relativePath: String!) {
   ...LayoutQueryFragment
   page(relativePath: $relativePath) {
