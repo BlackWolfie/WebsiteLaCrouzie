@@ -34,18 +34,10 @@ const Event: Collection = {
       name: "excerpt",
     },
     {
-      type: 'object',
-      label: "Artistes",
-      name: "artists",
-      list: true,
-      fields:[
-        {
-            type: 'reference',
-            label: 'Artiste',
-            name: 'artist',
-            collections: ['artist'],
-        }
-      ]
+      type: 'reference',
+      label: 'Artiste',
+      name: 'artist',
+      collections: ['artist'],
     },
     {
       type: "datetime",
@@ -116,4 +108,4 @@ const EventsSEO: Collection = {
   ],
 };
 
-export default Event;
+export {Event, EventsSEO };

@@ -5,29 +5,26 @@
       "nav": [
         {
           "name": "La Crouzié",
-          "link": "/#"
+          "link": "/"
         },
         {
           "name": "Debout Les Yeux",
-          "link": "/##"
+          "link": "/deboutlesyeux"
         },
         {
           "name": "À l'affiche",
-          "link": "/###"
-        },
-        {
-          "name": "Festival",
-          "link": "/####"
+          "link": "/events"
         },
         {
           "name": "La Crouzié Des Métiers",
-          "link": "/######"
+          "link": "/crouziedesmetiers"
         }
       ]
     },
     "contact": {
       "name": "Contact",
       "addr": "lieu-dit la Crouzié, 81190 Tanus",
+      "laddr": "https://www.google.com/maps/place/La+Crouzie,+81190+Tanus/@44.0950307,2.2775849,17z/data=!3m1!4b1!4m10!1m2!2m1!1sla+crouzi%C3%A9!3m6!1s0x12ad92eb2c1124d3:0x5f4309b33b6a3ad6!8m2!3d44.095027!4d2.2824558!15sCgtsYSBjcm91emnDqZIBBXJvdXRl4AEA!16s%2Fg%2F1tdslty9?entry=ttu",
       "phone": [
         "06 69 18 87 86"
       ],

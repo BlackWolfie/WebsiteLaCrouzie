@@ -6,6 +6,7 @@ import Author from "./collection/author";
 import Page from "./collection/page";
 import Themes from "./collection/theme";
 import {Artist, ArtistSEO} from "./collection/artist";
+import { Event, EventsSEO } from "./collection/event";
 
 const config = defineConfig({
   clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID!,
@@ -31,7 +32,7 @@ const config = defineConfig({
     outputFolder: "admin", // within the public folder
   },
   schema: {
-    collections: [Page, Post, Author, Artist, PostsSEO, ArtistSEO, Global, Themes],
+    collections: [Page, Post, Author, Event, Artist, PostsSEO, EventsSEO, ArtistSEO, Global, Themes],
   },
 });
 

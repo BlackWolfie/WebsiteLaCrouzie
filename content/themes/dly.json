@@ -9,16 +9,21 @@
     "nav": [
       {
         "default": true,
-        "href": "theme",
-        "label": "Home"
+        "href": "/deboutlesyeux",
+        "label": "Debout Les Yeux"
       },
       {
-        "href": "about",
-        "label": "About"
+        "default": false,
+        "href": "/events",
+        "label": "À l'Affiche"
       },
       {
-        "href": "posts",
-        "label": "Blog"
+        "href": "/artists",
+        "label": "Artistes"
+      },
+      {
+        "href": "/contact",
+        "label": "Contact"
       }
     ]
   },
