@@ -9,22 +9,20 @@
     "nav": [
       {
         "default": true,
-        "href": "/##",
-        "label": "Home1",
-        "subNav": [
-          {
-            "href": "home",
-            "label": "Home"
-          },
-          {
-            "href": "home",
-            "label": "Home"
-          }
-        ]
+        "href": "/",
+        "label": "La Crouzié"
       },
       {
-        "href": "#",
-        "label": "Home 2"
+        "href": "/deboutlesyeux",
+        "label": "Debout Les Yeux"
+      },
+      {
+        "href": "/lacrouziedesmetiers",
+        "label": "La Crouzié Des Métiers"
+      },
+      {
+        "href": "#contact",
+        "label": "Contact"
       }
     ]
   },

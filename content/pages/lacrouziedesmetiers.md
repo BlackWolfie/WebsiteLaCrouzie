@@ -1,0 +1,205 @@
+---
+seo:
+  title: La Crouzié des Métiers
+  description: >-
+    La Crouzié des Métiers : Un hub dynamique pour la valorisation et la
+    transmission des savoir-faire diversifiés. Location d'espaces de travail,
+    stages, échanges entre artisans, événements publics, et bien plus encore. Un
+    modèle économique responsable réinvestissant dans notre communauté.
+    Rejoignez cette aventure collective, favorisant la croissance
+    professionnelle au cœur d'une communauté solidaire.
+  openGraph:
+    url: lacrouzie.fr/lacrouziedesmetiers
+    type: website
+    title: La Crouzié des Métiers
+    description: >-
+      La Crouzié des Métiers : Un hub dynamique pour la valorisation et la
+      transmission des savoir-faire diversifiés. Location d'espaces de travail,
+      stages, échanges entre artisans, événements publics, et bien plus encore.
+      Un modèle économique responsable réinvestissant dans notre communauté.
+      Rejoignez cette aventure collective, favorisant la croissance
+      professionnelle au cœur d'une communauté solidaire.
+    images:
+      url: /uploads/gpe-photos-lcdm.jpg
+      width: 900
+      height: 500
+title: 'La Crouzié Des Métiers, savoir-faire et artisanat en action'
+themes: content/themes/lcdm.json
+blocks:
+  - tagline: ''
+    headline: ''
+    body: >
+      ## Découvrez La Crouzié Des Métiers : Promouvoir, Préserver et Transmettre
+      les Savoir-Faire
+
+
+      Au cœur d'un environnement dynamique et diversifié, l'association La
+      Crouzié Des Métiers s'engage passionnément dans la valorisation, la
+      conservation et la transmission d'une vaste gamme de savoir-faire. Notre
+      mission est aussi diversifiée que nos membres, englobant les métiers de
+      l'artisanat, les compétences agricoles, culinaires, artistiques, et bien
+      plus encore.
+
+
+      Une palette d'opportunités !
+
+
+      Nous offrons une multitude d'opportunités pour atteindre ces objectifs
+      ambitieux :
+
+
+      * Locations d'espaces de travail :
+
+
+      La Crouzié met à disposition un espace de travail partagé où des artisans
+      indépendants ont établi leurs entreprises. Cette mutualisation de
+      ressources, de matériel et de compétences facilite le quotidien de nos
+      membres.
+
+
+      * Fabrication accompagnée :
+
+
+      Pour ceux qui ont besoin de soutien technique ou d'accéder à des
+      équipements spécifiques, nous proposons une assistance à la fabrication
+      d'objets.
+
+
+      * Stages et formations :
+
+
+      Notre association organise régulièrement des stages et des formations pour
+      l'acquisition de nouvelles compétences ou le perfectionnement des
+      techniques existantes.
+
+
+      * Échanges et partage :
+
+
+      Nous encourageons vivement les échanges et la collaboration entre nos
+      membres. Ces interactions favorisent la transmission des savoirs et
+      l'enrichissement mutuel.
+
+
+      * Évènements publics :
+
+
+      La Crouzié ouvre ses portes au public lors d'évènements ponctuels,
+      permettant ainsi de sensibiliser la communauté locale aux métiers de
+      l'artisanat et de mettre en avant le talent de nos membres.
+
+
+      * Intervenants extérieurs :
+
+
+      Nous sommes également ouverts à l'accueil d'intervenants extérieurs pour
+      présenter leurs métiers et compétences, élargissant ainsi nos horizons.
+
+
+      Un modèle économique responsable !
+
+
+      Les activités économiques de l'association, telles que les locations
+      d'espaces de travail et les accompagnements, génèrent des revenus.
+      Cependant, ces revenus sont réinvestis de manière exclusive dans le  bon
+      fonctionnement de nos ateliers et la rémunération équitable des artisans
+      présents.
+
+
+      Une vision de partage et de croissance !
+
+
+      Notre lieu de travail partagé incarne la volonté première de mutualiser
+      les lieux, les équipements, et les compétences pour alléger la charge
+      quotidienne de nos membres.
+
+
+      La Crouzié Des Métiers a pour vocation de favoriser la transmission des
+      savoirs artisanaux,  de soutenir la mutualisation des moyens techniques,
+      et de valoriser les échanges entre professionnels. Pour concrétiser cette
+      vision, nous avons récemment élargi nos espaces de travail, offrant ainsi
+      de nouvelles opportunités de location.
+
+
+      \- Location ponctuelle à des professionels :
+
+
+      Vous êtes un travailleur indépendant (artisan, architecte, comptable,
+      manager artistique...) et vous souhaitez utiliser un lieu de travail
+      partagé pour répondre à un besoin ponctuel. Une journée, une semaine,  un
+      mois... venez travailler à la Crouzié le temps de la réalisation d'un
+      projet spécifique ou pour répondre à un besoin technique que nous pouvons
+      vous apporter (ateliers équipés de machines outils, cadre de travail 
+      agréable, échanges avec les autres professionnels du lieu...).
+
+
+      \- Location longue durée à des professionels :
+
+
+      Vous êtes un artisan indépendant ayant une activité stable. Au delà de la
+      gestion de votre entreprise, vous avez le désir de transmettre votre
+      savoir et de partager votre atelier.
+
+
+      Après quelques temps passés à la Crouzié (étape 1, minimum 6 mois), vous
+      souhaitez vous impliquer davantage dans la vie du Pôle (bois, métal,
+      aiguilles) sur lequel vous travaillez. Vous devenez un des responsables et
+      serez donc en charge du bon fonctionnement de votre atelier. Vous avez ici
+      l'opportunité d'accéder à un poste de travail fixe et le devoir d'être
+      acteur de l'association La Crouzié des Métiers.
+
+
+      \- Devenir propriétaire via la SCI Epilibre :
+
+
+      Après au moins une année en étape 2, le développement de la Crouzié est
+      devenu au fil des mois une priorité  pour vous et vous souhaitez vous
+      engager pleinement dans la gestion des activités du lieu.
+
+
+      Vous avez la capacité de fonctionner en collectif : organisation, remise
+      en question et évolution personnelle, fiabilité, autonomie.
+
+
+      Un investissement humain et financier vous sera demandé. Vous serez
+      co-décisionnaire, gardien des valeurs et responsable de l'ensemble des
+      actions du collectif. Vous serez en charge de l'entretien de votre espace
+      de travail mais aussi de l'ensemble des terres et des bâtiments
+      appartenant à la SCI (10 ha). Vous devenez un des propriétaires de la SCI
+      Epilibre.
+    _template: content
+  - tagline: ''
+    headline: Atelier des aiguilles
+    text: >
+      Un artisan des métiers de la couture (maroquinerie, sellerie garnissage,
+      tapisserie d’ameublement,
+       cordonnerie, couture…) pour faire évoluer l’Atelier des Aiguilles. Cet atelier déjà en place attend son deuxième travailleur pour être agencé. L’emplacement des machines et espaces de travail reste à définir pour faire ensuite les aménagements nécessaires.
+
+
+      Espace atelier :
+
+
+
+      Local de 43m² fraîchement éco-restauré, équipé d’un poêle à bois.
+
+
+
+      Machines et outils :
+
+
+      Machines à coudre Singer 29K, Adler 69, Pfaff 450, Singer 49k, Singer de
+      bourrellerie, Textima, machine de couture tissus mécanique et électrique,
+      pareuse, surjeteuse, presse à riveter, graveuse laser, grande table de
+      coupe.
+                  
+    actions:
+      - label: RÈGLEMENT DE L'ATELIER AIGUILLES
+        type: button
+        icon: false
+        link: /uploads/pdf/reglement-interieur-aiguilles.pdf
+    image:
+      src: /uploads/lena-cuir.jpg
+      alt: atelier des aiguilles
+    _template: hero
+---
+

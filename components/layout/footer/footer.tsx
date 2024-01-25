@@ -18,7 +18,7 @@ const style = {
   const [email, setEmail] = React.useState("");
   const onChange = ({ target }) => setEmail(target.value);
   return (
-    <footer className={`font-semibold leading-7 bg-right bg-no-repeat bg-cover back-footer-${Style} lg:bg-center`}>
+    <footer id="contact" className={`font-semibold leading-7 bg-right bg-no-repeat bg-cover back-footer-${Style} lg:bg-center`}>
       <Container className="relative pt-40" size="small">
         <div className='flex flex-row flex-wrap justify-around'>
           <div className='flex-grow mx-2 my-6 sm:flex-grow-0'>
