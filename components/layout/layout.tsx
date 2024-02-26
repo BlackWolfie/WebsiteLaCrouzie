@@ -3,10 +3,10 @@ import Head from "next/head";
 import { Header } from "./header";
 import { Footer } from "./footer";
 import { Theme } from "./theme";
-import layoutData from "../../content/global/index.json";
 import { Global , Page, PageSeo, ThemesConnection} from "../../tina/__generated__/types";
 import { Icon } from "../util/svg";
 import ScrollToTopButton from "../util/scrollToTop";
+import StyledComponentsRegistry from '../util/registry'
 
 export const Layout = ({
   type,
@@ -114,7 +114,7 @@ export const Layout = ({
         >
           <Header type={type} data={theme?.themes ? theme.themes : data.theme.themes} title={theme?.title? theme.title : 'La Crouzié'}/>
           <div className="flex flex-col flex-1 text-gray-800 bg-gradient-to-br from-white to-gray-50 dark:from-gray-900 dark:to-gray-1000">
-            {children}
+          <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
           </div>
           <Footer
             data={data?.footer}
