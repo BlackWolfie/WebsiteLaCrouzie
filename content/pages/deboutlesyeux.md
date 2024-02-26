@@ -29,6 +29,8 @@ blocks:
       proposé par les bénévoles. Il est fermé en cas d'évènement le samedi.
 
 
+
+
       Mais le Café Associatif va au-delà de la simple offre de restauration et
       de divertissement. Debout Les yeux organise également des événements
       ludiques et participatifs à vocation sociale lors de chaque ouverture. Ces

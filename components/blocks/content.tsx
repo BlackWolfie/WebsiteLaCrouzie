@@ -5,6 +5,7 @@ import { TinaMarkdown } from "tinacms/dist/rich-text";
 import type { Template } from "tinacms";
 import { PageBlocksContent, Themes, ThemesTheme } from "../../tina/__generated__/types";
 import { tinaField } from "tinacms/dist/react";
+import RichText from "../styled/MDXRichText";
 
 export const Content = ({ data , theme}: { data: PageBlocksContent , theme:Themes }) => {
   return (
@@ -36,7 +37,8 @@ export const Content = ({ data , theme}: { data: PageBlocksContent , theme:Theme
             </h3>
           )}
         <div className={`max-w-none text-center content`}>
-          <TinaMarkdown content={data.body}/>
+          <RichText content={data.body}/>
+          {/* <TinaMarkdown content={data.body}/> */}
         </div>
       </Container>
     </Section>
@@ -67,6 +69,51 @@ export const contentBlockSchema: Template = {
       type: "rich-text",
       label: "Body",
       name: "body",
+      templates: [
+        {
+          name: 'Quote',
+          label: 'Quote',
+          fields: [
+            {
+              type: 'string',
+              name: 'content',
+              label: 'Content',
+            },
+            {
+              type: 'string',
+              name: 'author',
+              label: 'Author',
+            },
+            {
+              type: 'string',
+              name: 'cite',
+              label: 'Cite',
+            },
+          ],
+        },
+        {
+          name: 'ArticleImage',
+          label: 'ArticleImage',
+          fields: [
+            {
+              type: 'string',
+              name: 'src',
+              label: 'Src',
+            },
+            {
+              type: 'string',
+              name: 'caption',
+              label: 'Caption',
+            },
+          ],
+        },
+        {
+          name: 'br',
+          label: 'Saut de ligne',
+          inline: true,
+          fields: [{ type: 'rich-text', name: 'children', label: 'Content' }],
+        },
+      ],
     },
   ],
 };

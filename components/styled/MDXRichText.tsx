@@ -45,8 +45,6 @@ const Container = styled.div`
 `;
 
 const Paragraph = styled.p`
-  font-size: 1.8rem;
-  line-height: 2.7rem;
   hanging-punctuation: first;
 
   &:not(:last-child) {
