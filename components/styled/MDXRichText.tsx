@@ -32,11 +32,12 @@ const Container = styled.div`
 
   ol,
   ul {
-    font-size: 1.8rem;
-    line-height: 2.7rem;
     margin: 0;
     padding-left: 2.4rem;
     li {
+      list-style: disc;
+      width: fit-content;
+      margin: auto;
       & > * {
         vertical-align: top;
       }
@@ -46,6 +47,7 @@ const Container = styled.div`
       margin-bottom: 2.7rem;
     }
   }
+  
 `;
 
 const Paragraph = styled.p`
