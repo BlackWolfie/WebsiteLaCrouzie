@@ -7,11 +7,12 @@ import { TinaMarkdown } from "tinacms/dist/rich-text";
 import type { Template } from "tinacms";
 import { PageBlocksHero, Themes } from "../../tina/__generated__/types";
 import { tinaField } from "tinacms/dist/react";
+import RichText from "../styled/MDXRichText";
 
 export const Hero = ({ data, theme }: { data: PageBlocksHero, theme:Themes }) => {
   //const theme = useTheme();
   return (
-    <Section color={theme._sys.filename}>
+    <Section>
       <Container
         size="large"
         width="xlarge"
@@ -45,7 +46,9 @@ export const Hero = ({ data, theme }: { data: PageBlocksHero, theme:Themes }) =>
               data-tina-field={tinaField(data, "text")}
               className={`mx-auto mb-10 md:mx-0`}
             >
-              <TinaMarkdown content={data.text} />
+              <RichText content={data.text}/>
+
+              {/* <TinaMarkdown content={data.text} /> */}
             </div>
           )}
           {data.actions && (
@@ -104,6 +107,13 @@ export const heroBlockSchema: Template = {
       label: "Text",
       name: "text",
       type: "rich-text",
+      templates: [
+        {
+          name: 'br',
+          label: 'Saut de ligne',
+          fields: [{ type: 'string', name: 'children', label: 'Content' }],
+        },
+      ],
     },
     {
       label: "Boutton",

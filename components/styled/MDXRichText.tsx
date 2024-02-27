@@ -11,7 +11,11 @@ const Container = styled.div`
 
   flex-direction: column;
   width: 100%;
-
+  color: inherit;
+  p {
+    font-size: 16px;
+    line-height: 150%;
+  }
   section:not(:last-child) {
     margin-bottom: 3.8rem;
   }
@@ -56,17 +60,31 @@ const Paragraph = styled.p`
     margin-top: -1.5rem !important;
   }
 `;
+const FirstHeading = styled.h1`
+  line-height: 3.9rem;
+  margin-bottom: 3.9rem;
+`;
 
 const SecondHeading = styled.h2`
-  font-size: 2.5rem;
   line-height: 3.75rem;
   margin-bottom: 3.75rem;
 `;
 
 const ThirdHeading = styled.h3`
-  font-size: 2.2rem;
   line-height: 3.4rem;
   margin-bottom: 3.4rem;
+`;
+const FourthHeading = styled.h4`
+  line-height: 3.2rem;
+  margin-bottom: 3.2rem;
+`;
+const FiftHeading = styled.h5`
+  line-height: 2.9rem;
+  margin-bottom: 2.9rem;
+`;
+const SixtHeading = styled.h6`
+  line-height: 2.7rem;
+  margin-bottom: 2.7rem;
 `;
 
 const Break = styled.br`
@@ -87,8 +105,12 @@ const TextHighlight = styled.code`
 `;
 
 const components = {
+  h1: FirstHeading,
   h2: SecondHeading,
   h3: ThirdHeading,
+  h4: FourthHeading,
+  h5: FiftHeading,
+  h6: SixtHeading,
   p: Paragraph,
   br: Break,
   code: TextHighlight,

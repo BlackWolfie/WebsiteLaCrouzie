@@ -74,6 +74,9 @@
 .back-crouzie{
     @apply bg-crouzie;
 }
+.back-color-crouzie{
+    @apply bg-crouzie-primary;
+}
 .back-footer-crouzie{
     @apply bg-courbe-footer-crouzie;
 }
@@ -92,6 +95,9 @@
 }
 .back-dly{
     @apply bg-dly;
+}
+.back-color-dly{
+    @apply bg-dly-primary;
 }
 .back-footer-dly{
     @apply bg-courbe-footer-dly;
@@ -112,6 +118,9 @@
 .back-lcdm{
     @apply bg-lcdm;
 }
+.back-color-lcdm{
+    @apply bg-lcdm-primary;
+}
 .back-footer-lcdm{
     @apply bg-courbe-footer-lcdm;
 }
@@ -124,3 +133,10 @@
     }
 
 }
+
+.navbar-title {
+  font-size: 1.4rem;
+  font-family: 'Montserrat', sans-serif;
+  margin-right: 3rem;
+}
+

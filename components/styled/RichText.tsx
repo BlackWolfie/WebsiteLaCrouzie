@@ -1,8 +1,7 @@
 import styled from 'styled-components';
 const RichText = styled.div`
-  font-size: 1.8rem;
   opacity: 0.8;
-  line-height: 1.6;
+ 
 
   ol,
   ul {

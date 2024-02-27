@@ -14,16 +14,16 @@ import { HiBars3, HiXMark } from "react-icons/hi2";
 
 function NavList({ data }: {data:Themes}) {
   return (
-    <ul className="my-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
+    <ul className="flex flex-col gap-2 my-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
       {data.header.nav && data.header.nav.map(function (item, i) {
         return (
         <Typography
           as="li"
           variant="small"
-          className="p-1 font-medium "
+          className="p-1 font-medium"
           key={data.header.name + i}
         >
-          <a href={item.href} className={`flex items-center hover ${data._sys.filename}`}>
+          <a href={item.href} className={`flex items-center hover ${data._sys.filename} navbar-title`}>
             {item.label}
           </a>
         </Typography>
@@ -43,9 +43,12 @@ export const Header = ({ data, title, type }: {data:Themes, title:String, type:B
       color :  data.theme.colorTerciary ,
     },
     bgPrimary:{
-      backgroundColor: data.theme.colorPrimary
-    }
-    
+      backgroundColor: data.theme.colorPrimary,
+    },
+    bgTransparent:{
+      backgroundColor: 'transparent',
+
+    },
 
   }
   const [openNav, setOpenNav] = React.useState(false);
@@ -76,8 +79,8 @@ export const Header = ({ data, title, type }: {data:Themes, title:String, type:B
           </g>
         </svg>
         <div className={`flex flex-col flex-nowrap justify-between w-full ${type ? `h-[90vh]`: `h-[25vh]` }`}>
-          <Navbar className={`mx-auto z-10 px-6 py-3 bg-transparent ${data._sys.filename}`} shadow={false} blurred={false} fullWidth={true}>
-            <div className="flex items-center justify-between text-blue-gray-900">
+          <Navbar className={`mx-auto z-10 px-6 py-3 ${data._sys.filename} bg-transparent`} shadow={false} blurred={false} fullWidth={true} style={openNav ? Style.bgPrimary : Style.bgTransparent}>
+            <div className="flex justify-between items-center text-blue-gray-900">
               <Typography
                 as="a"
                 href="/"
@@ -104,9 +107,9 @@ export const Header = ({ data, title, type }: {data:Themes, title:String, type:B
                 style={Style.secondary}
               >
                 {openNav ? (
-                  <HiXMark className="h-6 w-6 hover" strokeWidth={2} />
+                  <HiXMark className="w-6 h-6 hover" strokeWidth={2} />
                 ) : (
-                  <HiBars3 className="h-6 w-6 hover" strokeWidth={2} fill={data.theme.colorSecondary}/>
+                  <HiBars3 className="w-6 h-6 hover" strokeWidth={2} fill={data.theme.colorSecondary}/>
                 )}
               </IconButton>
             </div>
@@ -115,7 +118,7 @@ export const Header = ({ data, title, type }: {data:Themes, title:String, type:B
             </Collapse>
           </Navbar>
           {type &&
-          <div className={` mb-2`} style={Style.bgPrimary}>
+          <div className={`mb-2`} style={Style.bgPrimary}>
             <h1 className={`${data._sys.filename} text-center`}>
                 {title}
             </h1>

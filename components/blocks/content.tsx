@@ -9,7 +9,7 @@ import RichText from "../styled/MDXRichText";
 
 export const Content = ({ data , theme}: { data: PageBlocksContent , theme:Themes }) => {
   return (
-    <Section color={theme._sys.filename}>
+    <Section>
       <Container
         data-tina-field={tinaField(data, "body")}
         size="large"
@@ -96,7 +96,7 @@ export const contentBlockSchema: Template = {
           label: 'ArticleImage',
           fields: [
             {
-              type: 'string',
+              type: 'image',
               name: 'src',
               label: 'Src',
             },
@@ -110,8 +110,7 @@ export const contentBlockSchema: Template = {
         {
           name: 'br',
           label: 'Saut de ligne',
-          inline: true,
-          fields: [{ type: 'rich-text', name: 'children', label: 'Content' }],
+          fields: [{ type: 'string', name: 'children', label: 'Content' }],
         },
       ],
     },
