@@ -32,7 +32,7 @@ const Collapse = forwardRef<HTMLDivElement, PropsWithChildren<CollapseProps>>(
         duration={duration}
         easing={easing}
         animateOpacity={animateOpacity}
-        height={isOpen ? endingHeight : startingHeight}
+        height={isOpen ? endingHeight as number : startingHeight as number}
         applyInlineTransitions={false}
         {...{ onAnimationStart, onAnimationEnd }}
         style={{

@@ -1,8 +1,6 @@
 import Link from "next/link";
 import * as React from "react";
 import { BiRightArrowAlt } from "react-icons/bi";
-import { useTheme } from "../layout";
-import { PageBlocksHeroActions,PageBlocksHeroPlusActions, ThemesTheme } from "../../tina/__generated__/types";
 import { tinaField } from "tinacms/dist/react";
 
 export const Actions = ({
@@ -14,7 +12,6 @@ export const Actions = ({
   className: string;
   actions: any;
 }) => {
-  const theme = useTheme();
   const buttonColorClasses = {
     blue: "text-white bg-blue-500 hover:bg-blue-600 bg-gradient-to-r from-blue-400 to-blue-600 hover:from-blue-400 hover:to-blue-500",
     teal: "text-white bg-teal-500 hover:bg-teal-600 bg-gradient-to-r from-teal-400 to-teal-600 hover:from-teal-400 hover:to-teal-500",
@@ -61,7 +58,7 @@ export const Actions = ({
   };
 
   return (
-    <div className={`flex flex-wrap items-center gap-y-4 gap-x-6 ${className}`}>
+    <div className={`flex flex-wrap gap-y-4 gap-x-6 items-center ${className}`}>
       {actions &&
         actions.map(function (action, index) {
           let element = null;
@@ -79,7 +76,7 @@ export const Actions = ({
                   {action.label}
                   {action.icon && (
                     <BiRightArrowAlt
-                      className={`ml-1 -mr-1 w-6 h-6 opacity-80`}
+                      className={`-mr-1 ml-1 w-6 h-6 opacity-80`}
                     />
                   )}
                 </button>
@@ -104,7 +101,7 @@ export const Actions = ({
               >
                 {action.label}
                 {action.icon && (
-                  <BiRightArrowAlt className={`ml-0 mr-0 w-6 h-6 opacity-80`} />
+                  <BiRightArrowAlt className={`mr-0 ml-0 w-6 h-6 opacity-80`} />
                 )}
               </Link>
             );

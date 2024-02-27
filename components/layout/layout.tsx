@@ -2,7 +2,7 @@ import React from "react";
 import Head from "next/head";
 import { Header } from "./header";
 import { Footer } from "./footer";
-import { Theme } from "./theme";
+// import { Theme } from "./theme";
 import { Global , Page, PageSeo, ThemesConnection} from "../../tina/__generated__/types";
 import { Icon } from "../util/svg";
 import ScrollToTopButton from "../util/scrollToTop";
@@ -103,7 +103,7 @@ export const Layout = ({
         })}
         <ScrollToTopButton color={theme?.themes?.theme.colorSecondary ? theme?.themes.theme.colorSecondary : data.theme.themes.theme.colorSecondary}/>
       </div>
-      <Theme data={data?.theme}>
+      {/* <Theme data={data?.theme}> */}
         <div
           className={`min-h-screen flex flex-col ${
             data?.theme.font === "nunito" && "font-nunito"
@@ -121,7 +121,7 @@ export const Layout = ({
             theme={theme?.themes?.theme ? theme?.themes.theme : data.theme.themes.theme}
             Style={theme?.themes?._sys.filename}/>
         </div>
-      </Theme>
+      {/* </Theme> */}
     </>
   );
 };

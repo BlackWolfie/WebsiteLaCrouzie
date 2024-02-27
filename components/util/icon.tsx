@@ -1,7 +1,6 @@
 import * as React from "react";
 import { ColorPickerInput } from "../../tina/fields/color";
 import { IconPickerInput } from "../../tina/fields/icon";
-import { useTheme } from "../layout";
 import * as BoxIcons from "react-icons/bi";
 
 export const IconOptions = {
@@ -212,7 +211,6 @@ export const Icon = ({
 
   const { name, color, size = "medium", style = "regular" } = data;
 
-  const theme = useTheme();
 
   const IconSVG = IconOptions[name];
 
@@ -223,9 +221,7 @@ export const Icon = ({
 
   const iconColor = color
     ? color === "primary"
-      ? theme.color
-      : color
-    : theme.color;
+    : color;
 
   if (style == "circle") {
     return (
@@ -240,7 +236,7 @@ export const Icon = ({
     const iconColorClasses =
       iconColorClass[
         parentColor === "primary" &&
-        (iconColor === theme.color || iconColor === "primary")
+        (iconColor === color || iconColor === "primary")
           ? "white"
           : iconColor
       ].regular;

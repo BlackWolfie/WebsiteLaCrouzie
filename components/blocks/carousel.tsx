@@ -12,7 +12,7 @@ export const GalleryWithCarousel= ({ data, theme }: { data: PageBlocksCarousel, 
         size="medium"
         width="xlarge"
       >
-        <Carousel loop={true} autoplay={data.autoplay} className="rounded-xl">
+        <Carousel loop={true} autoplay={data.autoplay} className="rounded-xl" onResize={undefined} onResizeCapture={undefined}>
         { data.carousel && data.carousel.map((item,i)=>{
             return(
                 <img
@@ -20,7 +20,7 @@ export const GalleryWithCarousel= ({ data, theme }: { data: PageBlocksCarousel, 
                     key={'carousel'+i}
                     src={item.src}
                     alt={item.alt}
-                    className="h-full w-full object-cover object-center"
+                    className="object-cover object-center w-full h-full"
                 />
             )
         })

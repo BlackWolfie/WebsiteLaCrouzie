@@ -7,7 +7,7 @@ import { Icon } from "../../util/icon";
 import { GlobalFooter, ThemesTheme } from "../../../tina/__generated__/types";
 import { Input, Button } from "@material-tailwind/react";
 
-export const Footer = ({ data, theme, Style}: {data:GlobalFooter, theme:ThemesTheme, Style:String}) => {
+export const Footer = ({ data, theme, Style}: {data:GlobalFooter, theme:ThemesTheme, Style:string}) => {
 const date = new Date();
 const year = date.getFullYear();
 const style = {
@@ -58,14 +58,12 @@ const style = {
                   className="pr-20"
                   containerProps={{
                     className: "min-w-0",
-                  }}
-                />
+                  }} onResize={undefined} onResizeCapture={undefined}                />
                 <Button
                   size="sm"
                   color={email ? "gray" : "blue-gray"}
                   disabled={!email}
-                  className="rounded"
-                >
+                  className="rounded" onResize={undefined} onResizeCapture={undefined}                >
                   OK
                 </Button>
                 </form>

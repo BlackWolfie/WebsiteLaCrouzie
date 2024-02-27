@@ -18,11 +18,10 @@ function NavList({ data }: {data:Themes}) {
       {data.header.nav && data.header.nav.map(function (item, i) {
         return (
         <Typography
-          as="li"
-          variant="small"
-          className="p-1 font-medium"
-          key={data.header.name + i}
-        >
+            as="li"
+            variant="small"
+            className="p-1 font-medium"
+            key={data.header.name + i}  onResize={undefined} onResizeCapture={undefined}        >
           <a href={item.href} className={`flex items-center hover ${data._sys.filename} navbar-title`}>
             {item.label}
           </a>
@@ -33,7 +32,7 @@ function NavList({ data }: {data:Themes}) {
   );
 }
 
-export const Header = ({ data, title, type }: {data:Themes, title:String, type:Boolean}) => {
+export const Header = ({ data, title, type }: {data:Themes, title:string, type:boolean}) => {
   const router = useRouter();
   const Style = {
     secondary: {
@@ -79,14 +78,13 @@ export const Header = ({ data, title, type }: {data:Themes, title:String, type:B
           </g>
         </svg>
         <div className={`flex flex-col flex-nowrap justify-between w-full ${type ? `h-[90vh]`: `h-[25vh]` }`}>
-          <Navbar className={`mx-auto z-10 px-6 py-3 ${data._sys.filename} bg-transparent`} shadow={false} blurred={false} fullWidth={true} style={openNav ? Style.bgPrimary : Style.bgTransparent}>
+          <Navbar className={`mx-auto z-10 px-6 py-3 ${data._sys.filename} bg-transparent`} shadow={false} blurred={false} fullWidth={true} style={openNav ? Style.bgPrimary : Style.bgTransparent} onResize={undefined} onResizeCapture={undefined}>
             <div className="flex justify-between items-center text-blue-gray-900">
               <Typography
-                as="a"
-                href="/"
-                variant="h6"
-                className="mr-4 cursor-pointer py-1.5"
-              >
+              as="a"
+              href="/"
+              variant="h6"
+              className="mr-4 cursor-pointer py-1.5" onResize={undefined} onResizeCapture={undefined}              >
                 <Icon
                 className={`${data._sys.filename} hover`}
                   tinaField={tinaField(data.header, "icon")}
@@ -100,12 +98,11 @@ export const Header = ({ data, title, type }: {data:Themes, title:String, type:B
                 <NavList data={data} />
               </div>
               <IconButton
-                variant="text"
-                className={`ml-auto h-6 w-6 hover hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden ${data._sys.filename}`}
-                ripple={false}
-                onClick={() => setOpenNav(!openNav)}
-                style={Style.secondary}
-              >
+              variant="text"
+              className={`ml-auto h-6 w-6 hover hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden ${data._sys.filename}`}
+              ripple={false}
+              onClick={() => setOpenNav(!openNav)}
+              style={Style.secondary} onResize={undefined} onResizeCapture={undefined}              >
                 {openNav ? (
                   <HiXMark className="w-6 h-6 hover" strokeWidth={2} />
                 ) : (

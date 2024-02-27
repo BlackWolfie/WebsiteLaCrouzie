@@ -2,12 +2,10 @@ import React from "react";
 import Link from "next/link";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { BsArrowRight } from "react-icons/bs";
-import { useTheme } from "../layout";
 import format from "date-fns/format";
 import { PostsType } from "../../pages/posts";
 
 export const Posts = ({ data }: { data: PostsType[] }) => {
-  const theme = useTheme();
   const titleColorClasses = {
     blue: "group-hover:text-blue-600 dark:group-hover:text-blue-300",
     teal: "group-hover:text-teal-600 dark:group-hover:text-teal-300",
@@ -35,9 +33,7 @@ export const Posts = ({ data }: { data: PostsType[] }) => {
             className="block px-6 py-10 mb-8 bg-gray-50 bg-gradient-to-br from-gray-50 to-gray-100 rounded-md shadow-sm transition-all duration-150 ease-out group sm:px-8 md:px-10 last:mb-0 dark:from-gray-900 dark:to-gray-1000 hover:shadow-md hover:to-gray-50 dark:hover:to-gray-800"
           >
             <h3
-              className={`text-gray-700 dark:text-white text-3xl lg:text-4xl font-semibold title-font mb-5 transition-all duration-150 ease-out ${
-                titleColorClasses[theme.color]
-              }`}
+              className={`mb-5 text-3xl font-semibold text-gray-700 transition-all duration-150 ease-out dark:text-white lg:text-4xl title-font`}
             >
               {post.title}{" "}
               <span className="inline-block opacity-0 transition-all duration-300 ease-out group-hover:opacity-100">

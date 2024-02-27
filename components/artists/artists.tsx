@@ -1,9 +1,7 @@
 import React from "react";
-import Link from "next/link";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
-import { BsArrowRight } from "react-icons/bs";
 import { ArtistsType } from "../../pages/artists";
-import { Page, Themes} from "../../tina/__generated__/types";
+import { Themes} from "../../tina/__generated__/types";
 
 import { tinaField } from "tinacms/dist/react";
 import { Actions } from "../util/actions";

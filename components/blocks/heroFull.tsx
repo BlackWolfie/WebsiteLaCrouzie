@@ -2,15 +2,12 @@ import * as React from "react";
 import { Actions } from "../util/actions";
 import { Container } from "../util/container";
 import { Section } from "../util/section";
-import { useTheme } from "../layout";
-import { TinaMarkdown } from "tinacms/dist/rich-text";
 import type { Template } from "tinacms";
 import { PageBlocksHeroFull, Themes } from "../../tina/__generated__/types";
 import { tinaField } from "tinacms/dist/react";
 import RichText from "../styled/MDXRichText";
 
 export const HeroFull = ({ data, theme }: { data: PageBlocksHeroFull, theme:Themes }) => {
-  //const theme = useTheme();
   return (
     <Section  >
 

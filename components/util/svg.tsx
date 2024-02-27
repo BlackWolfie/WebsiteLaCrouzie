@@ -1,6 +1,5 @@
 import * as React from "react";
 import { IconPickerInput } from "../../tina/fields/logo";
-import { useTheme } from "../layout";
 
 export const IconOptions = {
   Crouzie: (props) => (
@@ -275,7 +274,7 @@ export const Icon = ({
 return (
     <div
     data-tina-field={tinaField}
-    className={`relative z-10 inline-flex items-center justify-center flex-shrink-0 ${iconSizeClasses} rounded-full ${className}`}
+    className={`inline-flex relative z-10 flex-shrink-0 justify-center items-center rounded-full ${iconSizeClasses} ${className}`}
     style={Style}
     >
     <IconSVG className="w-2/3 h-2/3" style={Style}/>
