@@ -9,6 +9,7 @@ import { carouselBlockSchema } from "../../components/blocks/carousel";
 import { carouselFeatureBlockSchema } from "../../components/blocks/carouselFeature";
 import { galleryBlockSchema } from "../../components/blocks/galery";
 import { expertSeoPageProps } from "./seo";
+import { heroVideoBlockSchema } from "../../components/blocks/heroVideo";
 
 const Page: Collection = {
   label: "Pages",
@@ -56,6 +57,7 @@ const Page: Collection = {
         heroBlockSchema,
         heroPlusBlockSchema,
         heroFullBlockSchema,
+        heroVideoBlockSchema,
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-ignore
         featureBlockSchema,
