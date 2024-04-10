@@ -49,21 +49,29 @@ const style = {
           <div className='flex-grow mx-2 my-6 sm:flex-grow-0'>
             <div>
                 <p>Abonnez-vous à la Newsletter</p>
-                <form className="flex flex-row flex-nowrap">
+
+              <form className="flex flex-row flex-nowrap" method="post" action="https://gazette.lacrouzie.fr/subscription/form" >
+                <input type="hidden" name="nonce" />
                 <Input
                   type="email"
                   label="Email Address"
+                  name="email"
                   value={email}
                   onChange={onChange}
                   className="pr-20"
                   containerProps={{
                     className: "min-w-0",
                   }} onResize={undefined} onResizeCapture={undefined}                />
+                
+                <p className="hidden">  
+                  <input id="236ee" type="checkbox" name="l" checked value="236ee3c5-41b7-421f-b2ca-9a47f34a9840" readOnly />
+                  <label htmlFor="236ee">La Gazette (mensuelle)</label>
+                </p>
                 <Button
                   size="sm"
                   color={email ? "gray" : "blue-gray"}
                   disabled={!email}
-                  className="rounded" onResize={undefined} onResizeCapture={undefined}                >
+                  className="rounded" onResize={undefined} onResizeCapture={undefined} type="submit">
                   OK
                 </Button>
                 </form>
