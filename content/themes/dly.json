@@ -13,11 +13,6 @@
         "label": "Debout Les Yeux"
       },
       {
-        "default": false,
-        "href": "/events",
-        "label": "À l'Affiche"
-      },
-      {
         "href": "/artists",
         "label": "Artistes"
       },
