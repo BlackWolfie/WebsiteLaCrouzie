@@ -11,6 +11,10 @@
         "default": true,
         "href": "/lacrouziedesmetiers",
         "label": "La Crouzié Des Metiers"
+      },
+      {
+        "href": "#contact",
+        "label": "Contact"
       }
     ]
   },
