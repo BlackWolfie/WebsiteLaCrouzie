@@ -6,10 +6,7 @@ actions:
     type: button
     icon: false
     link: 'https://leskeletonband.com/'
-children: >
-  Porté par l’énergie contagieuse de ses membres, ce collectif
-  hétéroclitefusionne ses influences diverses dans une esthétique unique et
-  colorée, créantainsi une énergie distinctive, accessible et solaire – celle de
-  l’amour du groove !
+children: |
+  Rock, post-rock, blues, folk - Montpellier
 ---
 
