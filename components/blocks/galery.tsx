@@ -6,6 +6,8 @@ import { Container } from "../util/container";
 import { tinaField } from "tinacms/dist/react";
 
 export const Gallery = ({ data, theme }: { data: PageBlocksGallery, theme:Themes }) => {
+  const r = data.gallery.length > 3 ? 'grid-cols-4' : 'grid-cols-'+data.gallery.length;
+  
   return (
     <Section color={theme._sys.filename}>
       <Container
@@ -32,12 +34,13 @@ export const Gallery = ({ data, theme }: { data: PageBlocksGallery, theme:Themes
             </span>
           </h3>
         )}
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-3 md:grid-cols-4">
+      <div className={`grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-${r}`}
+>
         {data.gallery && data.gallery.map((item , i) => (
           <div key={i}>
             <img
               data-tina-field={tinaField(item)}
-              className="h-40 w-full max-w-full rounded-lg object-cover object-center"
+              className=" w-full max-w-full rounded-lg object-cover object-center"
               src={item.src}
               alt={item.alt}
             />
