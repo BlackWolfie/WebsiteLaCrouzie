@@ -6,8 +6,7 @@ actions:
     type: button
     icon: false
     link: 'https://www.solakbalik.com/'
-children: >
-  Basé sur Toulouse, leurs origines diverses et leur attachement à la musique
-  caribéenne donnent toute sa richesse à leur musique.
+children: |
+  Afro Mediterranean music & Balkan sounds (ex-Swing Vandals)
 ---
 
