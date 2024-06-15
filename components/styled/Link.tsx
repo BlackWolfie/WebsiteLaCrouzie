@@ -8,7 +8,7 @@ export interface LinkProps {
 
 export default function Linkd({ href, children }: PropsWithChildren<LinkProps>) {
   return (
-    <Link href={href} passHref>
+    <Link href={href} passHref target='_blank'>
       <Anchor>{children}</Anchor>
     </Link>
   );
