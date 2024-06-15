@@ -7,6 +7,6 @@ actions:
     icon: false
     link: 'https://www.dominiquerousseau.fr/les-divines-biquettes'
 children: |
-  récits agroalimentaires sur contrebasse loopée
+  Récits agroalimentaires sur contrebasse loopée
 ---
 
