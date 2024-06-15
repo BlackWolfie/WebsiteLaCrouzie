@@ -2,7 +2,7 @@ import { Language } from 'prism-react-renderer';
 import styled from 'styled-components';
 import { Components, TinaMarkdown, TinaMarkdownContent } from 'tinacms/dist/rich-text';
 import ArticleImage from './ArticleImage';
-import Link from './Link';
+import Linkd from './Link';
 import Quote from './Quote';
 
 const Container = styled.div`
@@ -24,6 +24,9 @@ const Container = styled.div`
     word-break: break-word;
   }
 
+  a:hover{
+    color: blue;
+  }
 
   & > section,
   .footnotes {
@@ -116,8 +119,7 @@ const components = {
   p: Paragraph,
   br: Break,
   code: TextHighlight,
-  Image: ArticleImage,
-  Link,
+  Linkd,
   Quote,
   ArticleImage,
 };
