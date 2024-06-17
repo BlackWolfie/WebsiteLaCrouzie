@@ -45,21 +45,12 @@ const Container = styled.div`
         vertical-align: top;
       }
     }
-
-    &:not(:last-child) {
-      margin-bottom: 2.7rem;
-    }
   }
   
 `;
 
 const Paragraph = styled.p`
   hanging-punctuation: first;
-
-  &:not(:last-child) {
-    margin-bottom: 2.7rem;
-  }
-
   & + ul,
   & + li {
     margin-top: -1.5rem !important;
@@ -67,29 +58,23 @@ const Paragraph = styled.p`
 `;
 const FirstHeading = styled.h1`
   line-height: 3.9rem;
-  margin-bottom: 3.9rem;
 `;
 
 const SecondHeading = styled.h2`
   line-height: 3.75rem;
-  margin-bottom: 3.75rem;
 `;
 
 const ThirdHeading = styled.h3`
   line-height: 3.4rem;
-  margin-bottom: 3.4rem;
 `;
 const FourthHeading = styled.h4`
   line-height: 3.2rem;
-  margin-bottom: 3.2rem;
 `;
 const FiftHeading = styled.h5`
   line-height: 2.9rem;
-  margin-bottom: 2.9rem;
 `;
 const SixtHeading = styled.h6`
   line-height: 2.7rem;
-  margin-bottom: 2.7rem;
 `;
 
 const Break = styled.br`
