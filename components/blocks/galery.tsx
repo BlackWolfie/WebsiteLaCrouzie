@@ -77,6 +77,11 @@ export const galleryBlockSchema: Template = {
       type: "object",
       label: "Image",
       name: "gallery",
+      ui: {
+        itemProps: (item) => {
+          return { label: item?.alt };
+        },
+      },
       list: true,
       fields : [
         {
