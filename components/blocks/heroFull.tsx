@@ -9,7 +9,7 @@ import RichText from "../styled/MDXRichText";
 
 export const HeroFull = ({ data, theme }: { data: PageBlocksHeroFull, theme:Themes }) => {
   return (
-    <Section  >
+    <Section   id={data.id }>
 
       <Container
         size="large"
@@ -73,8 +73,16 @@ export const heroFullBlockSchema: Template = {
       headline: "This Big Text is Totally Awesome",
       text: "Phasellus scelerisque, libero eu finibus rutrum, risus risus accumsan libero, nec molestie urna dui a leo.",
     },
+    itemProps:(item) => {
+      return { label: item?.id };
+    },
   },
   fields: [
+    {
+      type: "string",
+      label: "Identifiant",
+      name: "id",
+    },
     {
       type: "string",
       label: "Sous Titre",

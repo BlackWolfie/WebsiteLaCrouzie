@@ -11,6 +11,7 @@ export const GalleryWithCarousel= ({ data, theme }: { data: PageBlocksCarousel, 
         data-tina-field={tinaField(data)}
         size="medium"
         width="xlarge"
+        id={data.id }
       >
         <Carousel loop={true} autoplay={data.autoplay} className="rounded-xl" onResize={undefined} onResizeCapture={undefined}>
         { data.carousel && data.carousel.map((item,i)=>{
@@ -39,13 +40,22 @@ export const carouselBlockSchema: Template = {
       previewSrc: "/blocks/carousel.png",
       defaultItem: {
       },
+      itemProps:(item) => {
+        return { label: item?.id };
+      },
     },
     fields: [
+        {
+          type: "string",
+          label: "Identifiant",
+          name: "id",
+        },
         {
             type: "boolean",
             label: "Autoplay",
             name: "autoplay",
         },
+        
         {
         type: "object",
         label: "Image",

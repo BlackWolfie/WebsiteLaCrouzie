@@ -9,7 +9,7 @@ import RichText from "../styled/MDXRichText";
 
 export const Content = ({ data , theme}: { data: PageBlocksContent , theme:Themes }) => {
   return (
-    <Section>
+    <Section  id={data.id }>
       <Container
         data-tina-field={tinaField(data, "body")}
         size="large"
@@ -53,8 +53,16 @@ export const contentBlockSchema: Template = {
     defaultItem: {
       body: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.",
     },
+    itemProps:(item) => {
+      return { label: item?.id };
+    },
   },
   fields: [
+    {
+      type: "string",
+      label: "Identifiant",
+      name: "id",
+    },
     {
       type: "string",
       label: "Sous Titre",

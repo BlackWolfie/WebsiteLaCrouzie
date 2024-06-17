@@ -7,7 +7,7 @@ import { tinaField } from "tinacms/dist/react";
 
 export const Testimonial = ({ data,theme }: { data: PageBlocksTestimonial , theme:Themes }) => {
   return (
-    <Section color={theme._sys.filename}>
+    <Section color={theme._sys.filename} id={data.id }>
       <Container size="large">
         <blockquote>
           <div
@@ -68,8 +68,16 @@ export const testimonialBlockSchema: Template = {
       author: "Phil Karlton",
       color: "primary",
     },
+    itemProps:(item) => {
+      return { label: item?.id };
+    },
   },
   fields: [
+    {
+      type: "string",
+      label: "Identifiant",
+      name: "id",
+    },
     {
       type: "string",
       ui: {

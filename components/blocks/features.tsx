@@ -52,7 +52,7 @@ export const Feature = ({
 
 export const Features = ({ data, theme }: { data: PageBlocksFeatures, theme:Themes }) => {
   return (
-    <Section color={theme._sys.filename}>
+    <Section color={theme._sys.filename}  id={data.id }>
       <Container
         className={`flex flex-wrap gap-y-8 gap-x-10 text-left`}
         size="large"
@@ -84,8 +84,16 @@ export const featureBlockSchema = {
     defaultItem: {
       items: [defaultFeature, defaultFeature, defaultFeature],
     },
+    itemProps:(item) => {
+      return { label: item?.id };
+    },
   },
   fields: [
+    {
+      type: "string",
+      label: "Identifiant",
+      name: "id",
+    },
     {
       type: "object",
       label: "Feature Items",

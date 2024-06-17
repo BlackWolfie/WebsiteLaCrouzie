@@ -9,7 +9,7 @@ export const Gallery = ({ data, theme }: { data: PageBlocksGallery, theme:Themes
   const r = data.gallery.length > 3 ? 'grid-cols-4' : 'grid-cols-'+data.gallery.length;
   
   return (
-    <Section color={theme._sys.filename}>
+    <Section color={theme._sys.filename}  id={data.id }>
       <Container
         size="large"
       >
@@ -61,8 +61,16 @@ export const galleryBlockSchema: Template = {
       tagline: "Sous Titre",
       headline: "Titre",
     },
+    itemProps:(item) => {
+      return { label: item?.id };
+    },
   },
   fields: [
+    {
+      type: "string",
+      label: "Identifiant",
+      name: "id",
+    },
     {
       type: "string",
       label: "Sous Titre",

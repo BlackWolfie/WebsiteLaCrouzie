@@ -13,6 +13,7 @@ export const GalleryWithCarouselFeature= ({ data, theme }: { data: PageBlocksCar
         data-tina-field={tinaField(data)}
         size="medium"
         width="xlarge"
+        id={data.id }
       >
         <div className="grid gap-4">
             <div>
@@ -49,8 +50,16 @@ export const carouselFeatureBlockSchema: Template = {
       previewSrc: "/blocks/carouselFeature.png",
       defaultItem: {
       },
+      itemProps:(item) => {
+        return { label: item?.id };
+      },
     },
     fields: [
+        {
+            type: "string",
+            label: "Identifiant",
+            name: "id",
+          },
         {
         type: "object",
         label: "Image",
