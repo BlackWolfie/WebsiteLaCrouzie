@@ -81,7 +81,7 @@ const Break = styled.br`
   display: block;
   content: '';
   margin: 0;
-  height: 3rem;
+  height: 1rem;
 `;
 
 const TextHighlight = styled.code`
