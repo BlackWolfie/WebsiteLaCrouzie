@@ -105,7 +105,7 @@ export const Header = ({ data, title, type, all }: {data:Themes, title:string, t
           </g>
         </svg>
         <div className={`flex flex-col flex-nowrap justify-between w-full ${type ? `h-[90vh]`: `h-[25vh]` }`}>
-          <Navbar className={`mx-auto z-10 px-6 py-3 ${data._sys.filename} bg-transparent`} shadow={false} blurred={false} fullWidth={true} style={openNav ? Style.bgPrimary : Style.bgTransparent} onResize={undefined} onResizeCapture={undefined}>
+          <Navbar className={`mx-auto z-50 px-6 py-3 ${data._sys.filename} bg-transparent`} shadow={false} blurred={false} fullWidth={true} style={openNav ? Style.bgPrimary : Style.bgTransparent} onResize={undefined} onResizeCapture={undefined}>
             <div className="flex justify-between items-center text-blue-gray-900">
               <Typography
               as="a"
