@@ -67,7 +67,7 @@ export const Actions = ({
               <Link key={index} href={action.link ? action.link : "/"}>
                 <button
                   data-tina-field={tinaField(action)}
-                  className={`z-10 relative flex items-center px-7 py-3 font-semibold text-lg transition duration-150 ease-out  rounded-lg transform focus:shadow-outline focus:outline-none focus:ring-2 ring-offset-current ring-offset-2 whitespace-nowrap ${
+                  className={`z-10 relative flex items-center px-7 py-3 font-semibold text-lg transition duration-150 ease-out  rounded-lg transform focus:shadow-outline focus:outline-none focus:ring-2 ring-offset-current ring-offset-2 whitespace-normal md:whitespace-nowrap ${
                     parentColor === "crouzie"? 'text-crouzie-secondary bg-crouzie-primary hover:text-crouzie-terciary '
                     :parentColor === "dly" ?'text-dly-secondary bg-dly-primary hover:text-dly-terciary ': 
                     parentColor === "lcdm"?'text-lcdm-secondary bg-lcdm-primary hover:text-lcdm-terciary ': ''
