@@ -16,11 +16,11 @@ fragment PostsQueryFragment on Query {
   }
 }
 
-fragment EventsQueryFragment on Query {
-  EventsSeo(relativePath: "index.md"){
-    ...EventsSeoParts
-  }
-}
+# fragment EventsQueryFragment on Query {
+#   EventsSeo(relativePath: "index.md"){
+#     ...EventsSeoParts
+#   }
+# }
 
 
 
