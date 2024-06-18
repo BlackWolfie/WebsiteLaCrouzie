@@ -106,7 +106,6 @@ const components = {
   code: TextHighlight,
   Linkd,
   Quote,
-  ArticleImage,
 };
 
 export default function RichText(props: { content: TinaMarkdownContent | TinaMarkdownContent[] }) {
