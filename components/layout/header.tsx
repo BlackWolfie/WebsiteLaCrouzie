@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useRouter } from "next/router";
 import { tinaField } from "tinacms/dist/react";
-import { Themes } from "../../tina/__generated__/types";
+import { Themes, ThemesConnection } from "../../tina/__generated__/types";
 import { Icon } from "../util/svg";
 import {
   Navbar,
@@ -12,9 +12,36 @@ import {
 import { HiBars3, HiXMark } from "react-icons/hi2";
 
 
-function NavList({ data }: {data:Themes}) {
+function NavList({ data, all }: {data:Themes, all:ThemesConnection}) {
   return (
     <ul className="flex flex-col gap-2 my-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
+      {all &&
+        <Typography
+            as="li"
+            variant="small"
+            className="p-1 font-medium sm:hidden"
+            key={data.header.nav.length +1}  onResize={undefined} onResizeCapture={undefined}        >
+          { all?.edges.map((item, i)=> {
+            let t = null 
+            item.node.header.nav && item.node.header.nav.map((e)=>{                
+              e.default === true ? t= e.href : 'console.log(e.href)'
+              return t
+            })
+            return (
+              <a href={t} key={i}>
+                <Icon
+                  className={`hover`}
+                  data={{
+                    name: item.node.header.icon.favicon,
+                    color: data.theme.colorSecondary ,
+                    size: "medium"
+                  }}
+                />
+              </a>
+            )
+          })}
+        </Typography>
+      }
       {data.header.nav && data.header.nav.map(function (item, i) {
         return (
         <Typography
@@ -27,12 +54,12 @@ function NavList({ data }: {data:Themes}) {
           </a>
         </Typography>
         )
-      })} 
+      })}
     </ul>
   );
 }
 
-export const Header = ({ data, title, type }: {data:Themes, title:string, type:boolean}) => {
+export const Header = ({ data, title, type, all }: {data:Themes, title:string, type:boolean, all:ThemesConnection}) => {
   const router = useRouter();
   const Style = {
     secondary: {
@@ -95,7 +122,7 @@ export const Header = ({ data, title, type }: {data:Themes, title:string, type:b
                 />
               </Typography>
               <div className="hidden lg:block">
-                <NavList data={data} />
+                <NavList data={data} all={null}/>
               </div>
               <IconButton
               variant="text"
@@ -111,7 +138,7 @@ export const Header = ({ data, title, type }: {data:Themes, title:string, type:b
               </IconButton>
             </div>
             <Collapse open={openNav}>
-              <NavList data={data}/>
+              <NavList data={data} all={all}/>
             </Collapse>
           </Navbar>
           {type &&

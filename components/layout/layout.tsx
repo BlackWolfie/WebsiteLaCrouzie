@@ -81,8 +81,8 @@ export const Layout = ({
           </>
         )}
       </Head>
-      <div className="flex fixed right-2 top-48 z-50 flex-col flex-nowrap">
-        {allThemes?.edges.map((item, i)=> {
+      <div className="hidden z-50 flex-col flex-nowrap sm:flex sm:fixed sm:right-2 sm:top-48">
+        { allThemes?.edges.map((item, i)=> {
           let t = null 
           item.node.header.nav && item.node.header.nav.map((e)=>{                
             e.default === true ? t= e.href : 'console.log(e.href)'
@@ -112,7 +112,7 @@ export const Layout = ({
           } ${data?.theme.font === "montserrat" && "font-montserrat"} 
           ${theme?.themes?._sys.filename}`}
         >
-          <Header type={type} data={theme?.themes ? theme.themes : data.theme.themes} title={theme?.title? theme.title : 'La Crouzié'}/>
+          <Header type={type} data={theme?.themes ? theme.themes : data.theme.themes} title={theme?.title? theme.title : 'La Crouzié'} all={allThemes}/>
           <div className="flex flex-col flex-1 text-gray-800 bg-gradient-to-br from-white to-gray-50 dark:from-gray-900 dark:to-gray-1000">
           <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
           </div>
