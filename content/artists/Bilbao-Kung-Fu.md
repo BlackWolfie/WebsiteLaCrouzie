@@ -1,4 +1,5 @@
 ---
+date: 2024-06-20T22:00:00.000Z
 name: Bilbao Kung Fu
 img: /uploads/Artiste/Bilbao Kung-Fu Jessica Calvo V2.jpg
 actions:

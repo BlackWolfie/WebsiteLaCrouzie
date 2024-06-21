@@ -1,4 +1,5 @@
 ---
+date: 2024-06-20T22:00:00.000Z
 name: IZOÏ
 img: /uploads/Artiste/279671314_127124976604093_4035624567177598355_n.jpg
 actions:

@@ -1,4 +1,5 @@
 ---
+date: 2022-12-31T23:00:00.000Z
 name: Skeleton Band
 img: /uploads/Artiste/20220512_LE_SKELETON_BAND_©adrien_vincent_5.jpg
 actions:

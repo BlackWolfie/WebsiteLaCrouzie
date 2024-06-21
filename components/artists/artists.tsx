@@ -7,6 +7,7 @@ import { tinaField } from "tinacms/dist/react";
 import { Actions } from "../util/actions";
 import { Section } from "../util/section";
 import { Container } from "../util/container";
+import { format } from "date-fns";
 
 export const Artists = ({ data, theme }: { data: ArtistsType[], theme: Themes }) => {
 
@@ -15,6 +16,11 @@ export const Artists = ({ data, theme }: { data: ArtistsType[], theme: Themes })
     <Section color={theme._sys.filename} className="!bg-transparent">
       {data.map((artistData, i) => {
         const artist = artistData.node;
+        const date = new Date(artist.date);
+        let formatDate='';
+        if (!isNaN(date.getTime())) {
+          formatDate = format(date, "yyyy");
+        }
 
         return (
           <Container
@@ -24,9 +30,16 @@ export const Artists = ({ data, theme }: { data: ArtistsType[], theme: Themes })
             className="grid grid-cols-1 gap-14 justify-center items-center md:grid-cols-5">
           
             <div className={`row-start-2 text-center ${ i%2===0 ? 'md:col-span-3': 'md:col-start-3' } md:col-span-3 md:row-start-1 md:text-left`}>
+              {formatDate && (
+              <h6
+                className={`inline-block relative z-20 px-3 py-1 mb-8 font-bold tracking-wide text-md title-font`}
+              >
+                {formatDate}
+                <span className="absolute top-0 left-0 w-full h-full bg-current rounded-full -z-1 opacity-7"></span>
+              </h6>
+            )}
               {artist.name && (
                 <h3
-                  data-tina-field={tinaField(artist, "name")}
                   className={`relative mb-10 w-full text-5xl font-extrabold tracking-normal leading-tight title-font`}
                 >
                   <span
@@ -38,7 +51,6 @@ export const Artists = ({ data, theme }: { data: ArtistsType[], theme: Themes })
               )}
               {artist.children && (
                 <div
-                  data-tina-field={tinaField(artist, "children")}
                   className={`mx-auto mb-10 md:mx-0`}
                 >
                   <TinaMarkdown content={artist.children} />
@@ -53,7 +65,6 @@ export const Artists = ({ data, theme }: { data: ArtistsType[], theme: Themes })
             </div>
             {artist.img && (
             <div
-              data-tina-field={tinaField(artist, "img")}
               className={`flex relative row-start-1 justify-center md:col-span-2`}>
                 <img
                   className="absolute w-full rounded-lg max-w-xs md:max-w-none h-auto blur-2xl brightness-150 contrast-[0.9] dark:brightness-150 saturate-200 opacity-50 dark:opacity-30 mix-blend-multiply dark:mix-blend-hard-light"

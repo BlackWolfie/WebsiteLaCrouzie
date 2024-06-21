@@ -23,9 +23,10 @@ query pageQuery {
 query artistQuery {
   ...LayoutQueryFragment
   ...ArtistQueryFragment
-  artistConnection {
+  artistConnection(sort:"date-name" ) {
     edges {
       node {
+        date
         name
         img
         actions {

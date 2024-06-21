@@ -1,5 +1,6 @@
 import type { Collection } from "tinacms";
 import { expertSeoPageProps } from "./seo";
+import { Value } from "sass";
 
 const Artist: Collection = {
   label: "Artist",
@@ -8,8 +9,23 @@ const Artist: Collection = {
   match: {
     exclude: '**/**/index',
   },
+  indexes:[{
+    name : 'date-name',
+    fields: [
+      {name:'date'},
+      {name:'name'}
+    ]
+  }],
   format: "md",
   fields: [
+    {
+      type: 'datetime',
+      label: 'Date de Passage',
+      name: 'date',
+      ui: {
+        dateFormat: 'YYYY',
+      }
+    },
     {
       type: "string",
       label: "Name",
