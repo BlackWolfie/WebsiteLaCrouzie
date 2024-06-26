@@ -5,19 +5,19 @@ import { client } from "../tina/__generated__/client";
 import { Layout } from "../components/layout";
 import { InferGetStaticPropsType } from "next";
 import { useTina } from "tinacms/dist/react";
-import { Themes } from "../tina/__generated__/types";
+import { ArtistConnection, Themes } from "../tina/__generated__/types";
 
 export default function HomePage(
   props: InferGetStaticPropsType<typeof getStaticProps>
 ) {
-  const artists = props.data.artistConnection.edges;
-  const theme = useTina(props.themeProps);
+  const artists = useTina(props.tinaProps);
+  const theme = props.data.themesConnection;
 
   return (
-    <Layout data={props.data.global as any} theme={props.data.global.theme as any} allThemes={theme.data.themesConnection as any} type={false} SEO={props.data.artistSeo.seo as any}>
+    <Layout data={artists.data.global as any} theme={artists.data.global.theme as any} allThemes={theme as any} type={false} SEO={artists.data.artistSeo.seo as any}>
       <Section className="flex-1">
         <Container size="large" width="large">
-          <Artists data={artists} theme={props.data.global.theme.themes as Themes}/>
+          <Artists data={artists.data.artistConnection as ArtistConnection} theme={artists.data.global.theme.themes as Themes}/>
         </Container>
       </Section>
     </Layout>
@@ -27,18 +27,14 @@ export default function HomePage(
 export const getStaticProps = async () => {
   const tinaProps = await client.queries.artistQuery();
   const themeProps = await client.queries.themesConnection();
-  const theme ={
-    ...themeProps,
+  const props ={
+    ...tinaProps,
     enableVisualEditing: process.env.VERCEL_ENV === "preview",
   }
   return {
     props: {
-      ...tinaProps,
-      themeProps: JSON.parse(JSON.stringify(theme)) as typeof theme,
+      ...themeProps,
+      tinaProps: JSON.parse(JSON.stringify(props)) as typeof props,
     },
   };
 };
-
-export type ArtistsType = InferGetStaticPropsType<
-  typeof getStaticProps
->["data"]["artistConnection"]["edges"][number];

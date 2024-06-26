@@ -1,20 +1,17 @@
 import React from "react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
-import { ArtistsType } from "../../pages/artists";
-import { Themes} from "../../tina/__generated__/types";
-
-import { tinaField } from "tinacms/dist/react";
+import { ArtistConnection, Themes} from "../../tina/__generated__/types";
 import { Actions } from "../util/actions";
 import { Section } from "../util/section";
 import { Container } from "../util/container";
 import { format } from "date-fns";
 
-export const Artists = ({ data, theme }: { data: ArtistsType[], theme: Themes }) => {
+export const Artists = ({ data, theme }: { data: ArtistConnection, theme: Themes }) => {
 
 
   return (
     <Section color={theme._sys.filename} className="!bg-transparent">
-      {data.map((artistData, i) => {
+      {data.edges.map((artistData, i) => {
         const artist = artistData.node;
         const date = new Date(artist.date);
         let formatDate='';

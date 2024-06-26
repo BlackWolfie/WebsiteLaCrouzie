@@ -9,9 +9,9 @@ export default function HomePage(
   props: InferGetStaticPropsType<typeof getStaticProps>,
 ) {
   const { data } = useTina(props.content);
-  const theme = useTina(props.themeprops)
+  const theme = props.data.themesConnection
   return (
-    <Layout type={true} data={data.global as any} theme={data.page as any} allThemes={theme.data.themesConnection as any} SEO={data.page.seo as any}>
+    <Layout type={true} data={data.global as any} theme={data.page as any} allThemes={theme as any} SEO={data.page.seo as any}>
       <Blocks {...data.page as any} />
     </Layout> 
   );
@@ -26,15 +26,11 @@ export const getStaticProps = async ({ params }) => {
     ...tinaProps,
     enableVisualEditing: process.env.VERCEL_ENV === "preview",
   };
-  const theme ={
-    ...themeProps,
-    enableVisualEditing: process.env.VERCEL_ENV === "preview",
-  }
 
   return {
     props: {
       content : JSON.parse(JSON.stringify(props)) as typeof props,
-      themeprops : JSON.parse(JSON.stringify(theme)) as typeof theme
+      ...themeProps
     }
     
   };
