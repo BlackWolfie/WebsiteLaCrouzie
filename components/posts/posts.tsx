@@ -3,9 +3,9 @@ import Link from "next/link";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { BsArrowRight } from "react-icons/bs";
 import format from "date-fns/format";
-import { PostsType } from "../../pages/posts";
+import { PostConnectionEdges } from "../../tina/__generated__/types";
 
-export const Posts = ({ data }: { data: PostsType[] }) => {
+export const Posts = ({ data }: { data: PostConnectionEdges[] }) => {
   const titleColorClasses = {
     blue: "group-hover:text-blue-600 dark:group-hover:text-blue-300",
     teal: "group-hover:text-teal-600 dark:group-hover:text-teal-300",

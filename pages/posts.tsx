@@ -5,6 +5,7 @@ import { client } from "../tina/__generated__/client";
 import { Layout } from "../components/layout";
 import { InferGetStaticPropsType } from "next";
 import { useTina } from "tinacms/dist/react";
+import { PostConnectionEdges } from "../tina/__generated__/types";
 
 export default function HomePage(
   props: InferGetStaticPropsType<typeof getStaticProps>
@@ -17,7 +18,7 @@ export default function HomePage(
     <Layout data={post.data.global as any} theme={post.data.global.theme as any} allThemes={theme.data.themesConnection as any} type={false} SEO={post.data.PostsSeo.seo as any}>
       <Section className="flex-1">
         <Container size="large" width="small">
-          <Posts data={posts} />
+          <Posts data={posts as any} />
         </Container>
       </Section>
     </Layout>
