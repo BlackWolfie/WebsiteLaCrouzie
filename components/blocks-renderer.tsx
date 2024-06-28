@@ -7,6 +7,7 @@ import { Gallery } from "./blocks/galery";
 import { Hero } from "./blocks/hero";
 import { HeroFull } from "./blocks/heroFull";
 import { HeroPlus } from "./blocks/heroPlus";
+import { HeroText } from "./blocks/heroText";
 import { HeroVideo } from "./blocks/heroVideo";
 import { Testimonial } from "./blocks/testimonial";
 import { tinaField } from "tinacms/dist/react";
@@ -33,6 +34,8 @@ const Block = ({ block , theme}:{block: PageBlocks, theme: Themes}) => {
       return <Content data={block} theme={theme}/>;
     case "PageBlocksHero":
       return <Hero data={block} theme={theme}/>;
+      case "PageBlocksHeroText":
+      return <HeroText data={block} theme={theme}/>;
     case "PageBlocksHeroPlus":
       return <HeroPlus data={block} theme={theme}/>;
     case "PageBlocksHeroFull":

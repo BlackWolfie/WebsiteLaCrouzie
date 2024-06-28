@@ -7,6 +7,7 @@ import { Global , Page, PageSeo, ThemesConnection} from "../../tina/__generated_
 import { Icon } from "../util/svg";
 import ScrollToTopButton from "../util/scrollToTop";
 import StyledComponentsRegistry from '../util/registry'
+import PrelineScript from "../util/PrelineScript";
 
 export const Layout = ({
   type,
@@ -28,6 +29,7 @@ export const Layout = ({
   return (
     <>
       <Head>
+        <PrelineScript />
         <title>{SEO?.title ? SEO?.title : metatitle}</title>
         <meta charSet="UTF-8" />
         <meta name="description" content={SEO?.description ? SEO?.description : metadescription}/>

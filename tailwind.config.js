@@ -18,7 +18,7 @@ let h1 = h2 * font_scale;
 
 module.exports = withMT({
   mode: "jit",
-  content: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
+  content: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}",'./node_modules/dist/*.js',],
   darkMode: "class",
   theme: {
     colors: {
@@ -244,5 +244,9 @@ module.exports = withMT({
       typography: ["tint", "dark", "primary", 'crouzie'] 
     },
   },
-  plugins: [require("@tailwindcss/typography")],
+  plugins: [
+    require("@tailwindcss/typography"),
+    require('preline/plugin'),
+
+  ],
 });

@@ -10,6 +10,7 @@ import { carouselFeatureBlockSchema } from "../../components/blocks/carouselFeat
 import { galleryBlockSchema } from "../../components/blocks/galery";
 import { expertSeoPageProps } from "./seo";
 import { heroVideoBlockSchema } from "../../components/blocks/heroVideo";
+import { heroTextBlockSchema } from "../../components/blocks/heroText";
 
 const Page: Collection = {
   label: "Pages",
@@ -55,6 +56,7 @@ const Page: Collection = {
       },
       templates: [
         heroBlockSchema,
+        heroTextBlockSchema,
         heroPlusBlockSchema,
         heroFullBlockSchema,
         heroVideoBlockSchema,

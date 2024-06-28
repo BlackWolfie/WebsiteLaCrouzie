@@ -2495,6 +2495,11 @@
   resolved "https://registry.yarnpkg.com/@pcode-at/tinacms-seo/-/tinacms-seo-2.0.0.tgz#72630ba2e7af034a310f3fd216099c7bdd0347cb"
   integrity sha512-Gp7v4HrjQLgEJ4pZZZX75Iie+A5ekjXRmEoi3ttpQAWQPLfL3OfQUErumY7onHl5M1Pg/fOXuAWjBWSh/Pt7uA==
 
+"@popperjs/core@^2.11.2":
+  version "2.11.8"
+  resolved "https://registry.yarnpkg.com/@popperjs/core/-/core-2.11.8.tgz#6b79032e760a0899cd4204710beede972a3a185f"
+  integrity sha512-P1st0aksCrn9sGZhp8GMYwBnQsbvAWsZAX44oXNNvLHGqAOcoVxmjZiohstwQ7SqKnbR47akdNi+uleWD8+g6A==
+
 "@radix-ui/primitive@1.0.1":
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/@radix-ui/primitive/-/primitive-1.0.1.tgz#e46f9958b35d10e9f6dc71c497305c22e3e55dbd"
@@ -8185,6 +8190,13 @@ prebuild-install@^7.1.1:
     simple-get "^4.0.0"
     tar-fs "^2.0.0"
     tunnel-agent "^0.6.0"
+
+preline@^2.3.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/preline/-/preline-2.3.0.tgz#dcba3f0ac170208fb9b326651f3e1ea51ee299cf"
+  integrity sha512-mBMF7NTbbhC2wp+1RHbBaHUCXsdM9ObJo64LvDcNRSKLbaC4uszkqBZ/X/paklEQh3+dOUAVBp1zvE5yQf/czw==
+  dependencies:
+    "@popperjs/core" "^2.11.2"
 
 prelude-ls@^1.2.1:
   version "1.2.1"
