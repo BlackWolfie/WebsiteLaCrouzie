@@ -11,6 +11,7 @@ import { galleryBlockSchema } from "../../components/blocks/galery";
 import { expertSeoPageProps } from "./seo";
 import { heroVideoBlockSchema } from "../../components/blocks/heroVideo";
 import { heroTextBlockSchema } from "../../components/blocks/heroText";
+import { heroFeatureBlockSchema } from "../../components/blocks/heroFeature";
 
 const Page: Collection = {
   label: "Pages",
@@ -56,10 +57,11 @@ const Page: Collection = {
       },
       templates: [
         heroBlockSchema,
-        heroTextBlockSchema,
         heroPlusBlockSchema,
         heroFullBlockSchema,
         heroVideoBlockSchema,
+        heroTextBlockSchema,
+        heroFeatureBlockSchema,
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-ignore
         featureBlockSchema,

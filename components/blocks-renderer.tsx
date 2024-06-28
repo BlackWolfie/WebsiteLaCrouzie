@@ -5,6 +5,7 @@ import { Content } from "./blocks/content";
 import { Features } from "./blocks/features";
 import { Gallery } from "./blocks/galery";
 import { Hero } from "./blocks/hero";
+import { HeroFeature } from "./blocks/heroFeature";
 import { HeroFull } from "./blocks/heroFull";
 import { HeroPlus } from "./blocks/heroPlus";
 import { HeroText } from "./blocks/heroText";
@@ -34,14 +35,16 @@ const Block = ({ block , theme}:{block: PageBlocks, theme: Themes}) => {
       return <Content data={block} theme={theme}/>;
     case "PageBlocksHero":
       return <Hero data={block} theme={theme}/>;
-      case "PageBlocksHeroText":
-      return <HeroText data={block} theme={theme}/>;
     case "PageBlocksHeroPlus":
       return <HeroPlus data={block} theme={theme}/>;
     case "PageBlocksHeroFull":
       return <HeroFull data={block} theme={theme}/>;
     case "PageBlocksHeroVideo":
       return <HeroVideo data={block} theme={theme}/>;
+    case "PageBlocksHeroText":
+      return <HeroText data={block} theme={theme}/>;
+    case "PageBlocksHeroFeature":
+      return <HeroFeature data={block} theme={theme}/>;
     case "PageBlocksFeatures":
       return <Features data={block} theme={theme}/>;
     case "PageBlocksTestimonial":
