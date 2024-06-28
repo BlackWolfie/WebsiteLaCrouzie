@@ -1,9 +1,8 @@
-import { Language } from 'prism-react-renderer';
 import styled from 'styled-components';
 import { Components, TinaMarkdown, TinaMarkdownContent } from 'tinacms/dist/rich-text';
-import ArticleImage from './ArticleImage';
 import Linkd from './Link';
 import Quote from './Quote';
+import SetImage from './SetImage';
 
 const Container = styled.div`
   display: flex;
@@ -106,6 +105,7 @@ const components = {
   code: TextHighlight,
   Linkd,
   Quote,
+  SetImage,
 };
 
 export default function RichText(props: { content: TinaMarkdownContent | TinaMarkdownContent[] }) {

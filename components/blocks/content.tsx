@@ -100,8 +100,8 @@ export const contentBlockSchema: Template = {
           ],
         },
         {
-          name: 'ArticleImage',
-          label: 'ArticleImage',
+          name: 'SetImage',
+          label: 'Image Parametrable',
           fields: [
             {
               type: 'image',
@@ -109,9 +109,24 @@ export const contentBlockSchema: Template = {
               label: 'Src',
             },
             {
+              type: 'number',
+              name: 'width',
+              label: 'Largeur de l\'image en % ',
+            },
+            {
+              type: 'string',
+              name: 'alt',
+              label: 'Titre affiché si l\'image ne charge pas',
+            },
+            {
               type: 'string',
               name: 'caption',
-              label: 'Caption',
+              label: 'Titre affiché en dessous de l\'image',
+            },
+            {
+              type: 'string',
+              name: 'link',
+              label: 'Lien',
             },
           ],
         },
