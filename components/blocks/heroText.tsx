@@ -8,6 +8,7 @@ import { tinaField } from "tinacms/dist/react";
 import RichText from "../styled/MDXRichText";
 import { Icon } from "../util/icon";
 import { iconSchema } from "../util/icon";
+
 export const HeroText = ({ data, theme }: { data: PageBlocksHeroText, theme:Themes }) => {
   return (
     <Section  id={data.id }>
@@ -43,15 +44,13 @@ export const HeroText = ({ data, theme }: { data: PageBlocksHeroText, theme:Them
                         { data.feature && data.feature.map((item,i)=> {
                             return (
                             <div className="flex">
-                                {/* {item.icon && (
+                                 {item.icon && (
                                     <Icon
                                     tinaField={tinaField(item, "icon")}
-                                    data={{ size: "medium", ...item.icon }}
+                                    data={{ size: "small", ...item.icon }}
                                     />
                                 )}
-                                <span className="flex-shrink-0 inline-flex justify-center items-center size-[46px] rounded-full border border-gray-200 bg-white text-gray-800 shadow-sm mx-auto">
-                                    <svg className="flex-shrink-0 size-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-                                </span> */}
+
                                 <div className="ms-5 sm:ms-8">
                                     {item.headline &&
                                     <h3 className="text-base font-semibold text-gray-800 sm:text-lg">
@@ -139,6 +138,7 @@ export const heroTextBlockSchema: Template = {
             itemProps: (item) => ({ label: item.headline }),
           },
         fields:[
+            iconSchema,
             {
                 type: "string",
                 label: "Titre",

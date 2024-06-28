@@ -11,6 +11,7 @@ export const colorOptions = [
   "pink",
   "purple",
   "white",
+  "black"
 ];
 
 export const ColorPickerInput = wrapFieldsWithMeta(({ input }) => {
@@ -24,12 +25,13 @@ export const ColorPickerInput = wrapFieldsWithMeta(({ input }) => {
     pink: "bg-pink-500 border-pink-600",
     purple: "bg-purple-500 border-purple-600",
     white: "bg-white border-gray-150",
+    black: "bg-black border-white"
   };
 
   return (
     <>
       <input type="text" id={input.name} className="hidden" {...input} />
-      <div className="flex gap-2 flex-wrap">
+      <div className="flex flex-wrap gap-2">
         {colorOptions.map((color) => {
           return (
             <button
