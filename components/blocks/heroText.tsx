@@ -138,7 +138,7 @@ export const heroTextBlockSchema: Template = {
             itemProps: (item) => ({ label: item.headline }),
           },
         fields:[
-            iconSchema,
+            iconSchema as any,
             {
                 type: "string",
                 label: "Titre",

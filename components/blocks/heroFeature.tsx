@@ -121,8 +121,11 @@ export const heroFeatureBlockSchema: Template = {
         name: "feature",
         type: "object",
         list:true,
+        ui: {
+          itemProps: (item) => ({ label: item.headline }),
+        },
         fields:[
-            iconSchema,
+            iconSchema as any,
             {
                 type: "string",
                 label: "Titre",

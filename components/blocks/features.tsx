@@ -110,7 +110,7 @@ export const featureBlockSchema = {
         },
       },
       fields: [
-        iconSchema,
+        iconSchema as any,
         {
           type: "string",
           label: "Title",
