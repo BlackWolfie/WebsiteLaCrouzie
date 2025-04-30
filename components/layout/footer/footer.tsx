@@ -65,7 +65,7 @@ const style = {
                 
                 <p className="hidden">  
                   <input id="f5805" type="checkbox" name="l" checked value="f5805ee6-4b51-4877-ba1b-99a7bd9c00ce" />
-      <label for="f5805">La Gazette (mensuelle)</label>
+      <label htmlFor="f5805">La Gazette (mensuelle)</label>
     </p>
                 <Button
                   size="sm"
