@@ -64,9 +64,9 @@ const style = {
                   }} onResize={undefined} onResizeCapture={undefined}                />
                 
                 <p className="hidden">  
-                  <input id="236ee" type="checkbox" name="l" checked value="236ee3c5-41b7-421f-b2ca-9a47f34a9840" readOnly />
-                  <label htmlFor="236ee">La Gazette (mensuelle)</label>
-                </p>
+                  <input id="f5805" type="checkbox" name="l" checked value="f5805ee6-4b51-4877-ba1b-99a7bd9c00ce" />
+      <label for="f5805">La Gazette (mensuelle)</label>
+    </p>
                 <Button
                   size="sm"
                   color={email ? "gray" : "blue-gray"}
